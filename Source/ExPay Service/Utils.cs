@@ -10,22 +10,23 @@ namespace ExPay_Service
     public static class Utils
     {
         [STAThread]
-        public static T ShowDialog<T, U>()
-            where U : Window, new()
+        public static TResult ShowDialog<TResult, TDialog>(object context)
+            where TDialog : Window, new()
         {
-            var tcs = new TaskCompletionSource<T>();
+            var tcs = new TaskCompletionSource<TResult>();
 
             var uiThread = new Thread(() =>
             {
                 var a = new Application();
-                var dialog = new U();
+                var dialog = new TDialog();
+                dialog.DataContext = context;
 
                 a.MainWindow = dialog;
                 a.MainWindow.ShowDialog();
 
                 a.Exit += (s, e) =>
                 {
-                    tcs.SetResult((T)dialog.Tag);
+                    tcs.SetResult((TResult)dialog.Tag);
                 };
 
                 a.Run();
