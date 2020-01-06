@@ -1,5 +1,5 @@
 Shared Methods:
 	[0xAA] Ping() -> bool
 	[0x1D] GetSupportedMethodIds() -> string[]
-	[0xEE] SubmitPaymentRequest() -> int
+	[0xEE] SubmitPaymentRequest(PaymentRequest) -> int
 	[0xCC] Complete -> void
