@@ -4,30 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExPay_Service.Dialogs"
+        xmlns:ui="clr-namespace:ExPay_Service.UI"
         mc:Ignorable="d"
         Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
     <StackPanel>
-        <TextBlock Text="{Binding MerchantInfo.URN}" />
+        <StackPanel>
+            <TextBlock Text="{Binding MerchantInfo.URN}" />
+        </StackPanel>
 
-        <Expander Header="Items">
+        <Expander Header="Items" IsExpanded="True">
             <ListBox ItemsSource="{Binding Details.DisplayItems}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Name}" />
-                            <TextBlock Text="{Binding Amount.Value}" />
-                            <TextBlock Text=" " />
-                            <TextBlock Text="{Binding Amount.Currency}" />
-                        </StackPanel>
+                        <DockPanel>
+                            <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" DockPanel.Dock="Left" />
+
+                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                <TextBlock Text="{Binding Amount.Value, Converter={ui:CurrencyConverter}, FallbackValue=1.99}" />
+
+                                <TextBlock Text="{Binding Amount.Currency}" />
+                            </StackPanel>
+                        </DockPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Expander>
+
+        <Expander Header="payment Method">
+            <ListBox ItemsSource="{Binding AcceptedPaymentMethods}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding URN}" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Expander>
 
         <TextBlock>
-            <Run Text="{Binding Details.Total.Amount.Value}" />
-            <Run Text=" " /> <!-- space -->
-            <Run Text="{Binding Details.Total.Amount.Currency}" /> <!-- space -->
+            <Run Text="Total: " />
+            <Run Text="{Binding Details.Total.Amount.Value, Converter={ui:CurrencyConverter}}" />
+           
+            <Run Text="{Binding Details.Total.Amount.Currency}" /> 
         </TextBlock>
     </StackPanel>
 </Window>
