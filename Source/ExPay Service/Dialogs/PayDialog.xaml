@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExPay_Service.Dialogs"
         mc:Ignorable="d"
-        Title="ExPay" Height="450" Width="800">
+        Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
     <StackPanel>
-        <TextBlock>hello world</TextBlock>
-        <TextBlock Text="{Binding Details.Total}" />
+        <TextBlock Text="{Binding MerchantInfo.URN}" />
+
+        <Expander Header="Items">
+            <ListBox ItemsSource="{Binding Details.DisplayItems}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock Text="{Binding Amount.Value}" />
+                            <TextBlock Text=" " />
+                            <TextBlock Text="{Binding Amount.Currency}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Expander>
+
+        <TextBlock>
+            <Run Text="{Binding Details.Total.Amount.Value}" />
+            <Run Text=" " /> <!-- space -->
+            <Run Text="{Binding Details.Total.Amount.Currency}" /> <!-- space -->
+        </TextBlock>
     </StackPanel>
 </Window>
