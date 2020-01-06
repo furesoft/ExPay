@@ -2,6 +2,10 @@
 {
     public class ShippingAddress
     {
+        public ShippingAddress()
+        {
+        }
+
         //ToDo: add properties to ShippingAddress
     }
 }

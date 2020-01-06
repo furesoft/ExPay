@@ -6,10 +6,16 @@ namespace ExPay.Core.Models
     public class PaymentDetailsModifier
     {
         public IEnumerable<PaymentItem> AdditionalDisplayItems { get; }
+
         public string JsonData { get; }
+
         public IEnumerable<string> SupportedMethodIds { get; }
 
         public PaymentItem Total { get; }
+
+        public PaymentDetailsModifier()
+        {
+        }
 
         public PaymentDetailsModifier(IEnumerable<string> supportedMethodIds, PaymentItem total, IEnumerable<PaymentItem> additionalDisplayItems)
         {

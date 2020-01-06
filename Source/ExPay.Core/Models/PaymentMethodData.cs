@@ -6,6 +6,10 @@
 
         public string URN { get; set; }
 
+        public PaymentMethodData()
+        {
+        }
+
         public PaymentMethodData(string uRN, object data)
         {
             URN = uRN;

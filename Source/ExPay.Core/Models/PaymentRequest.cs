@@ -12,6 +12,10 @@ namespace ExPay.Core.Models
 
         public PaymentOptions Options { get; }
 
+        public PaymentRequest()
+        {
+        }
+
         public PaymentRequest(PaymentDetails details, IEnumerable<PaymentMethodData> acceptedPaymentMethods, PaymentMerchantInfo merchantInfo, PaymentOptions options)
         {
             Details = details;

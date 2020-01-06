@@ -6,6 +6,10 @@
 
         public string Name { get; set; }
 
+        public PaymentItem()
+        {
+        }
+
         public PaymentItem(string name, PaymentCurrencyAmount amount)
         {
             Name = name;

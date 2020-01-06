@@ -6,6 +6,10 @@ namespace ExPay.Core.Models
     {
         public Uri URN { get; set; }
 
+        public PaymentMerchantInfo()
+        {
+        }
+
         public PaymentMerchantInfo(Uri uRN)
         {
             URN = uRN;
