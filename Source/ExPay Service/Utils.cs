@@ -10,7 +10,7 @@ namespace ExPay_Service
     public static class Utils
     {
         [STAThread]
-        public static TResult ShowDialog<TResult, TDialog>(object context)
+        public static TResult ShowDialog<TResult, TDialog>(object context = null)
             where TDialog : Window, new()
         {
             var tcs = new TaskCompletionSource<TResult>();
