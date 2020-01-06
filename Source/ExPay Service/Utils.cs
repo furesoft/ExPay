@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExPay.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -15,18 +16,22 @@ namespace ExPay_Service
         {
             var tcs = new TaskCompletionSource<TResult>();
 
-            var uiThread = new Thread(() =>
+            Thread uiThread = new Thread(() =>
             {
-                var a = new Application();
+                var a = Singleton<Application>.Instance;
+
                 var dialog = new TDialog();
                 dialog.DataContext = context;
 
                 a.MainWindow = dialog;
+                a.ShutdownMode = ShutdownMode.OnExplicitShutdown;
+
                 a.MainWindow.ShowDialog();
 
                 a.Exit += (s, e) =>
                 {
                     tcs.SetResult((TResult)dialog.Tag);
+                    a.Shutdown();
                 };
 
                 a.Run();

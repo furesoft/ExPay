@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ExPay_Service.Dialogs"
         mc:Ignorable="d"
         Title="ExPay" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
         <TextBlock>hello world</TextBlock>
-    </Grid>
+        <TextBlock Text="{Binding Details.Total}" />
+    </StackPanel>
 </Window>
