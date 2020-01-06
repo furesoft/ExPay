@@ -5,11 +5,32 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Position;
 
 namespace ExPay_Service
 {
     public static class Utils
     {
+        public static Notifier MakeNotifier()
+        {
+            return new Notifier(cfg =>
+            {
+                cfg.PositionProvider = new WindowPositionProvider(
+                    parentWindow: Singleton<Application>.Instance.MainWindow,
+                    corner: Corner.TopRight,
+                    offsetX: 10,
+                    offsetY: 10);
+
+                cfg.LifetimeSupervisor = new TimeAndCountBasedLifetimeSupervisor(
+                    notificationLifetime: TimeSpan.FromSeconds(3),
+                    maximumNotificationCount: MaximumNotificationCount.FromCount(5));
+
+                cfg.Dispatcher = Singleton<Application>.Instance.Dispatcher;
+            });
+        }
+
         [STAThread]
         public static TResult ShowDialog<TResult, TDialog>(object context = null)
             where TDialog : Window, new()
@@ -19,6 +40,7 @@ namespace ExPay_Service
             Thread uiThread = new Thread(() =>
             {
                 var a = Singleton<Application>.Instance;
+                a.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("pack://application:,,,/ToastNotifications.Messages;component/Themes/Default.xaml") });
 
                 var dialog = new TDialog();
                 dialog.DataContext = context;
