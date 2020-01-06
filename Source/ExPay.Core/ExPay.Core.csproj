@@ -8,4 +8,8 @@
     <Folder Include="Contracts\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Furesoft.Signals" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>
