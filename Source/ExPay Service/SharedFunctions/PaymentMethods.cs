@@ -1,5 +1,6 @@
 ﻿using ExPay.Core.API;
 using ExPay.Core.Models;
+using ExPay_Service.Dialogs;
 using Furesoft.Signals.Attributes;
 
 namespace ExPay_Service.SharedFunctions
@@ -8,14 +9,16 @@ namespace ExPay_Service.SharedFunctions
     public class PaymentMethods
     {
         [SharedFunction((int)SharedMethodIds.Complete)]
-        public void Complete()
+        public static void Complete()
         {
         }
 
         [SharedFunction((int)SharedMethodIds.SubmitPaymentRequest)]
-        public int SubmitPaymentRequest(PaymentRequest req)
+        public static PaymentRequestSubmitResult SubmitPaymentRequest(PaymentRequest req)
         {
-            return 0;
+            var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayDialog>();
+
+            return result;
         }
     }
 }

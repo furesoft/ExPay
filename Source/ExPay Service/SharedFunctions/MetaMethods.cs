@@ -7,7 +7,7 @@ namespace ExPay_Service.SharedFunctions
     public class MetaMethods
     {
         [SharedFunction((int)SharedMethodIds.GetSupportedMethodIds)]
-        public string[] GetSupportedMethodIds()
+        public static string[] GetSupportedMethodIds()
         {
             return null;
         }
