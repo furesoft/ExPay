@@ -3,7 +3,6 @@ using ExPay.Core.Models;
 using Furesoft.Signals;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 
 namespace TestClient
