@@ -14,4 +14,8 @@
     <PackageReference Include="Topshelf" Version="4.2.1.218-develop" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ExPay.Core\ExPay.Core.csproj" />
+  </ItemGroup>
+
 </Project>

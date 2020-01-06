@@ -13,7 +13,7 @@ namespace TestClient
         {
             var channel = Signal.CreateSenderChannel("ExPay");
 
-            var result = Signal.CallMethod<int>(channel, 0x3A1);
+            var result = Signal.CallMethod<int>(channel, (int)SharedMethodIds.OpenDialogTest);
 
             if (result == 1)
             {
