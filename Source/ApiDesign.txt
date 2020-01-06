@@ -1,6 +1,6 @@
 var acceptedPaymentMethods = new[]
 {
-    new PaymentMethodData(new[] { "https://pay.microsoft.com/microsoftpay" }, data)
+    new PaymentMethodData("https://pay.microsoft.com/microsoftpay", data)
 };
 
 // Determine which of our accepted payment methods are supported by the customer's payment applications.
@@ -9,12 +9,12 @@ var supportedPaymentMethods = await paymentMediator.GetSupportedMethodIdsAsync()
 
 var displayItemsInCart = new List<PaymentItem>
 {
-    new PaymentItem("Contoso shoes", new PaymentCurrencyAmount("88.00", "USD")),
-    new PaymentItem("Contoso shoelaces", new PaymentCurrencyAmount("0.56", "USD")),
+    new PaymentItem("Contoso shoes", new PaymentCurrencyAmount(88.00m, "USD")),
+    new PaymentItem("Contoso shoelaces", new PaymentCurrencyAmount(0.56m, "USD")),
 };
 
 // Calculate the total value of display items.
-var totalValue = displayItemsInCart.Sum(item => Convert.ToDecimal(item.Amount.Value));
+var totalValue = displayItemsInCart.Sum(item => item.Amount.Value);
 
 // Add items for any/all applicable taxes.
 decimal salesTax = 0.095241M * totalValue;
@@ -56,7 +56,7 @@ var totalItemForContosoCard = new PaymentItem("Total",
     },
     Modifiers = new[]
     {
-        new PaymentDetailsModifier(new[] { "contoso/credit" }, 
+        new PaymentDetailsModifier("contoso/credit", 
         totalItemForContosoCard, displayItemsForContosoCard)
     },
 };
@@ -78,10 +78,7 @@ var request = new PaymentRequest(details, acceptedPaymentMethods, merchantInfo, 
 
 // Submit the payment request for mediation and (possibly) user review and wait for the user to approve
 // or reject the request.
-var submissionResult = await paymentMediator.SubmitPaymentRequestAsync(request, (s, ev) =>
-{
-    ev.Acknowledge(new PaymentRequestChangedResult(true));
-});
+var submissionResult = await paymentMediator.SubmitPaymentRequestAsync(request);
 
 if (submissionResult.Status != PaymentRequestStatus.Succeeded)
 {

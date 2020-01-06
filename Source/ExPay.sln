@@ -11,6 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExPay Manager", "ExPay Mana
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{6F958A2B-6CFC-447E-8FFE-0D33585A04D1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{935E02E4-5F52-455B-8A37-7B1E7B08BBBB}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		ApiDesign.txt = ApiDesign.txt
+		Protocol.txt = Protocol.txt
+		ToDo.txt = ToDo.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
