@@ -88,7 +88,7 @@ namespace TestClient
                 RequestPayerName = PaymentOptionPresence.None,
                 RequestPayerEmail = PaymentOptionPresence.None,
                 RequestPayerPhoneNumber = PaymentOptionPresence.None,
-                RequestShipping = true,
+                RequestShipping = false,
                 ShippingType = PaymentShippingType.Shipping
             };
 

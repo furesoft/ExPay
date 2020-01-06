@@ -4,13 +4,13 @@ namespace ExPay.Core.Models
 {
     public class PaymentRequest
     {
-        public IEnumerable<PaymentMethodData> AcceptedPaymentMethods { get; }
+        public IEnumerable<PaymentMethodData> AcceptedPaymentMethods { get; set; }
 
-        public PaymentDetails Details { get; }
+        public PaymentDetails Details { get; set; }
 
-        public PaymentMerchantInfo MerchantInfo { get; }
+        public PaymentMerchantInfo MerchantInfo { get; set; }
 
-        public PaymentOptions Options { get; }
+        public PaymentOptions Options { get; set; }
 
         public PaymentRequest()
         {
