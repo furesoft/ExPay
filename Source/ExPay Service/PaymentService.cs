@@ -1,5 +1,4 @@
 ﻿using Furesoft.Signals;
-using System.Diagnostics;
 using Topshelf;
 
 namespace ExPay_Service
@@ -8,7 +7,7 @@ namespace ExPay_Service
     {
         public bool Start(HostControl hostControl)
         {
-            var channel = Signal.CreateRecieverChannel("ExPay");
+            channel = Signal.CreateRecieverChannel("ExPay");
             Signal.CollectAllShared(channel);
 
             return true;
@@ -16,7 +15,11 @@ namespace ExPay_Service
 
         public bool Stop(HostControl hostControl)
         {
+            channel = null;
+
             return true;
         }
+
+        private IpcChannel channel;
     }
 }
