@@ -45,15 +45,15 @@ namespace ExPay_Service
                 var dialog = new TDialog();
                 dialog.DataContext = context;
 
-                a.MainWindow = dialog;
+                //a.MainWindow = dialog;
                 a.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
-                a.MainWindow.ShowDialog();
+                dialog.ShowDialog();
 
                 a.Exit += (s, e) =>
                 {
                     tcs.SetResult((TResult)dialog.Tag);
-                    a.Shutdown();
+                    //a.Shutdown();
                 };
 
                 a.Run();

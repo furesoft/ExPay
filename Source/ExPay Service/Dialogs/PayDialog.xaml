@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ExPay_Service.Dialogs"
         xmlns:ui="clr-namespace:ExPay_Service.UI"
         mc:Ignorable="d"
+        ShowInTaskbar="False"
         Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <StackPanel>
@@ -43,8 +44,8 @@
         <TextBlock>
             <Run Text="Total: " />
             <Run Text="{Binding Details.Total.Amount.Value, Converter={ui:CurrencyConverter}}" />
-           
-            <Run Text="{Binding Details.Total.Amount.Currency}" /> 
+
+            <Run Text="{Binding Details.Total.Amount.Currency}" />
         </TextBlock>
     </StackPanel>
 </Window>
