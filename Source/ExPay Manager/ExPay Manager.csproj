@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>ExPay_Manager</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>pay.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

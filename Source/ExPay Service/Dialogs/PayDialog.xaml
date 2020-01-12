@@ -14,23 +14,21 @@
             <Image Source="{Binding MerchantInfo.Image}" />
         </StackPanel>
 
-        <Expander Header="Items" IsExpanded="True">
-            <ListBox ItemsSource="{Binding Details.DisplayItems}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <DockPanel>
-                            <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" DockPanel.Dock="Left" />
+        <ListBox ScrollViewer.IsDeferredScrollingEnabled="True" ItemsSource="{Binding Details.DisplayItems}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" DockPanel.Dock="Left" />
 
-                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                                <TextBlock Text="{Binding Amount.Value, Converter={ui:CurrencyConverter}, FallbackValue=1.99}" />
+                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                            <TextBlock Text="{Binding Amount.Value, Converter={ui:CurrencyConverter}, FallbackValue=1.99}" />
 
-                                <TextBlock Text="{Binding Amount.Currency}" />
-                            </StackPanel>
-                        </DockPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </Expander>
+                            <TextBlock Text="{Binding Amount.Currency}" />
+                        </StackPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <Expander Header="payment Method">
             <ListBox ItemsSource="{Binding AcceptedPaymentMethods}">
@@ -48,5 +46,21 @@
 
             <Run Text="{Binding Details.Total.Amount.Currency}" />
         </TextBlock>
+
+        <Grid>
+            <Button HorizontalAlignment="Right">
+                <Grid>
+                    <Image Source="/pay.ico" Width="50" Height="50" HorizontalAlignment="Left" />
+                    <TextBlock Text="Pay" HorizontalAlignment="Right" />
+                </Grid>
+            </Button>
+
+            <Button HorizontalAlignment="Left">
+                <Grid>
+                    <Image Source="close.png" Width="50" Height="50" HorizontalAlignment="Left" />
+                    <TextBlock Text="Cancel" HorizontalAlignment="Right" />
+                </Grid>
+            </Button>
+        </Grid>
     </StackPanel>
 </Window>

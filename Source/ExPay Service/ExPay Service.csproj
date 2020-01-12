@@ -5,8 +5,18 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>ExPay_Service</RootNamespace>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon />
+    <ApplicationIcon>pay.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Dialogs\close.png" />
+    <None Remove="pay.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Dialogs\close.png" />
+    <Resource Include="pay.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Furesoft.Signals" Version="1.0.0" />
