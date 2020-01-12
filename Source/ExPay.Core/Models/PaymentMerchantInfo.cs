@@ -4,16 +4,22 @@ namespace ExPay.Core.Models
 {
     public class PaymentMerchantInfo
     {
+        public Uri Image { get; set; }
         public string Name { get; set; }
-        public Uri URN { get; set; }
 
         public PaymentMerchantInfo()
         {
         }
 
-        public PaymentMerchantInfo(Uri uRN)
+        public PaymentMerchantInfo(string name)
         {
-            URN = uRN;
+            Name = name;
+        }
+
+        public PaymentMerchantInfo(string name, Uri image)
+            : this(name)
+        {
+            Image = image;
         }
     }
 }

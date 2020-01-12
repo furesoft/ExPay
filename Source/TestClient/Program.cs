@@ -92,7 +92,7 @@ namespace TestClient
                 ShippingType = PaymentShippingType.Shipping
             };
 
-            var merchantInfo = new PaymentMerchantInfo(new Uri("https://store.contoso.com"));
+            var merchantInfo = new PaymentMerchantInfo("https://store.contoso.com", new Uri("https://i2.wp.com/www.mobiflip.de/wp-content/uploads/2019/04/amazon-logo-header.jpg?fit=1085%2C678&ssl=1"));
 
             // Create a new payment request and associated internal state describing this proposed transaction.
             var request = new PaymentRequest(details, acceptedPaymentMethods, merchantInfo, options);
