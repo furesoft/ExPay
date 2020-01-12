@@ -17,8 +17,11 @@ namespace ExPay_Service
 
             var t = new Thread(() =>
            {
-               var a = BuildAvaloniaApp();
-               a.SetupWithoutStarting();
+               if (a == null)
+               {
+                   a = BuildAvaloniaApp();
+                   a.SetupWithoutStarting();
+               }
 
                var dialog = new TDialog();
                dialog.DataContext = context;
@@ -35,6 +38,8 @@ namespace ExPay_Service
 
             return tcs.Task.Result;
         }
+
+        private static AppBuilder a;
 
         private static AppBuilder BuildAvaloniaApp()
                     => AppBuilder.Configure<App>()
