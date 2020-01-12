@@ -25,7 +25,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.1" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.1" />
-    <PackageReference Include="Furesoft.Signals" Version="1.0.0" />
+    <PackageReference Include="Furesoft.Signals" Version="1.0.7" />
     <PackageReference Include="Topshelf" Version="4.2.1.218-develop" />
   </ItemGroup>
   <ItemGroup>
