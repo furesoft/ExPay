@@ -1,7 +1,4 @@
 ﻿using System;
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Logging.Serilog;
 using Topshelf;
 
 namespace ExPay_Service
