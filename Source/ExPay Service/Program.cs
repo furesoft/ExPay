@@ -1,9 +1,12 @@
 ﻿using System;
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Logging.Serilog;
 using Topshelf;
 
 namespace ExPay_Service
 {
-    public static class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {

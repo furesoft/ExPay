@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Avalonia.Data.Converters;
+using Avalonia.Markup.Xaml;
+using System;
 using System.Globalization;
-using System.Windows.Data;
-using System.Windows.Markup;
 
-namespace ExPay_Service.UI
+namespace ExPay.UI.Converters
 {
     internal class CurrencyConverter : MarkupExtension, IValueConverter
     {

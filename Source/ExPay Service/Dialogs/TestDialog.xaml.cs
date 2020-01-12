@@ -1,18 +1,22 @@
-﻿using System.Windows;
+﻿using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Markup.Xaml;
 
 namespace ExPay_Service.Dialogs
 {
-    public partial class TestDialog : Window
+    public class TestDialog : Window
     {
         public TestDialog()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+#if DEBUG
+            this.AttachDevTools();
+#endif
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void InitializeComponent()
         {
-            Tag = 1;
-            Close();
+            AvaloniaXamlLoader.Load(this);
         }
     }
 }

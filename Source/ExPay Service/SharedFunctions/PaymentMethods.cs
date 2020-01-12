@@ -16,7 +16,7 @@ namespace ExPay_Service.SharedFunctions
         [SharedFunction((int)SharedMethodIds.SubmitPaymentRequest)]
         public static PaymentRequestSubmitResult SubmitPaymentRequest(PaymentRequest req)
         {
-            var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayDialog>(req);
+            var result = Utils.ShowDialog<PaymentRequestSubmitResult, TestDialog>(req);
 
             return result;
         }
