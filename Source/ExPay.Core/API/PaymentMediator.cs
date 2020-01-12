@@ -1,7 +1,6 @@
 ﻿using ExPay.Core.Models;
 using Furesoft.Signals;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ExPay.Core.API
@@ -29,6 +28,13 @@ namespace ExPay.Core.API
 
                 return PaymentCanMakePaymentResultStatus.No;
             });
+        }
+
+        public Task Complete(PaymentRequestCompletionStatus succeeded)
+        {
+            channel.Dispose();
+
+            return Task.CompletedTask;
         }
 
         public async Task<IEnumerable<string>> GetSupportedMethodIdsAsync()
