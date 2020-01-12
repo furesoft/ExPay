@@ -25,6 +25,7 @@ namespace ExPay_Service
 
                var dialog = new TDialog();
                dialog.DataContext = context;
+               dialog.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
                dialog.Closed += (s, e) =>
                {
