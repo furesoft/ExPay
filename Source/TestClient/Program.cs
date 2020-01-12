@@ -108,7 +108,7 @@ namespace TestClient
             }
 
             //Your app waits for the user to tap Pay, then completes the order.
-            await submissionResult.Response.CompleteAsync(PaymentRequestCompletionStatus.Succeeded);
+            await paymentMediator.Complete(PaymentRequestCompletionStatus.Succeeded);
         }
     }
 }
