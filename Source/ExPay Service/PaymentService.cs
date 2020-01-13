@@ -7,6 +7,8 @@ namespace ExPay_Service
     {
         public bool Start(HostControl hostControl)
         {
+            WindowManager.Init();
+
             channel = Signal.CreateRecieverChannel("ExPay");
             Signal.CollectAllShared(channel);
 

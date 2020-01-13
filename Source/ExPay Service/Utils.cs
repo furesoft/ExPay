@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Logging.Serilog;
+using Avalonia.Threading;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,36 +16,21 @@ namespace ExPay_Service
         {
             var tcs = new TaskCompletionSource<TResult>();
 
-            var t = new Thread(() =>
-           {
-               if (a == null)
-               {
-                   a = BuildAvaloniaApp();
-                   a.SetupWithoutStarting();
-               }
+            Dispatcher.UIThread.InvokeAsync(() =>
+            {
+                var dialog = new TDialog();
+                dialog.DataContext = context;
+                dialog.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-               var dialog = new TDialog();
-               dialog.DataContext = context;
-               dialog.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                dialog.Closed += (s, e) =>
+                {
+                    tcs.SetResult((TResult)dialog.Tag);
+                };
 
-               dialog.Closed += (s, e) =>
-               {
-                   tcs.SetResult((TResult)dialog.Tag);
-               };
-
-               a.Instance.Run(dialog);
-           });
-
-            t.Start();
+                WindowManager.AppBuilder.Instance.Run(dialog);
+            });
 
             return tcs.Task.Result;
         }
-
-        private static AppBuilder a;
-
-        private static AppBuilder BuildAvaloniaApp()
-                    => AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .LogToDebug();
     }
 }
