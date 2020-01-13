@@ -1,5 +1,6 @@
 ﻿using ExPay.Core.API;
 using ExPay.Core.Models;
+using Furesoft.Signals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace TestClient
     {
         private static void Main(string[] args)
         {
+            var sig = Signal.GetSignatureOf(Signal.CreateSenderChannel("ExPay"), (int)SharedMethodIds.OpenDialogTest);
+
             TestPayment();
 
             Console.ReadLine();
