@@ -5,8 +5,12 @@ using System.Globalization;
 
 namespace ExPay.UI.Converters
 {
-    internal class CurrencyConverter : MarkupExtension, IValueConverter
+    public class CurrencyConverter : MarkupExtension, IValueConverter
     {
+        public CurrencyConverter()
+        {
+        }
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return string.Format("{0:F2}", value);

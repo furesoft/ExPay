@@ -1,6 +1,5 @@
 ﻿using ExPay.Core.API;
 using ExPay.Core.Models;
-using Furesoft.Signals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +15,14 @@ namespace TestClient
             Console.ReadLine();
         }
 
-        private static async void TestPayment()
+        private static void TestPayment()
         {
             object data = null;
 
             var acceptedPaymentMethods = new[]
-{
-    new PaymentMethodData("https://pay.microsoft.com/microsoftpay", data)
-};
+            {
+                new PaymentMethodData("https://pay.microsoft.com/microsoftpay", data)
+            };
 
             // Determine which of our accepted payment methods are supported by the customer's payment applications.
             var paymentMediator = new PaymentMediator();
