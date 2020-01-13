@@ -2,8 +2,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://furesoft.ml/expay"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="PayDialog" Height="500" Width="450" WindowStartupLocation="CenterScreen">
-    Pay
+
+    <StackPanel>
+        <StackPanel>
+            <TextBlock Text="{Binding MerchantInfo.Name}" />
+        </StackPanel>
+
+        <ListBox Items="{Binding Details.DisplayItems}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" DockPanel.Dock="Left" />
+
+                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                            <TextBlock Text="{Binding Amount.Value, Converter={ui:CurrencyConverter}, FallbackValue=1.99}" />
+
+                            <TextBlock Text="{Binding Amount.Currency}" />
+                        </StackPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
 </Window>
