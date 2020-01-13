@@ -46,9 +46,9 @@ namespace ExPay.Core.API
             });
         }
 
-        public async Task<PaymentRequestSubmitResult> SubmitPaymentRequestAsync(PaymentRequest paymentRequest)
+        public Task<PaymentRequestSubmitResult> SubmitPaymentRequestAsync(PaymentRequest paymentRequest)
         {
-            return await Task.Run(() =>
+            return Task.Run(() =>
             {
                 var result = Signal.CallMethod<PaymentRequestSubmitResult>(channel, (int)SharedMethodIds.SubmitPaymentRequest, paymentRequest);
 
