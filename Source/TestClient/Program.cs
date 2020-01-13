@@ -11,8 +11,6 @@ namespace TestClient
     {
         private static void Main(string[] args)
         {
-            var sig = Signal.GetSignatureOf(Signal.CreateSenderChannel("ExPay"), (int)SharedMethodIds.OpenDialogTest);
-
             TestPayment();
 
             Console.ReadLine();
@@ -29,7 +27,7 @@ namespace TestClient
 
             // Determine which of our accepted payment methods are supported by the customer's payment applications.
             var paymentMediator = new PaymentMediator();
-            var supportedPaymentMethods = await paymentMediator.GetSupportedMethodIdsAsync();
+            var supportedPaymentMethods = paymentMediator.GetSupportedMethodIdsAsync();
 
             var displayItemsInCart = new List<PaymentItem>
 {
@@ -102,7 +100,7 @@ namespace TestClient
 
             // Submit the payment request for mediation and (possibly) user review and wait for the user to approve
             // or reject the request.
-            var submissionResult = await paymentMediator.SubmitPaymentRequestAsync(request);
+            var submissionResult = paymentMediator.SubmitPaymentRequestAsync(request);
 
             if (submissionResult.Status != PaymentRequestStatus.Succeeded)
             {
@@ -111,7 +109,7 @@ namespace TestClient
             }
 
             //Your app waits for the user to tap Pay, then completes the order.
-            await paymentMediator.Complete(PaymentRequestCompletionStatus.Succeeded);
+            var success = paymentMediator.Complete();
         }
     }
 }

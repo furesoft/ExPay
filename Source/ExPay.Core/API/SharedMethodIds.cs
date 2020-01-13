@@ -8,5 +8,6 @@
         Complete = 0xCC,
 
         OpenDialogTest = 0x3A1,
+        GetPaymentStatus = 0x3A2,
     }
 }

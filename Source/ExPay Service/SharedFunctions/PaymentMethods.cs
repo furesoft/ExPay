@@ -15,13 +15,20 @@ namespace ExPay_Service.SharedFunctions
         {
         }
 
+        [SharedFunction((int)SharedMethodIds.GetPaymentStatus)]
+        [Description("Get Result of current Payment")]
+        public static int GetPaymentStatus()
+        {
+            return 0;
+        }
+
         [SharedFunction((int)SharedMethodIds.SubmitPaymentRequest)]
         [Description("Submit the Payment Request")]
         public static PaymentRequestSubmitResult SubmitPaymentRequest(PaymentRequest req)
         {
             var result = Utils.ShowDialog<PaymentRequestSubmitResult, TestDialog>(req);
 
-            return result;
+            return result.Result;
         }
     }
 }

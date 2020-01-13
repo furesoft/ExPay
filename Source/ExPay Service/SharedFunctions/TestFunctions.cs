@@ -12,7 +12,7 @@ namespace ExPay_Service.SharedFunctions
         [Description("Show a TestDialog")]
         public static int OpenDialog()
         {
-            return Utils.ShowDialog<int, TestDialog>();
+            return Utils.ShowDialog<int, TestDialog>().Result;
         }
     }
 }

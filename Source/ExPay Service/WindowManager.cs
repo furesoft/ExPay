@@ -16,7 +16,8 @@ namespace ExPay_Service
                 if (AppBuilder == null)
                 {
                     AppBuilder = BuildAvaloniaApp();
-                    AppBuilder.SetupWithoutStarting();
+
+                    AppBuilder.StartWithClassicDesktopLifetime(null);
                 }
             });
 
