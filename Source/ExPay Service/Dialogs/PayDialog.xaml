@@ -9,7 +9,7 @@
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="PayDialog" Height="500" Width="450" WindowStartupLocation="CenterScreen">
 
-  <Grid RowDefinitions="50,100,*,100">
+  <Grid RowDefinitions="50,100,*,50">
     <StackPanel Grid.Row="0">
       <TextBlock Text="{Binding MerchantInfo.Name}" />
     </StackPanel>
@@ -41,13 +41,14 @@
       <Button Click="OnCancel" HorizontalAlignment="Left">
         <StackPanel Orientation="Horizontal">
           <Image MaxWidth="35" MaxHeight="35" Source="resm:ExPay_Service.close.png" />
-          <TextBlock Text="Cancel" />
+          <TextBlock Text="Cancel" FontSize="23" />
         </StackPanel>
       </Button>
+
       <Button HorizontalAlignment="Right">
-        <Grid ColumnDefinitions="35,*">
-          <Image Grid.Column="0" MaxWidth="35" MaxHeight="35" Source="resm:ExPay_Service.pay.ico" />
-          <TextBlock Grid.Column="1" Text="Pay" />
+        <Grid ColumnDefinitions="25,*">
+          <Image Grid.Column="0" Margin="5,0,0,0" MaxWidth="35" MaxHeight="35" Source="resm:ExPay_Service.pay.ico" />
+          <TextBlock FontSize="23" Grid.Column="1" Text="Pay" />
         </Grid>
       </Button>
     </Grid>
