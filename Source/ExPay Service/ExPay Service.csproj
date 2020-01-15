@@ -28,6 +28,7 @@
     <PackageReference Include="Avalonia" Version="0.9.1" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.1" />
     <PackageReference Include="Furesoft.Signals" Version="1.0.8" />
+    <PackageReference Include="LiteDB" Version="4.1.4" />
     <PackageReference Include="Topshelf" Version="4.2.1.218-develop" />
   </ItemGroup>
   <ItemGroup>
