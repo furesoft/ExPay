@@ -19,6 +19,7 @@
     <AvaloniaResource Remove="Dialogs\TestDialog.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="close.png" />
     <None Remove="Dialogs\PayDialog.xaml" />
     <None Remove="Dialogs\TestDialog.xaml" />
     <None Remove="pay.ico" />
@@ -34,6 +35,7 @@
     <ProjectReference Include="..\ExPay.UI\ExPay.UI.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="close.png" />
     <EmbeddedResource Include="Dialogs\TestDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
