@@ -4,39 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="clr-namespace:ExPay.UI.Converters;assembly=ExPay.UI"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+    xmlns:core="clr-namespace:ExPay.Core.DesignData"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="PayDialog" Height="500" Width="450" WindowStartupLocation="CenterScreen">
 
-  <StackPanel>
-    <StackPanel>
+  <Grid RowDefinitions="50,100,*,100">
+    <StackPanel Grid.Row="0">
       <TextBlock Text="{Binding MerchantInfo.Name}" />
     </StackPanel>
 
-    <ListBox Items="{Binding Details.DisplayItems}">
+    <ListBox Items="{Binding Details.DisplayItems}" Grid.Row="1">
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <DockPanel>
-            <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" DockPanel.Dock="Left" />
+          <Grid>
+            <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" HorizontalAlignment="Left" />
 
-            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
               <TextBlock Text="{Binding Amount.Value, Converter={ui:CurrencyConverter}, FallbackValue=1.99}" />
 
               <TextBlock Text="{Binding Amount.Currency}" />
             </StackPanel>
-          </DockPanel>
+          </Grid>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
 
-    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+    <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
       <TextBlock Text="Total: " />
       <TextBlock Text="{Binding Details.Total.Amount.Value, Converter={ui:CurrencyConverter}}" />
 
       <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
     </StackPanel>
 
-    <controls:Button Click="OnCancel">Cancel</controls:Button>
-    <Button>Pay</Button>
-  </StackPanel>
+    <Grid Grid.Row="3">
+      <Button Click="OnCancel" HorizontalAlignment="Left">Cancel</Button>
+      <Button HorizontalAlignment="Right">Pay</Button>
+    </Grid>
+  </Grid>
 </Window>
