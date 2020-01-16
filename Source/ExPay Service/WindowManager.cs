@@ -7,6 +7,7 @@ namespace ExPay_Service
     public static class WindowManager
     {
         public static AppBuilder AppBuilder;
+        public static Application Application;
         public static Thread UIThread;
 
         public static void Init()
@@ -18,6 +19,7 @@ namespace ExPay_Service
                     AppBuilder = BuildAvaloniaApp();
 
                     AppBuilder.StartWithClassicDesktopLifetime(null);
+                    Application = AppBuilder.Instance;
                 }
             });
 
