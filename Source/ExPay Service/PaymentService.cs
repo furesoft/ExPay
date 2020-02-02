@@ -17,6 +17,7 @@ namespace ExPay_Service
 
         public bool Stop(HostControl hostControl)
         {
+            channel.Dispose();
             channel = null;
 
             return true;
