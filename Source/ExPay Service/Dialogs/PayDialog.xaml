@@ -38,19 +38,9 @@
     </StackPanel>
 
     <Grid Grid.Row="3">
-      <Button Click="OnCancel" HorizontalAlignment="Left">
-        <StackPanel Orientation="Horizontal">
-          <Image MaxWidth="35" MaxHeight="35" Source="resm:ExPay_Service.close.png" />
-          <TextBlock Text="Cancel" FontSize="23" />
-        </StackPanel>
-      </Button>
+      <Button Click="OnCancel" MinWidth="125" HorizontalAlignment="Left" Content="Cancel" />
 
-      <Button HorizontalAlignment="Right">
-        <Grid ColumnDefinitions="25,*">
-          <Image Grid.Column="0" Margin="5,0,0,0" MaxWidth="35" MaxHeight="35" Source="resm:ExPay_Service.pay.ico" />
-          <TextBlock FontSize="23" Grid.Column="1" Text="Pay" />
-        </Grid>
-      </Button>
+      <Button Content="Pay" MinWidth="125" HorizontalAlignment="Right" />
     </Grid>
   </Grid>
 </Window>
