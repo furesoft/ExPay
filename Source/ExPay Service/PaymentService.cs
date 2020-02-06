@@ -1,4 +1,5 @@
-﻿using Furesoft.Signals;
+﻿using ExPay.Core.Contracts;
+using Furesoft.Signals;
 using Topshelf;
 
 namespace ExPay_Service
@@ -11,6 +12,13 @@ namespace ExPay_Service
 
             channel = Signal.CreateRecieverChannel("ExPay");
             Signal.CollectAllShared(channel);
+
+            PluginLoader.Compose();
+
+            foreach (var sender in PluginLoader.MessageSenders)
+            {
+                sender.Send("hello pluginloader");
+            }
 
             return true;
         }
