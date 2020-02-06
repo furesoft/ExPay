@@ -15,9 +15,9 @@ namespace ExPay_Service
 
             PluginLoader.Compose();
 
-            foreach (var sender in PluginLoader.MessageSenders)
+            foreach (var sender in PluginLoader.Instance.PaymentMethods)
             {
-                sender.Send("hello pluginloader");
+                sender.Initialize();
             }
 
             return true;

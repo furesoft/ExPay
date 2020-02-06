@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Composition;
 using System.Composition.Hosting;
 using System.IO;
@@ -9,15 +8,12 @@ using System.Runtime.Loader;
 
 namespace ExPay.Core.Contracts
 {
-    public interface IMessageSender
+    public class PluginLoader
     {
-        void Send(string message);
-    }
+        public static PluginLoader Instance = new PluginLoader();
 
-    public static class PluginLoader
-    {
         [ImportMany]
-        public static IEnumerable<IMessageSender> MessageSenders { get; set; }
+        public IEnumerable<IPaymentMethod> PaymentMethods { get; set; }
 
         public static CompositionHost Compose()
         {
@@ -37,19 +33,11 @@ namespace ExPay.Core.Contracts
                 .WithAssemblies(assemblies);
 
             var container = configuration.CreateContainer();
+            container.SatisfyImports(Instance);
 
-            MessageSenders = container.GetExports<IMessageSender>();
+            //Instance.PaymentMethods = container.GetExports<IPaymentMethod>();
 
             return container;
-        }
-    }
-
-    [Export(typeof(IMessageSender))]
-    public class EmailSender : IMessageSender
-    {
-        public void Send(string message)
-        {
-            Console.WriteLine(message);
         }
     }
 }

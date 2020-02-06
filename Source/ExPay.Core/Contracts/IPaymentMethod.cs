@@ -4,6 +4,8 @@
     {
         PaymentMethodInfo GetInfo();
 
+        void Initialize();
+
         bool Invoke(object data);
     }
 }
