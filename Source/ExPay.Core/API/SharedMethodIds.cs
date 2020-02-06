@@ -9,7 +9,5 @@
 
         OpenDialogTest = 0x3A1,
         GetPaymentStatus = 0x3A2,
-
-        OpenDB = 0x4BB0,
     }
 }
