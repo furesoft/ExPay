@@ -2,7 +2,7 @@
 {
     public interface IPaymentMethod
     {
-        PaymentMethodInfo GetInfo();
+        PaymentMethodInfo GetInfo { get; }
 
         void Initialize();
 

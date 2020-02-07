@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ui="clr-namespace:ExPay.UI.Converters;assembly=ExPay.UI"
-    xmlns:core="clr-namespace:ExPay.Core.DesignData"
+    xmlns:core="http://furesoft.ml/expay"
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="PayDialog" Height="500" Width="450" WindowStartupLocation="CenterScreen">
@@ -29,6 +28,8 @@
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
+
+    <ListBox Items="{Binding {x:Static core:PluginLoader.Instance.PaymentMethods}}"></ListBox>
 
     <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
       <TextBlock Text="Total: " />

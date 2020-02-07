@@ -35,8 +35,6 @@ namespace ExPay.Core.Contracts
             var container = configuration.CreateContainer();
             container.SatisfyImports(Instance);
 
-            //Instance.PaymentMethods = container.GetExports<IPaymentMethod>();
-
             return container;
         }
     }
