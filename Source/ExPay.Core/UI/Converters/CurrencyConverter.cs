@@ -3,7 +3,7 @@ using Avalonia.Markup.Xaml;
 using System;
 using System.Globalization;
 
-namespace ExPay.UI.Converters
+namespace ExPay.Core.UI.Converters
 {
     public class CurrencyConverter : MarkupExtension, IValueConverter
     {

@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Dialogs;
 using Avalonia.Logging.Serilog;
 using System;
 using Topshelf;
@@ -18,5 +19,11 @@ namespace ExPay_Service
                 x.StartAutomatically();
             });
         }
+
+        private static AppBuilder BuildAvaloniaApp()
+                    => AppBuilder.Configure<App>()
+                .UsePlatformDetect()
+                .UseManagedSystemDialogs()
+                .LogToDebug();
     }
 }

@@ -6,26 +6,26 @@ namespace ExPay_Service
 {
     public static class Utils
     {
-        public static async Task<TResult> ShowDialog<TResult, TDialog>(object context = null)
+        public static Task<TResult> ShowDialog<TResult, TDialog>(object context = null)
             where TDialog : Window, new()
         {
             var tcs = new TaskCompletionSource<TResult>();
 
-            await Dispatcher.UIThread.InvokeAsync(() =>
+            Dispatcher.UIThread.InvokeAsync(() =>
             {
                 var dialog = new TDialog();
                 dialog.DataContext = context;
                 dialog.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-                dialog.Closed += (s, e) =>
+                dialog.Closing += (s, e) =>
                 {
                     tcs.SetResult((TResult)dialog.Tag);
                 };
 
                 dialog.Show();
-            });
+            }).ConfigureAwait(false);
 
-            return tcs.Task.Result;
+            return tcs.Task;
         }
     }
 }

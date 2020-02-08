@@ -6,4 +6,4 @@
 [assembly: XmlnsDefinition("http://furesoft.ml/expay", "ExPay.Core.DesignData")]
 [assembly: XmlnsDefinition("http://furesoft.ml/expay", "ExPay.Core.Models")]
 [assembly: XmlnsDefinition("http://furesoft.ml/expay", "ExPay.Core.UI")]
-[assembly: XmlnsDefinition("http://furesoft.ml/expay", "ExPay.Core.Converters")]
+[assembly: XmlnsDefinition("http://furesoft.ml/expay", "ExPay.Core.UI.Converters")]

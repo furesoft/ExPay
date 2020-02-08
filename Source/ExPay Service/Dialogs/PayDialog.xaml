@@ -3,11 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:core="http://furesoft.ml/expay"
-    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:conv="http://furesoft.ml/expay"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="PayDialog" Height="500" Width="450" WindowStartupLocation="CenterScreen">
-
   <Grid RowDefinitions="50,100,*,50">
     <StackPanel Grid.Row="0">
       <TextBlock Text="{Binding MerchantInfo.Name}" />
@@ -20,9 +19,9 @@
             <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" HorizontalAlignment="Left" />
 
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
-              <TextBlock Text="{Binding Amount.Value, Converter={core:CurrencyConverter}, FallbackValue=1.99}" />
+              <TextBlock Text="{Binding Amount.Value, FallbackValue=1.99}" />
 
-              <TextBlock Text="{Binding Amount.Currency}" />
+              <TextBlock Text="{Binding Amount.Currency, Converter={conv:CurrencyConverter}}" />
             </StackPanel>
           </Grid>
         </DataTemplate>
@@ -31,7 +30,7 @@
 
     <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
       <TextBlock Text="Total: " />
-      <TextBlock Text="{Binding Details.Total.Amount.Value, Converter={ui:CurrencyConverter}}" />
+      <TextBlock Text="{Binding Details.Total.Amount.Value, Converter={conv:CurrencyConverter}}" />
 
       <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
     </StackPanel>
@@ -39,7 +38,7 @@
     <Grid Grid.Row="3">
       <Button Click="OnCancel" MinWidth="125" HorizontalAlignment="Left" Content="Cancel" />
 
-      <Button Content="Pay" MinWidth="125" HorizontalAlignment="Right" />
+      <Button Click="OnPay" Content="Pay" MinWidth="125" HorizontalAlignment="Right" />
     </Grid>
   </Grid>
 </Window>
