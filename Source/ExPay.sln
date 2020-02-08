@@ -18,11 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExPay Manager", "ExPay Mana
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExPay Service", "ExPay Service\ExPay Service.csproj", "{8B978F41-7900-4261-85AA-92946A89F256}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExPay.UI", "ExPay.UI\ExPay.UI.csproj", "{3A968473-2E05-472A-B07A-E0BEBB68379F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{5AE1D0D5-7748-456D-A388-004678CF249C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "Plugins\TestPlugin\TestPlugin.csproj", "{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestPlugin", "Plugins\TestPlugin\TestPlugin.csproj", "{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,10 +44,6 @@ Global
 		{8B978F41-7900-4261-85AA-92946A89F256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B978F41-7900-4261-85AA-92946A89F256}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B978F41-7900-4261-85AA-92946A89F256}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A968473-2E05-472A-B07A-E0BEBB68379F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A968473-2E05-472A-B07A-E0BEBB68379F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A968473-2E05-472A-B07A-E0BEBB68379F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A968473-2E05-472A-B07A-E0BEBB68379F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU

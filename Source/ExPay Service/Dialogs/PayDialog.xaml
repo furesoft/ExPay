@@ -20,7 +20,7 @@
             <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" HorizontalAlignment="Left" />
 
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
-              <TextBlock Text="{Binding Amount.Value, Converter={ui:CurrencyConverter}, FallbackValue=1.99}" />
+              <TextBlock Text="{Binding Amount.Value, Converter={core:CurrencyConverter}, FallbackValue=1.99}" />
 
               <TextBlock Text="{Binding Amount.Currency}" />
             </StackPanel>
@@ -28,8 +28,6 @@
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
-
-    <ListBox Items="{Binding {x:Static core:PluginLoader.Instance.PaymentMethods}}"></ListBox>
 
     <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
       <TextBlock Text="Total: " />

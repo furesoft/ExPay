@@ -18,10 +18,5 @@ namespace ExPay_Service
                 x.StartAutomatically();
             });
         }
-
-        private static AppBuilder BuildAvaloniaApp()
-                    => AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .LogToDebug();
     }
 }

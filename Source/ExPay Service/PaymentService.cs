@@ -28,6 +28,8 @@ namespace ExPay_Service
             channel.Dispose();
             channel = null;
 
+            WindowManager.Shutdown();
+
             return true;
         }
 
