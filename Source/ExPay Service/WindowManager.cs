@@ -1,5 +1,7 @@
 ﻿using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Logging.Serilog;
+using Avalonia.Threading;
 using System.Threading;
 
 namespace ExPay_Service
@@ -18,12 +20,21 @@ namespace ExPay_Service
                 {
                     AppBuilder = BuildAvaloniaApp();
 
-                    AppBuilder.StartWithClassicDesktopLifetime(null);
+                    AppBuilder.StartWithClassicDesktopLifetime(null, Avalonia.Controls.ShutdownMode.OnExplicitShutdown);
                     Application = AppBuilder.Instance;
                 }
             });
 
             UIThread.Start();
+        }
+
+        public static async void Shutdown()
+        {
+            await Dispatcher.UIThread.InvokeAsync(() =>
+            {
+                var lifetime = (IClassicDesktopStyleApplicationLifetime)Application.Current.ApplicationLifetime;
+                lifetime.Shutdown();
+            });
         }
 
         private static AppBuilder BuildAvaloniaApp()
