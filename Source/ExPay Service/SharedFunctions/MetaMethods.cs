@@ -1,6 +1,8 @@
 ﻿using ExPay.Core.API;
+using ExPay.Core.Contracts;
 using Furesoft.Signals.Attributes;
 using System.ComponentModel;
+using System.Linq;
 
 namespace ExPay_Service.SharedFunctions
 {
@@ -11,7 +13,9 @@ namespace ExPay_Service.SharedFunctions
         [Description("Get supported Payment Method IDs")]
         public static string[] GetSupportedMethodIds()
         {
-            return null;
+            var ids = PluginLoader.Instance.PaymentMethods.Select(_ => _.GetInfo.ID);
+
+            return ids.ToArray();
         }
     }
 }
