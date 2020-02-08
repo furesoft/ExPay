@@ -2,6 +2,7 @@
 using ExPay.Core.Models;
 using ExPay_Service.Dialogs;
 using Furesoft.Signals.Attributes;
+using System;
 using System.ComponentModel;
 
 namespace ExPay_Service.SharedFunctions
@@ -28,7 +29,10 @@ namespace ExPay_Service.SharedFunctions
         {
             var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayDialog>(req);
 
+            Console.WriteLine(count++);
             return result.Result;
         }
+
+        private static int count = 0;
     }
 }
