@@ -35,6 +35,8 @@ namespace ExPay.Core.Contracts
             var container = configuration.CreateContainer();
             container.SatisfyImports(Instance);
 
+            Logger.Trace("Plugins composed");
+
             return container;
         }
 
