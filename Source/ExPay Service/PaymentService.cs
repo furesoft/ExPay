@@ -20,7 +20,7 @@ namespace ExPay_Service
             foreach (var sender in PluginLoader.Instance.PaymentMethods)
             {
                 sender.Initialize();
-                Logger.Trace($"Payment Method '{sender.GetInfo.Name}' initialized");
+                Logger.Trace($"Payment Method '{sender.Info.Name}' initialized");
             }
 
             return true;
