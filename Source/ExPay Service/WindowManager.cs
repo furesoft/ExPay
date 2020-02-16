@@ -38,6 +38,8 @@ namespace ExPay_Service
             });
         }
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         private static AppBuilder BuildAvaloniaApp()
                     => AppBuilder.Configure<App>()
                 .UsePlatformDetect()

@@ -37,5 +37,7 @@ namespace ExPay.Core.Contracts
 
             return container;
         }
+
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }

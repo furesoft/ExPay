@@ -8,6 +8,8 @@ namespace ExPay_Service
     {
         public bool Start(HostControl hostControl)
         {
+            Logger.Trace("Service started");
+
             WindowManager.Init();
 
             channel = Signal.CreateRecieverChannel("ExPay");
@@ -18,6 +20,7 @@ namespace ExPay_Service
             foreach (var sender in PluginLoader.Instance.PaymentMethods)
             {
                 sender.Initialize();
+                Logger.Trace($"Payment Method '{sender.GetInfo.Name}' initialized");
             }
 
             return true;
@@ -25,6 +28,8 @@ namespace ExPay_Service
 
         public bool Stop(HostControl hostControl)
         {
+            Logger.Trace("Service Stoped");
+
             channel.Dispose();
             channel = null;
 
@@ -33,6 +38,7 @@ namespace ExPay_Service
             return true;
         }
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private IpcChannel channel;
     }
 }
