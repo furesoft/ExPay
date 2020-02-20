@@ -6,8 +6,10 @@ namespace ExPay_Service
 {
     internal class PaymentService : ServiceControl
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public bool Start(HostControl hostControl)
         {
+            Logger.Trace("Service started");
             WindowManager.Init();
 
             channel = Signal.CreateRecieverChannel("ExPay");
@@ -18,6 +20,7 @@ namespace ExPay_Service
             foreach (var sender in PluginLoader.Instance.PaymentMethods)
             {
                 sender.Initialize();
+                Logger.Trace($"Payment Method '{sender.Info.Name}' initialized");
             }
 
             return true;
@@ -29,6 +32,8 @@ namespace ExPay_Service
             channel = null;
 
             WindowManager.Shutdown();
+
+            Logger.Trace("Service Stoped");
 
             return true;
         }

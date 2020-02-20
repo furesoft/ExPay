@@ -11,6 +11,7 @@ namespace ExPay.Core.Contracts
     public class PluginLoader
     {
         public static PluginLoader Instance = new PluginLoader();
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         [ImportMany]
         public IEnumerable<IPaymentMethod> PaymentMethods { get; set; }
@@ -34,6 +35,8 @@ namespace ExPay.Core.Contracts
 
             var container = configuration.CreateContainer();
             container.SatisfyImports(Instance);
+
+            Logger.Trace("Plugins composed");
 
             return container;
         }

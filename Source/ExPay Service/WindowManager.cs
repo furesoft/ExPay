@@ -27,13 +27,16 @@ namespace ExPay_Service
             });
 
             UIThread.Start();
+            Logger.Trace("WindowManager initialized");
         }
-
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public static async void Shutdown()
         {
             await Dispatcher.UIThread.InvokeAsync(() =>
             {
                 var lifetime = (IClassicDesktopStyleApplicationLifetime)Application.Current.ApplicationLifetime;
+                Logger.Trace("WindowManager Stoped");
+
                 lifetime.Shutdown();
             });
         }
