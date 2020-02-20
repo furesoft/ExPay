@@ -15,7 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.3" />
     <PackageReference Include="Avalonia.Desktop" Version="0.9.3" />
-    <PackageReference Include="Furesoft.Signals" Version="1.0.11" />
+    <PackageReference Include="Furesoft.Signals" Version="1.0.12" />
     <PackageReference Include="NLog" Version="4.6.8" />
   </ItemGroup>
 </Project>
