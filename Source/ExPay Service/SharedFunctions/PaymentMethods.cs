@@ -1,4 +1,5 @@
 ﻿using ExPay.Core.API;
+using ExPay.Core.Contracts;
 using ExPay.Core.Models;
 using ExPay_Service.Dialogs;
 using Furesoft.Signals.Attributes;
@@ -27,9 +28,20 @@ namespace ExPay_Service.SharedFunctions
         [Description("Submit the Payment Request")]
         public static PaymentRequestSubmitResult SubmitPaymentRequest(PaymentRequest req)
         {
-            var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayDialog>(req);
+            var isavailable = PluginLoader.Instance.IsPaymentMethodAvailable(req.AcceptedPaymentMethods);
 
-            return result.Result;
+            if (isavailable)
+            {
+                var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayDialog>(req);
+
+                return result.Result;
+            }
+            else
+            {
+                var errorDlg = Utils.ShowDialog<PaymentRequestSubmitResult, MessageDialog>("No Payment Method is configured or available for this Request");
+
+                return errorDlg.Result;
+            }
         }
 
     }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using ExPay.Core.Models;
+using System;
+using System.Collections.Generic;
 using System.Composition;
 using System.Composition.Hosting;
 using System.IO;
@@ -39,6 +41,24 @@ namespace ExPay.Core.Contracts
             Logger.Trace("Plugins composed");
 
             return container;
+        }
+
+        public bool IsPaymentMethodAvailable(IEnumerable<PaymentMethodData> acceptedPaymentMethods)
+        {
+            var ids = Instance.PaymentMethods.Select(_ => _.Info.ID);
+
+            if (ids.Any())
+            {
+                foreach (var id in ids)
+                {
+                    if (PaymentConfig.IsConfigured())
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }
