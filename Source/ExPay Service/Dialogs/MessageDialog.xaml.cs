@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using ExPay.Core.API;
 
 namespace ExPay_Service.Dialogs
 {
@@ -12,6 +13,8 @@ namespace ExPay_Service.Dialogs
 #if DEBUG
             this.AttachDevTools();
 #endif
+
+            Tag = new PaymentRequestSubmitResult { Status = ExPay.Core.Models.PaymentRequestStatus.Failed };
         }
 
         private void InitializeComponent()
