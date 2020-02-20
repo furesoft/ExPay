@@ -6,7 +6,7 @@ namespace TestPlugin
     [Export(typeof(IPaymentMethod))]
     public class CreditCardPaymentMethod : IPaymentMethod
     {
-        public PaymentMethodInfo Info => new PaymentMethodInfo("creditCard", "CreditCard", null);
+        public PaymentMethodInfo Info => new PaymentMethodInfo("https://pay.microsoft.com/microsoftpay", "CreditCard", null);
 
         public void Initialize()
         {

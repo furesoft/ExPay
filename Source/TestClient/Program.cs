@@ -3,6 +3,7 @@ using ExPay.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace TestClient
 {
@@ -10,6 +11,8 @@ namespace TestClient
     {
         private static void Main(string[] args)
         {
+            Thread.Sleep(3000);
+
             TestPayment();
 
             Console.ReadLine();
@@ -103,12 +106,9 @@ namespace TestClient
 
             if (submissionResult.Status != PaymentRequestStatus.Succeeded)
             {
-                Console.WriteLine($"Payment request rejected by customer {submissionResult.Response}.");
+                Console.WriteLine($"Payment request {submissionResult.Status} by customer {submissionResult.Response}.");
                 return;
             }
-
-            //Your app waits for the user to tap Pay, then completes the order.
-            var success = paymentMediator.Complete();
         }
     }
 }

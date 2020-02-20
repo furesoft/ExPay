@@ -5,9 +5,10 @@
         Ping = 0xAA,
         GetSupportedMethodIds = 0x1D,
         SubmitPaymentRequest = 0xEE,
-        Complete = 0xCC,
+        IsPaymentConfigured = 0xCD,
+        GetPaymentStatus = 0x3A,
 
         OpenDialogTest = 0x3A1,
-        GetPaymentStatus = 0x3A2,
+
     }
 }

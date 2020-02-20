@@ -17,10 +17,10 @@ namespace ExPay.Core.API
 
             if (ping)
             {
-                //ToDo: check if paymentmethodid is registered
-                //ToDo: check if payment provider is configured
-
-                return PaymentCanMakePaymentResultStatus.Yes;
+                if (Signal.CallMethod<bool>(channel, (int)SharedMethodIds.IsPaymentConfigured))
+                {
+                    return PaymentCanMakePaymentResultStatus.Yes;
+                }
             }
 
             return PaymentCanMakePaymentResultStatus.No;
@@ -28,7 +28,7 @@ namespace ExPay.Core.API
 
         public PaymentRequestCompletionStatus Complete()
         {
-            var status = (PaymentRequestCompletionStatus)Signal.CallMethod<int>(channel, (int)SharedMethodIds.GetPaymentStatus);
+            var status = (PaymentRequestCompletionStatus)Signal.CallMethod<int>(channel, (int)SharedMethodIds.IsPaymentConfigured);
 
             channel.Dispose();
 
@@ -37,8 +37,7 @@ namespace ExPay.Core.API
 
         public IEnumerable<string> GetSupportedMethodIdsAsync()
         {
-            //ToDo: load payment methodid from plugin database
-            return new[] { "https://pay.microsoft.com/microsoftpay" };
+            return Signal.CallMethod<string[]>(channel, (int)SharedMethodIds.GetSupportedMethodIds);
         }
 
         public PaymentRequestSubmitResult SubmitPaymentRequestAsync(PaymentRequest paymentRequest)

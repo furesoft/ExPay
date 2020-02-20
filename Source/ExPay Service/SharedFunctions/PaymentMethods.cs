@@ -11,17 +11,18 @@ namespace ExPay_Service.SharedFunctions
     [Shared]
     public class PaymentMethods
     {
-        [SharedFunction((int)SharedMethodIds.Complete)]
-        [Description("Complete the Payment")]
-        public static void Complete()
-        {
-        }
-
         [SharedFunction((int)SharedMethodIds.GetPaymentStatus)]
         [Description("Get Result of current Payment")]
-        public static int GetPaymentStatus()
+        public static PaymentRequestStatus GetPaymentStatus()
         {
             return 0;
+        }
+
+        [SharedFunction((int)SharedMethodIds.IsPaymentConfigured)]
+        [Description("Is the Payment Configured")]
+        public static bool IsPaymentConfigured(PaymentRequest req)
+        {
+            return PluginLoader.Instance.IsPaymentMethodAvailable(req.AcceptedPaymentMethods);
         }
 
         [SharedFunction((int)SharedMethodIds.SubmitPaymentRequest)]

@@ -39,7 +39,12 @@ namespace ExPay.Core
 
         public static bool IsConfigured(string id)
         {
-            return _methods.GetSubKeyNames().Contains(id);
+            if (_methods != null)
+            {
+                return _methods.GetSubKeyNames().Contains(id);
+            }
+
+            return false;
         }
 
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
