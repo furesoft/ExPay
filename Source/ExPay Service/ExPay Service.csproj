@@ -15,11 +15,13 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaResource Remove="Dialogs\MessageDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\PayDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\TestDialog.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="close.png" />
+    <None Remove="Dialogs\MessageDialog.xaml" />
     <None Remove="Dialogs\PayDialog.xaml" />
     <None Remove="Dialogs\TestDialog.xaml" />
     <None Remove="pay.ico" />
@@ -47,5 +49,10 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="pay.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\MessageDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

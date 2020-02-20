@@ -51,7 +51,7 @@ namespace ExPay.Core.Contracts
             {
                 foreach (var id in ids)
                 {
-                    if (PaymentConfig.IsConfigured())
+                    if (PaymentConfig.IsConfigured(id))
                     {
                         return true;
                     }

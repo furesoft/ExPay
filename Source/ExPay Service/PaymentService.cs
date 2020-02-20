@@ -1,4 +1,5 @@
-﻿using ExPay.Core.Contracts;
+﻿using ExPay.Core;
+using ExPay.Core.Contracts;
 using Furesoft.Signals;
 using Topshelf;
 
@@ -11,6 +12,7 @@ namespace ExPay_Service
         {
             Logger.Trace("Service started");
             WindowManager.Init();
+            PaymentConfig.Init();
 
             channel = Signal.CreateRecieverChannel("ExPay");
             Signal.CollectAllShared(channel);
