@@ -17,6 +17,7 @@ namespace ExPay.Core
             {
                 _hive = new RegistryHive(File.Open(configFilename, FileMode.OpenOrCreate));
                 _methods = _hive.Root.OpenSubKey("payment_methods");
+
             }
             else
             {
@@ -24,6 +25,7 @@ namespace ExPay.Core
                 _methods = _hive.Root.CreateSubKey("payment_methods");
             }
 
+            Dispose.Add(_hive);
             Logger.Trace("PaymentConfig initialized");
         }
 

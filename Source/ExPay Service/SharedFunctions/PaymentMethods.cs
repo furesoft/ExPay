@@ -1,4 +1,5 @@
-﻿using ExPay.Core.API;
+﻿using ExPay.Core;
+using ExPay.Core.API;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
 using ExPay_Service.Dialogs;

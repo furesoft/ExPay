@@ -11,11 +11,14 @@ namespace ExPay_Service
         public bool Start(HostControl hostControl)
         {
             Logger.Trace("Service started");
+
             WindowManager.Init();
             PaymentConfig.Init();
 
             channel = Signal.CreateRecieverChannel("ExPay");
             Signal.CollectAllShared(channel);
+
+            Dispose.Add(channel);
 
             PluginLoader.Compose();
 
@@ -30,8 +33,7 @@ namespace ExPay_Service
 
         public bool Stop(HostControl hostControl)
         {
-            channel.Dispose();
-            channel = null;
+            Dispose.DisposeAll();
 
             WindowManager.Shutdown();
 
