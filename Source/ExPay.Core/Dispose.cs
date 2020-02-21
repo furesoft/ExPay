@@ -7,6 +7,20 @@ namespace ExPay.Core
     {
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
+        public static T New<T>()
+            where T : IDisposable, new()
+        {
+            var instance = new T();
+            Add(instance);
+
+            return instance;
+        }
+
+        public static void AutomaticDispose(this IDisposable dis)
+        {
+            Add(dis);
+        }
+
         public static void Add(IDisposable disposable)
         {
             _disposables.Add(disposable);
