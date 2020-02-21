@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ExPay.Core
 {
@@ -12,6 +13,16 @@ namespace ExPay.Core
         {
             var instance = new T();
             Add(instance);
+
+            return instance;
+        }
+
+        public static T New<T>(params object[] args)
+             where T : IDisposable, new()
+        {
+            var type = typeof(T);
+            var ctor = type.GetConstructor(args.Select(_ => _.GetType()).ToArray());
+            var instance = (T)ctor.Invoke(args);
 
             return instance;
         }
