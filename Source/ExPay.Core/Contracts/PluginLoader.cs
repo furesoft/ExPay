@@ -43,9 +43,12 @@ namespace ExPay.Core.Contracts
             return container;
         }
 
+
+
         public bool IsPaymentMethodAvailable(IEnumerable<PaymentMethodData> acceptedPaymentMethods)
         {
             PaymentConfig.Init();
+            PaymentConfig.InitMethods(Instance.PaymentMethods);
 
             var ids = Instance.PaymentMethods.Select(_ => _.Info.ID);
 
