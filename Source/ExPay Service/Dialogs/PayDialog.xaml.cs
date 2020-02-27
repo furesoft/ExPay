@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ExPay.Core.API;
+using ExPay_Service.Pages;
 using System;
 
 namespace ExPay_Service.Dialogs
@@ -13,10 +14,18 @@ namespace ExPay_Service.Dialogs
         {
             this.InitializeComponent();
 
+            this.Activated += PayDialog_Initialized;
+
             Tag = new PaymentRequestSubmitResult { Status = ExPay.Core.Models.PaymentRequestStatus.Failed };
 #if DEBUG
             this.AttachDevTools();
 #endif
+        }
+
+        private void PayDialog_Initialized(object sender, EventArgs e)
+        {
+            var frame = this.FindControl<ContentControl>("content");
+            Navigator.Init(frame, new PaymentDetailsPage());
         }
 
         public void OnCancel(object sender, RoutedEventArgs e)

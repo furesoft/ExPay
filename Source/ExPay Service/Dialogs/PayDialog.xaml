@@ -12,28 +12,7 @@
       <TextBlock Text="{Binding MerchantInfo.Name}" />
     </StackPanel>
 
-    <ListBox Items="{Binding Details.DisplayItems}" Grid.Row="1">
-      <ListBox.ItemTemplate>
-        <DataTemplate>
-          <Grid>
-            <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" HorizontalAlignment="Left" />
-
-            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
-              <TextBlock Text="{Binding Amount.Value, Converter={conv:CurrencyConverter}, FallbackValue=1.99}" />
-
-              <TextBlock Text="{Binding Amount.Currency}" />
-            </StackPanel>
-          </Grid>
-        </DataTemplate>
-      </ListBox.ItemTemplate>
-    </ListBox>
-
-    <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
-      <TextBlock Text="Total: " />
-      <TextBlock Text="{Binding Details.Total.Amount.Value, Converter={conv:CurrencyConverter}}" />
-
-      <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
-    </StackPanel>
+    <ContentControl Grid.Row="2" x:Name="content" />
 
     <Grid Grid.Row="3">
       <Button Click="OnCancel" MinWidth="125" HorizontalAlignment="Left" Content="Cancel" />

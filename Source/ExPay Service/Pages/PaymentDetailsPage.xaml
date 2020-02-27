@@ -1,0 +1,32 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:conv="http://furesoft.ml/expay"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ExPay_Service.Pages.PaymentDetailsPage">
+  <Grid>
+    <ListBox Items="{Binding Details.DisplayItems}">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Grid>
+            <TextBlock Text="{Binding Name, FallbackValue='TestProduct'}" HorizontalAlignment="Left" />
+
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+              <TextBlock Text="{Binding Amount.Value, Converter={conv:CurrencyConverter}, FallbackValue=1.99}" />
+
+              <TextBlock Text="{Binding Amount.Currency}" />
+            </StackPanel>
+          </Grid>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+      <TextBlock Text="Total: " />
+      <TextBlock Text="{Binding Details.Total.Amount.Value, Converter={conv:CurrencyConverter}}" />
+
+      <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
+    </StackPanel>
+  </Grid>
+</UserControl>
