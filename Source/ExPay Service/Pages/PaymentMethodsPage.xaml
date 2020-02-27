@@ -4,5 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.PaymentMethodsPage">
-  Payment Methods
+  <Grid RowDefinitions="35,*">
+    <ListBox Items="{Binding PaymentMethods}" Grid.Row="1">
+
+    </ListBox>
+
+    <TextBlock Grid.Row="0">Payment Methods</TextBlock>
+  </Grid>
 </UserControl>
