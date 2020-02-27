@@ -1,11 +1,12 @@
 ﻿using Avalonia.Controls;
 
-namespace ExPay_Service
+namespace ExPay_Service.Core
 {
     public static class Navigator
     {
         private static ContentControl _frame;
 
+        public static int PageIndex = 0;
         public static void Init(ContentControl frame, object defaultContent = null)
         {
             if (frame is null)
@@ -24,6 +25,8 @@ namespace ExPay_Service
         public static void Navigate(Control control)
         {
             _frame.Content = control;
+
+            PageIndex++;
         }
     }
 }
