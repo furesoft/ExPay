@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.PaymentDetailsPage">
-  <Grid>
+  <Grid RowDefinitions="*,150">
     <ListBox Items="{Binding Details.DisplayItems}">
       <ListBox.ItemTemplate>
         <DataTemplate>

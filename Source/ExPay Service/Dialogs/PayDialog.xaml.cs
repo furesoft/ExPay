@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ExPay.Core.API;
+using ExPay_Service.Core;
 using ExPay_Service.Pages;
 using System;
 
