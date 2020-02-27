@@ -4,9 +4,9 @@ using System.Composition;
 namespace TestPlugin
 {
     [Export(typeof(IPaymentMethod))]
-    public class MsPayPaymentMethod : IPaymentMethod
+    public class BitcoinPaymentMethod : IPaymentMethod
     {
-        public PaymentMethodInfo Info => new PaymentMethodInfo("https://pay.microsoft.com/microsoftpay", "Microsoft Pay", null);
+        public PaymentMethodInfo Info => new PaymentMethodInfo("urn:bitcoin", "Bitcoin", null);
 
         public void Initialize()
         {
