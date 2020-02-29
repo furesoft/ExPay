@@ -1,14 +1,16 @@
 ﻿using Avalonia.Controls;
+using ExPay.Core.Navigation;
 using System.Collections.Generic;
 
-namespace ExPay_Service.Core
+namespace ExPay_Service.Core.Navigation
 {
     public static class Navigator
     {
         private static ContentControl _frame;
 
         public static int PageIndex = 0;
-        public static List<Control> Pages = new List<Control>();
+        public static List<INavigatorAction> Pages = new List<INavigatorAction>();
+        private static Window _parent;
 
         public static void Forward()
         {
@@ -16,11 +18,19 @@ namespace ExPay_Service.Core
             {
                 PageIndex++;
 
-                Navigate(Pages[PageIndex]);
+                Pages[PageIndex].Invoke();
             }
         }
 
-        public static void Init(ContentControl frame, Control defaultContent = null)
+        public static Window GetParent() => _parent;
+
+        public static void SetResult(object result)
+        {
+            _parent.Tag = result;
+            _parent.Close();
+        }
+
+        public static void Init(Window parent, ContentControl frame, Control defaultContent = null)
         {
             if (frame is null)
             {
@@ -33,8 +43,10 @@ namespace ExPay_Service.Core
             {
                 _frame.Content = defaultContent;
 
-                Pages.Add(defaultContent);
+                Pages.Add(NavigatorAction.SwitchPage(defaultContent));
             }
+
+            _parent = parent;
         }
 
         public static void Navigate(Control control)
