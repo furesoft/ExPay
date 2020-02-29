@@ -31,7 +31,7 @@ namespace ExPay_Service.Dialogs
             Navigator.Init(this, frame, new PaymentDetailsPage());
 
             Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
-            Navigator.AddAction(NavigatorAction.Finish(true));
+            Navigator.AddAction(NavigatorAction.Finish(new PaymentRequestSubmitResult() { Status = ExPay.Core.Models.PaymentRequestStatus.Succeeded, Response = new ExPay.Core.Models.PaymentResponse() { } }));
         }
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
