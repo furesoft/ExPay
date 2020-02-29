@@ -11,6 +11,8 @@ namespace ExPay_Service.Core.Navigation
 
         public static void AddAction(INavigatorAction navigatorAction)
         {
+            navigatorAction.Parent = _parent;
+
             PageActions.Add(navigatorAction);
         }
 
