@@ -9,6 +9,5 @@
         GetPaymentStatus = 0x3A,
 
         OpenDialogTest = 0x3A1,
-
     }
 }

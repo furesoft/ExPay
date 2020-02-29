@@ -1,9 +1,5 @@
 ﻿using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using ExPay_Service.Dialogs;
-using System;
-using Topshelf;
 
 namespace ExPay_Service
 {

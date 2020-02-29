@@ -1,5 +1,4 @@
 ﻿using ExPay.Core.Models;
-using System;
 using System.Collections.Generic;
 using System.Composition;
 using System.Composition.Hosting;
@@ -13,7 +12,6 @@ namespace ExPay.Core.Contracts
     public class PluginLoader
     {
         public static PluginLoader Instance = new PluginLoader();
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         [ImportMany]
         public IEnumerable<IPaymentMethod> PaymentMethods { get; set; }
@@ -43,8 +41,6 @@ namespace ExPay.Core.Contracts
             return container;
         }
 
-
-
         public bool IsPaymentMethodAvailable(IEnumerable<PaymentMethodData> acceptedPaymentMethods)
         {
             PaymentConfig.Init();
@@ -65,5 +61,7 @@ namespace ExPay.Core.Contracts
 
             return false;
         }
+
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 }

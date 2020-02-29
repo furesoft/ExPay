@@ -5,8 +5,6 @@ namespace ExPay.Core.Navigation.Actions
 {
     internal class DelegateAction : INavigatorAction
     {
-        Action action;
-
         public DelegateAction(Action action)
         {
             this.action = action;
@@ -16,5 +14,7 @@ namespace ExPay.Core.Navigation.Actions
         {
             action();
         }
+
+        private Action action;
     }
 }

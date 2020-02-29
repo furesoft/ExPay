@@ -9,9 +9,15 @@ namespace ExPay.Core
 {
     public static class PaymentConfig
     {
-        private static string configFilename = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Expay.config";
-        private static RegistryHive _hive;
-        private static RegistryKey _methods;
+        public static RegistryKey AddPaymentMethod(string id)
+        {
+            if (_methods.GetSubKeyNames().Contains(id))
+            {
+                return _methods.OpenSubKey(id);
+            }
+
+            return _methods.CreateSubKey(id);
+        }
 
         public static void Init()
         {
@@ -33,14 +39,12 @@ namespace ExPay.Core
             Logger.Trace("PaymentConfig initialized");
         }
 
-        public static RegistryKey AddPaymentMethod(string id)
+        public static void InitMethods(IEnumerable<IPaymentMethod> paymentMethods)
         {
-            if (_methods.GetSubKeyNames().Contains(id))
+            foreach (var pm in paymentMethods)
             {
-                return _methods.OpenSubKey(id);
+                AddPaymentMethod(pm.Info.ID);
             }
-
-            return _methods.CreateSubKey(id);
         }
 
         public static bool IsConfigured(string id)
@@ -54,13 +58,8 @@ namespace ExPay.Core
         }
 
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
-
-        public static void InitMethods(IEnumerable<IPaymentMethod> paymentMethods)
-        {
-            foreach (var pm in paymentMethods)
-            {
-                AddPaymentMethod(pm.Info.ID);
-            }
-        }
+        private static RegistryHive _hive;
+        private static RegistryKey _methods;
+        private static string configFilename = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Expay.config";
     }
 }

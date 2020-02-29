@@ -1,15 +1,10 @@
 ﻿using Avalonia.Controls;
 using ExPay_Service.Core.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ExPay.Core.Navigation.Actions
 {
-    class SwitchPageAction : INavigatorAction
+    internal class SwitchPageAction : INavigatorAction
     {
-        Control content;
-
         public SwitchPageAction(Control content)
         {
             this.content = content;
@@ -19,5 +14,7 @@ namespace ExPay.Core.Navigation.Actions
         {
             Navigator.Navigate(content);
         }
+
+        private Control content;
     }
 }

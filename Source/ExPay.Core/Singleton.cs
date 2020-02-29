@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExPay.Core
+﻿namespace ExPay.Core
 {
     public class Singleton<T> where T : class, new()
 

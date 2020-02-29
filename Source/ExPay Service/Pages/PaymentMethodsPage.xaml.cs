@@ -2,9 +2,7 @@
 using Avalonia.Markup.Xaml;
 using ExPay.Core.Contracts;
 using System.Collections.Generic;
-using Avalonia.Media;
 using System.Linq;
-using Avalonia.Media.Imaging;
 
 namespace ExPay_Service.Pages
 {

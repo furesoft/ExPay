@@ -7,7 +7,6 @@ namespace ExPay_Service
 {
     internal class PaymentService : ServiceControl
     {
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public bool Start(HostControl hostControl)
         {
             Logger.Trace("Service started");
@@ -42,6 +41,7 @@ namespace ExPay_Service
             return true;
         }
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private IpcChannel channel;
     }
 }

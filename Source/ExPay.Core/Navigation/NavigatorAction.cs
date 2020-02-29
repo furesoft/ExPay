@@ -7,9 +7,13 @@ namespace ExPay.Core.Navigation
 {
     public static class NavigatorAction
     {
-        public static INavigatorAction SwitchPage(Control defaultContent)
+        public static INavigatorAction Dialog<TDialog, TResult>(object context)
+            where TDialog : Window, new()
         {
-            return new SwitchPageAction(defaultContent);
+            return new DelegateAction(async () =>
+            {
+                await Utils.ShowDialog<TResult, TDialog>(context);
+            });
         }
 
         public static INavigatorAction New(Action callback)
@@ -25,13 +29,9 @@ namespace ExPay.Core.Navigation
             return (INavigatorAction)Activator.CreateInstance(type, args);
         }
 
-        public static INavigatorAction Dialog<TDialog, TResult>(object context)
-            where TDialog : Window, new()
+        public static INavigatorAction SwitchPage(Control defaultContent)
         {
-            return new DelegateAction(async () =>
-            {
-                await Utils.ShowDialog<TResult, TDialog>(context);
-            });
+            return new SwitchPageAction(defaultContent);
         }
     }
 }

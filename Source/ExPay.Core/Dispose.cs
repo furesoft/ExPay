@@ -6,7 +6,27 @@ namespace ExPay.Core
 {
     public static class Dispose
     {
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        public static void Add(IDisposable disposable)
+        {
+            _disposables.Add(disposable);
+        }
+
+        public static void AutomaticDispose(this IDisposable dis)
+        {
+            Add(dis);
+        }
+
+        public static void DisposeAll()
+        {
+            foreach (var d in _disposables)
+            {
+                d.Dispose();
+                Logger.Info($"{d.GetType().Name} disposed");
+            }
+
+            _disposables.Clear();
+            Logger.Info("Disposechain cleared");
+        }
 
         public static T New<T>()
             where T : IDisposable, new()
@@ -27,28 +47,7 @@ namespace ExPay.Core
             return instance;
         }
 
-        public static void AutomaticDispose(this IDisposable dis)
-        {
-            Add(dis);
-        }
-
-        public static void Add(IDisposable disposable)
-        {
-            _disposables.Add(disposable);
-        }
-
-        public static void DisposeAll()
-        {
-            foreach (var d in _disposables)
-            {
-                d.Dispose();
-                Logger.Info($"{d.GetType().Name} disposed");
-            }
-
-            _disposables.Clear();
-            Logger.Info("Disposechain cleared");
-        }
-
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private static List<IDisposable> _disposables = new List<IDisposable>();
     }
 }

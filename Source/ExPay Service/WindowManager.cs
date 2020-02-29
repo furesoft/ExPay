@@ -29,7 +29,7 @@ namespace ExPay_Service
             UIThread.Start();
             Logger.Trace("WindowManager initialized");
         }
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         public static async void Shutdown()
         {
             await Dispatcher.UIThread.InvokeAsync(() =>
@@ -40,6 +40,8 @@ namespace ExPay_Service
                 lifetime.Shutdown();
             });
         }
+
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         private static AppBuilder BuildAvaloniaApp()
                     => AppBuilder.Configure<App>()

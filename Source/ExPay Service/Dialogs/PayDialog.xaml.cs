@@ -4,7 +4,6 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ExPay.Core.API;
 using ExPay.Core.Navigation;
-using ExPay_Service.Core;
 using ExPay_Service.Core.Navigation;
 using ExPay_Service.Pages;
 using NLog;

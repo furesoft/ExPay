@@ -4,7 +4,6 @@ using ExPay.Core.Contracts;
 using ExPay.Core.Models;
 using ExPay_Service.Dialogs;
 using Furesoft.Signals.Attributes;
-using System;
 using System.ComponentModel;
 
 namespace ExPay_Service.SharedFunctions
@@ -45,6 +44,5 @@ namespace ExPay_Service.SharedFunctions
                 return errorDlg.Result;
             }
         }
-
     }
 }
