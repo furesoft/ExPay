@@ -2,7 +2,9 @@
 using Avalonia.Markup.Xaml;
 using ExPay.Core.Contracts;
 using System.Collections.Generic;
+using Avalonia.Media;
 using System.Linq;
+using Avalonia.Media.Imaging;
 
 namespace ExPay_Service.Pages
 {
@@ -18,6 +20,9 @@ namespace ExPay_Service.Pages
              {
                  DataContext = this;
                  PaymentMethods = PluginLoader.Instance.PaymentMethods.ToList();
+
+                 var paymentMethodsLb = this.FindControl<ListBox>("paymentMethodsLb");
+                 paymentMethodsLb.Items = PaymentMethods;
              };
         }
 

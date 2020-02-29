@@ -26,7 +26,7 @@ namespace ExPay_Service.Dialogs
         private void PayDialog_Initialized(object sender, EventArgs e)
         {
             var frame = this.FindControl<ContentControl>("content");
-            Navigator.Init(frame, new PaymentDetailsPage());
+            Navigator.Init(this, frame, new PaymentDetailsPage());
 
             Navigator.Pages.Add(new PaymentMethodsPage());
         }
@@ -40,9 +40,6 @@ namespace ExPay_Service.Dialogs
         public void OnPay(object sender, RoutedEventArgs e)
         {
             Navigator.Forward();
-
-            //Tag = new PaymentRequestSubmitResult { Status = ExPay.Core.Models.PaymentRequestStatus.Succeeded };
-            //Close();
         }
 
         private void InitializeComponent()
