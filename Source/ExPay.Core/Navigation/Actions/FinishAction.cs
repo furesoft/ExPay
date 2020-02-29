@@ -17,7 +17,7 @@ namespace ExPay.Core.Navigation.Actions
         public void Invoke()
         {
             var btn = Parent.FindControl<Button>("nextBtn");
-            btn.Content = "Pay";
+            btn.Content = I18N._("Pay");
 
             btn.Click += (s, e) =>
             {

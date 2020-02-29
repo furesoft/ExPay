@@ -1,5 +1,4 @@
 ﻿using NGettext;
-using System.Globalization;
 
 namespace ExPay.Core
 {
@@ -10,6 +9,6 @@ namespace ExPay.Core
             return catalog.GetString(value);
         }
 
-        private static ICatalog catalog = new Catalog("Expay", "./Locale", new CultureInfo("en"));
+        private static ICatalog catalog = new Catalog("Expay", "./Locale");
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using ExPay.Core;
 using ExPay.Core.Contracts;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace ExPay_Service.Pages
 
             this.Initialized += (s, e) =>
              {
+                 this.FindControl<TextBlock>("HeaderTb").Text = I18N._("Payment Methods");
+
                  DataContext = this;
                  PaymentMethods = PluginLoader.Instance.PaymentMethods.ToList();
 

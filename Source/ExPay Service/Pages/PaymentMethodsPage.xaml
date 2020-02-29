@@ -5,7 +5,7 @@
              mc:Ignorable="d"
              x:Class="ExPay_Service.Pages.PaymentMethodsPage">
   <Grid RowDefinitions="35,*">
-    <TextBlock Grid.Row="0">Payment Methods</TextBlock>
+    <TextBlock Name="HeaderTb" Grid.Row="0">Payment Methods</TextBlock>
 
     <ListBox Name="paymentMethodsLb" Grid.Row="1" MinWidth="150" MinHeight="150">
       <ListBox.ItemTemplate>
