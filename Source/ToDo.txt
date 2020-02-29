@@ -1,3 +1,1 @@
-[ ] implement Actions for the Navigator
-	Navigator.Do() -> invokes next action
-	ActionTypes: SwitchPageAction, DelegateAction, SetResultAction
+[ ] implement I18N with GetText

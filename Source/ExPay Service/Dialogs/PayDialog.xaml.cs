@@ -31,9 +31,10 @@ namespace ExPay_Service.Dialogs
             Navigator.Init(this, frame, new PaymentDetailsPage());
 
             Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
+            Navigator.AddAction(NavigatorAction.Finish(true));
         }
 
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public void OnCancel(object sender, RoutedEventArgs e)
         {

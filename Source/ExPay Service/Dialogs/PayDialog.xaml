@@ -17,7 +17,7 @@
     <Grid Grid.Row="2">
       <Button Click="OnCancel" MinWidth="125" HorizontalAlignment="Left" Content="Cancel" />
 
-      <Button Click="OnPay" Content="Next" MinWidth="125" HorizontalAlignment="Right" />
+      <Button Name="nextBtn" Click="OnPay" Content="Next" MinWidth="125" HorizontalAlignment="Right" />
     </Grid>
   </Grid>
 </Window>
