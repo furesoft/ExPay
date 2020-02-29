@@ -2,6 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using ExPay.Core;
 using ExPay.Core.API;
 using ExPay.Core.Navigation;
 using ExPay_Service.Core.Navigation;
@@ -27,6 +28,9 @@ namespace ExPay_Service.Dialogs
 
         private void PayDialog_Initialized(object sender, EventArgs e)
         {
+            this.FindControl<Button>("cancelBtn").Content = I18N._("Cancel");
+            this.FindControl<Button>("nextBtn").Content = I18N._("Next");
+
             var frame = this.FindControl<ContentControl>("content");
             Navigator.Init(this, frame, new PaymentDetailsPage());
 

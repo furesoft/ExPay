@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:conv="http://furesoft.ml/expay"
+        xmlns:c="clr-namespace:ExPay.Core.UI.MarkupExtensions"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="PayDialog" Height="500" Width="450" WindowStartupLocation="CenterScreen">
@@ -15,7 +16,7 @@
     <ContentControl Grid.Row="1" x:Name="content" />
 
     <Grid Grid.Row="2">
-      <Button Click="OnCancel" MinWidth="125" HorizontalAlignment="Left" Content="Cancel" />
+      <Button Name="cancelBtn" Click="OnCancel" MinWidth="125" HorizontalAlignment="Left" Content="Cancel" />
 
       <Button Name="nextBtn" Click="OnPay" Content="Next" MinWidth="125" HorizontalAlignment="Right" />
     </Grid>
