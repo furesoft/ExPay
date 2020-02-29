@@ -20,7 +20,7 @@ namespace ExPay_Service.Core.Navigation
             {
                 PageIndex++;
 
-                Logger.Info($"Invoking Action {PageIndex}");
+                Logger.Info($"Invoking Action {PageActions[PageIndex].GetType().Name}");
 
                 PageActions[PageIndex].Invoke();
             }
