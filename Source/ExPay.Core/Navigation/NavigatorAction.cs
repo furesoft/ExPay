@@ -36,12 +36,7 @@ namespace ExPay.Core.Navigation
 
         public static INavigatorAction Finish(object result)
         {
-            return New(() =>
-            {
-                //ToDo: get PayDialog instance
-                //ToDo: change Button Text to Pay
-                //ToDo: call SetResult
-            });
+            return new FinishAction(result);
         }
     }
 }
