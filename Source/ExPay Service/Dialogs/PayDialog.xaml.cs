@@ -3,8 +3,11 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ExPay.Core.API;
+using ExPay.Core.Navigation;
 using ExPay_Service.Core;
+using ExPay_Service.Core.Navigation;
 using ExPay_Service.Pages;
+using NLog;
 using System;
 
 namespace ExPay_Service.Dialogs
@@ -28,11 +31,15 @@ namespace ExPay_Service.Dialogs
             var frame = this.FindControl<ContentControl>("content");
             Navigator.Init(this, frame, new PaymentDetailsPage());
 
-            Navigator.Pages.Add(new PaymentMethodsPage());
+            Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
         }
+
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public void OnCancel(object sender, RoutedEventArgs e)
         {
+            Logger.Info("Payment canceled");
+
             Tag = new PaymentRequestSubmitResult { Status = ExPay.Core.Models.PaymentRequestStatus.Canceled };
             Close();
         }

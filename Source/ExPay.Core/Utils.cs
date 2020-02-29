@@ -2,7 +2,7 @@
 using Avalonia.Threading;
 using System.Threading.Tasks;
 
-namespace ExPay_Service
+namespace ExPay.Core
 {
     public static class Utils
     {
