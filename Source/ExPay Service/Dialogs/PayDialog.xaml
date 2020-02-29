@@ -7,7 +7,7 @@
         xmlns:c="clr-namespace:ExPay.Core.UI.MarkupExtensions"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
-        Title="PayDialog" Height="500" Width="450" WindowStartupLocation="CenterScreen">
+        Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
   <Grid RowDefinitions="50,*,50">
     <StackPanel Grid.Row="0">
       <TextBlock Text="{Binding MerchantInfo.Name}" />
