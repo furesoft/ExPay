@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
+    <PackageReference Include="NBitcoin" Version="5.0.15" />
+    <PackageReference Include="NBitcoin.Altcoins" Version="2.0.5.2" />
   </ItemGroup>
 
   <ItemGroup>
