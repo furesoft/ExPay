@@ -15,6 +15,12 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaResource Remove="bin\**" />
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+  <ItemGroup>
     <AvaloniaResource Remove="Dialogs\MessageDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\PayDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\TestDialog.xaml" />
@@ -69,5 +75,16 @@
     <EmbeddedResource Include="Pages\PaymentMethodsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Locale\de-DE\LC_MESSAGES\ExPay.mo">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Locale\en.mo">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Locale\en\LC_MESSAGES\ExPay.mo">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
