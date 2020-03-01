@@ -35,10 +35,14 @@ namespace ExPay_Service.Pages
             AvaloniaXamlLoader.Load(this);
         }
 
-        public void OnFinish()
+        public async void OnFinish()
         {
             var paymentMethodsLb = this.FindControl<ListBox>("paymentMethodsLb");
-            Console.WriteLine("Selected: " + paymentMethodsLb.SelectedItem.ToString());
+
+            var selectedMethod = (IPaymentMethod)paymentMethodsLb.SelectedItem;
+            var data = await selectedMethod.BeforePay(); // call Event to do some stuff like open dialog
+
+            selectedMethod.Invoke(data);
         }
     }
 }

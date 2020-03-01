@@ -1,4 +1,6 @@
-﻿namespace ExPay.Core.Contracts
+﻿using System.Threading.Tasks;
+
+namespace ExPay.Core.Contracts
 {
     public interface IPaymentMethod
     {
@@ -7,5 +9,7 @@
         void Initialize();
 
         bool Invoke(object data);
+
+        Task<object> BeforePay();
     }
 }
