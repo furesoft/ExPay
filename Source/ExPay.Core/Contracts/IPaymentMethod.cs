@@ -11,5 +11,7 @@ namespace ExPay.Core.Contracts
         bool Invoke(object data);
 
         Task<object> BeforePay();
+
+        bool IsConfigured();
     }
 }

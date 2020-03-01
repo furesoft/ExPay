@@ -32,5 +32,11 @@ namespace TestPlugin
         {
             throw new System.NotImplementedException();
         }
+
+        public bool IsConfigured()
+        {
+            //ToDo: check if xpubkey is configured in custom registry, only get Key for this specific Plugin, no access to other keys
+            return false;
+        }
     }
 }

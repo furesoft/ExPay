@@ -46,13 +46,11 @@ namespace ExPay.Core.Contracts
             PaymentConfig.Init();
             PaymentConfig.InitMethods(Instance.PaymentMethods);
 
-            var ids = Instance.PaymentMethods.Select(_ => _.Info.ID);
-
-            if (ids.Any())
+            foreach (var pm in Instance.PaymentMethods)
             {
-                foreach (var id in ids)
+                if (PaymentConfig.IsConfigured(pm.Info.ID))
                 {
-                    if (PaymentConfig.IsConfigured(id))
+                    if (pm.IsConfigured())
                     {
                         return true;
                     }
