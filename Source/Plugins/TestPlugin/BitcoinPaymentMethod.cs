@@ -1,6 +1,8 @@
-﻿using ExPay.Core.Contracts;
+﻿using ExPay.Core;
+using ExPay.Core.Contracts;
 using NBitcoin;
 using System.Composition;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace TestPlugin
@@ -35,8 +37,10 @@ namespace TestPlugin
 
         public bool IsConfigured()
         {
-            //ToDo: check if xpubkey is configured in custom registry, only get Key for this specific Plugin, no access to other keys
-            return false;
+            var config = PaymentConfig.OpenConfig(); //ToDo: make a Registry wrapper to prevent from changing other stuff
+
+            //ToDo: check if xpubkey is configured in custom registry
+            return config.GetValueNames().Contains("xpub");
         }
     }
 }
