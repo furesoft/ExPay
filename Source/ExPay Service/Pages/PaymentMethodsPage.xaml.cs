@@ -2,12 +2,14 @@
 using Avalonia.Markup.Xaml;
 using ExPay.Core;
 using ExPay.Core.Contracts;
+using ExPay.Core.Navigation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ExPay_Service.Pages
 {
-    public class PaymentMethodsPage : UserControl
+    public class PaymentMethodsPage : UserControl, IFinished
     {
         public List<IPaymentMethod> PaymentMethods { get; set; }
 
@@ -27,9 +29,16 @@ namespace ExPay_Service.Pages
              };
         }
 
+
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        public void OnFinish()
+        {
+            var paymentMethodsLb = this.FindControl<ListBox>("paymentMethodsLb");
+            Console.WriteLine("Selected: " + paymentMethodsLb.SelectedItem.ToString());
         }
     }
 }

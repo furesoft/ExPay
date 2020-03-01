@@ -13,6 +13,13 @@ namespace ExPay.Core.Navigation.Actions
 
         public void Invoke()
         {
+            var oldPage = Parent.FindControl<ContentControl>("content").Content as IPageSwitched;
+
+            if (oldPage != null)
+            {
+                oldPage.OnPageSwitched(content);
+            }
+
             Navigator.Navigate(content);
         }
 
