@@ -2,7 +2,6 @@
 using ExPay.Core.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -20,16 +19,6 @@ namespace ExPay.Core
             return _methods.CreateSubKey(id);
         }
 
-        public static RegistryKey OpenConfig()
-        {
-            var frame = new StackFrame(1, true);
-            var method = frame.GetMethod();
-            var type = method.DeclaringType;
-            var typeInstance = (IPaymentMethod)Activator.CreateInstance(type);
-            var id = typeInstance.Info.ID;
-
-            return _methods.OpenSubKey(id);
-        }
 
         public static void Init()
         {
@@ -71,7 +60,7 @@ namespace ExPay.Core
 
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private static RegistryHive _hive;
-        private static RegistryKey _methods;
+        internal static RegistryKey _methods;
         private static string configFilename = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Expay.config";
     }
 }

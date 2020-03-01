@@ -37,7 +37,7 @@ namespace TestPlugin
 
         public bool IsConfigured()
         {
-            var config = PaymentConfig.OpenConfig(); //ToDo: make a Registry wrapper to prevent from changing other stuff
+            var config = new PaymentMethodConfig();
 
             //ToDo: check if xpubkey is configured in custom registry
             return config.GetValueNames().Contains("xpub");
