@@ -11,5 +11,7 @@ namespace ExPay.Implementation.Windows
         public string PluginsPath => Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Plugins");
 
         public string SettingsPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Expay.config");
+
+        public string AppPath => Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
     }
 }

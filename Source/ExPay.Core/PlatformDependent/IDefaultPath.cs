@@ -4,5 +4,7 @@
     {
         string PluginsPath { get; }
         string SettingsPath { get; }
+
+        string AppPath { get; }
     }
 }
