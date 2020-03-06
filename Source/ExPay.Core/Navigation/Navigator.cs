@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using ExPay.Core.Navigation;
 using System;
 using System.Collections.Generic;
 
@@ -11,6 +12,26 @@ namespace ExPay_Service.Core.Navigation
 
         public static void AddAction(INavigatorAction navigatorAction)
         {
+            navigatorAction.Parent = _parent;
+
+            PageActions.Add(navigatorAction);
+        }
+
+        public static void AddAction(INavigatorAction navigatorAction, NavigationTarget target, int index = 0)
+        {
+            //ToDo: implement AddAction NavigationTarget
+            switch (target)
+            {
+                case NavigationTarget.BeforeFinish:
+                    break;
+                case NavigationTarget.BeforeIndex:
+                    break;
+                case NavigationTarget.AfterIndex:
+                    break;
+                default:
+                    break;
+            }
+
             navigatorAction.Parent = _parent;
 
             PageActions.Add(navigatorAction);

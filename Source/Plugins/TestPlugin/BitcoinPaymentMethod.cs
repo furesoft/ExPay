@@ -1,6 +1,8 @@
 ﻿using Avalonia.Media.Imaging;
 using ExPay.Core;
 using ExPay.Core.Contracts;
+using ExPay.Core.Navigation;
+using ExPay_Service.Core.Navigation;
 using NBitcoin;
 using System;
 using System.Composition;
@@ -16,6 +18,8 @@ namespace TestPlugin
 
         public Task<object> BeforePay(object data)
         {
+            Navigator.AddAction(NavigatorAction.SwitchPage(new TestPage()), NavigationTarget.BeforeFinish);
+
             var addr = GenerateAddress();
 
             return Task.FromResult<object>(new { hello = "world" });
