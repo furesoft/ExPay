@@ -20,11 +20,11 @@ namespace TestClient
 
         private static void TestPayment()
         {
-            object data = null;
+            object data = new { Test = true };
 
             var acceptedPaymentMethods = new[]
             {
-                new PaymentMethodData("https://pay.microsoft.com/microsoftpay", data)
+                new PaymentMethodData("urn:bitcoin", data)
             };
 
             // Determine which of our accepted payment methods are supported by the customer's payment applications.

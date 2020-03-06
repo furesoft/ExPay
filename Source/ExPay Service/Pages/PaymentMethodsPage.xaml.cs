@@ -14,6 +14,8 @@ namespace ExPay_Service.Pages
     {
         public List<IPaymentMethod> PaymentMethods { get; set; }
 
+        private PaymentRequest _request;
+
         public PaymentMethodsPage()
         {
             this.InitializeComponent();
@@ -22,7 +24,9 @@ namespace ExPay_Service.Pages
              {
                  this.FindControl<TextBlock>("HeaderTb").Text = I18N._("Payment Methods");
 
+                 _request = (PaymentRequest)DataContext;
                  DataContext = this;
+
                  PaymentMethods = PluginLoader.Instance.PaymentMethods.ToList();
 
                  var paymentMethodsLb = this.FindControl<ListBox>("paymentMethodsLb");
@@ -40,9 +44,10 @@ namespace ExPay_Service.Pages
         {
             var paymentMethodsLb = this.FindControl<ListBox>("paymentMethodsLb");
 
-            object requestData = null; //ToDo: Replace RequestData with real data from paymentoption in request
             var selectedMethod = (IPaymentMethod)paymentMethodsLb.SelectedItem;
-            var data = await selectedMethod.BeforePay(requestData);
+            var accpt_pi = _request.AcceptedPaymentMethods.Where(_ => _.URN == selectedMethod.Info.ID).FirstOrDefault();
+
+            var data = await selectedMethod.BeforePay(accpt_pi?.Data);
 
             selectedMethod.Invoke(data);
         }
