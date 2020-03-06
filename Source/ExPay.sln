@@ -22,6 +22,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{5AE1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KryptoPlugin", "Plugins\TestPlugin\KryptoPlugin.csproj", "{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{C3C2F33F-AEA2-44CF-A51D-510C2CB446FA}"
+	ProjectSection(SolutionItems) = preProject
+		..\References\Microsoft.Extensions.Logging.Abstractions.dll = ..\References\Microsoft.Extensions.Logging.Abstractions.dll
+		..\References\NBitcoin.dll = ..\References\NBitcoin.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
