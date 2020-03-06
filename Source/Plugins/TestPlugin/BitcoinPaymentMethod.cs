@@ -4,10 +4,7 @@ using ExPay.Core.Contracts;
 using NBitcoin;
 using System;
 using System.Composition;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace TestPlugin
@@ -47,16 +44,6 @@ namespace TestPlugin
             return !config.GetValueNames().Contains("xpub");
         }
 
-        public Bitmap Image
-        {
-            get
-            {
-
-                var client = new WebClient();
-                var strm = client.DownloadData("https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
-
-                return new Bitmap(new MemoryStream(strm));
-            }
-        }
+        public Bitmap Image => ExPay.Core.Utils.DownloadBitmap("https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
     }
 }

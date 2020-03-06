@@ -1,5 +1,8 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Media.Imaging;
 using Avalonia.Threading;
+using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace ExPay.Core
@@ -26,6 +29,14 @@ namespace ExPay.Core
             }).ConfigureAwait(false);
 
             return tcs.Task;
+        }
+
+        public static Bitmap DownloadBitmap(string uri)
+        {
+            var client = new WebClient();
+            var strm = client.DownloadData(uri);
+
+            return new Bitmap(new MemoryStream(strm));
         }
     }
 }
