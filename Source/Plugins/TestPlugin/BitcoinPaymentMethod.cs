@@ -12,7 +12,7 @@ namespace TestPlugin
     {
         public PaymentMethodInfo Info => new PaymentMethodInfo("urn:bitcoin", "Bitcoin", "https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
 
-        public Task<object> BeforePay()
+        public Task<object> BeforePay(object data)
         {
             var addr = GenerateAddress();
 
@@ -39,8 +39,7 @@ namespace TestPlugin
         {
             var config = new PaymentMethodConfig();
 
-            //ToDo: check if xpubkey is configured in custom registry
-            return config.GetValueNames().Contains("xpub");
+            return !config.GetValueNames().Contains("xpub");
         }
     }
 }

@@ -2,6 +2,7 @@
 using Avalonia.Markup.Xaml;
 using ExPay.Core;
 using ExPay.Core.Contracts;
+using ExPay.Core.Models;
 using ExPay.Core.Navigation;
 using System;
 using System.Collections.Generic;
@@ -39,8 +40,9 @@ namespace ExPay_Service.Pages
         {
             var paymentMethodsLb = this.FindControl<ListBox>("paymentMethodsLb");
 
+            object requestData = null; //ToDo: Replace RequestData with real data from paymentoption in request
             var selectedMethod = (IPaymentMethod)paymentMethodsLb.SelectedItem;
-            var data = await selectedMethod.BeforePay(); // call Event to do some stuff like open dialog
+            var data = await selectedMethod.BeforePay(requestData);
 
             selectedMethod.Invoke(data);
         }

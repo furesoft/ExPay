@@ -10,7 +10,7 @@ namespace ExPay.Core.Contracts
 
         bool Invoke(object data);
 
-        Task<object> BeforePay();
+        Task<object> BeforePay(object data);
 
         bool IsConfigured();
     }
