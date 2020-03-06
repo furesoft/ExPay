@@ -12,7 +12,7 @@
         <DataTemplate>
           <StackPanel Orientation="Vertical">
             <TextBlock Text="{Binding Info.Name}" />
-            <Image Source="{Binding Info.IconUrl}" />
+            <Image Width="50" Height="50" Source="{Binding Image}" />
           </StackPanel>
         </DataTemplate>
       </ListBox.ItemTemplate>

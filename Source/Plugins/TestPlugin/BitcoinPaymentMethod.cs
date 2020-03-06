@@ -4,7 +4,9 @@ using ExPay.Core.Contracts;
 using NBitcoin;
 using System;
 using System.Composition;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -49,15 +51,11 @@ namespace TestPlugin
         {
             get
             {
-                var handler = new Func<Task<Bitmap>>(async () =>
-                {
-                    HttpClient client = new HttpClient();
-                    var strm = await client.GetStreamAsync("https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
 
-                    return new Bitmap(strm);
-                });
+                var client = new WebClient();
+                var strm = client.DownloadData("https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
 
-                return handler().Result;
+                return new Bitmap(new MemoryStream(strm));
             }
         }
     }
