@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Furesoft.Signals" Version="1.0.14" />
+    <PackageReference Include="Furesoft.Signals" Version="1.0.15" />
   </ItemGroup>
 
   <ItemGroup>

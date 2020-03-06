@@ -35,7 +35,7 @@ namespace TestPlugin
 
         public bool Invoke(object data)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public bool IsConfigured()
