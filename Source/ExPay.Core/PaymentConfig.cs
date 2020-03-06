@@ -1,5 +1,6 @@
 ﻿using DiscUtils.Registry;
 using ExPay.Core.Contracts;
+using ExPay.Core.PlatformDependent;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,6 +62,6 @@ namespace ExPay.Core
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private static RegistryHive _hive;
         internal static RegistryKey _methods;
-        private static string configFilename = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Expay.config";
+        private static string configFilename = Allocator.New<IDefaultPath>().SettingsPath;
     }
 }

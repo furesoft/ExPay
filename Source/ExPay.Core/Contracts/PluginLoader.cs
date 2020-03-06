@@ -1,10 +1,10 @@
 ﻿using ExPay.Core.Models;
+using ExPay.Core.PlatformDependent;
 using System.Collections.Generic;
 using System.Composition;
 using System.Composition.Hosting;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.Loader;
 
 namespace ExPay.Core.Contracts
@@ -18,8 +18,7 @@ namespace ExPay.Core.Contracts
 
         public static CompositionHost Compose()
         {
-            var executableLocation = Assembly.GetEntryAssembly().Location;
-            var path = Path.Combine(Path.GetDirectoryName(executableLocation), "Plugins");
+            var path = Allocator.New<IDefaultPath>().PluginsPath;
 
             if (!Directory.Exists(path))
             {
