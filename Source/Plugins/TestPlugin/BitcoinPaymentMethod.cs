@@ -1,8 +1,11 @@
-﻿using ExPay.Core;
+﻿using Avalonia.Media.Imaging;
+using ExPay.Core;
 using ExPay.Core.Contracts;
 using NBitcoin;
+using System;
 using System.Composition;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace TestPlugin
@@ -10,7 +13,7 @@ namespace TestPlugin
     [Export(typeof(IPaymentMethod))]
     public class BitcoinPaymentMethod : IPaymentMethod
     {
-        public PaymentMethodInfo Info => new PaymentMethodInfo("urn:bitcoin", "Bitcoin", "https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
+        public PaymentMethodInfo Info => new PaymentMethodInfo("urn:bitcoin", "Bitcoin");
 
         public Task<object> BeforePay(object data)
         {
@@ -40,6 +43,22 @@ namespace TestPlugin
             var config = new PaymentMethodConfig();
 
             return !config.GetValueNames().Contains("xpub");
+        }
+
+        public Bitmap Image
+        {
+            get
+            {
+                var handler = new Func<Task<Bitmap>>(async () =>
+                {
+                    HttpClient client = new HttpClient();
+                    var strm = await client.GetStreamAsync("https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
+
+                    return new Bitmap(strm);
+                });
+
+                return handler().Result;
+            }
         }
     }
 }

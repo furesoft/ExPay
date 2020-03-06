@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Avalonia.Media.Imaging;
+using System.Threading.Tasks;
 
 namespace ExPay.Core.Contracts
 {
@@ -13,5 +14,7 @@ namespace ExPay.Core.Contracts
         Task<object> BeforePay(object data);
 
         bool IsConfigured();
+
+        Bitmap Image { get; }
     }
 }
