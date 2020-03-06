@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", 
 		..\References\NBitcoin.dll = ..\References\NBitcoin.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInstaller", "PluginInstaller\PluginInstaller.csproj", "{BF4EE648-92B5-4D7B-ADF3-D2B262EB1B15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4EE648-92B5-4D7B-ADF3-D2B262EB1B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4EE648-92B5-4D7B-ADF3-D2B262EB1B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4EE648-92B5-4D7B-ADF3-D2B262EB1B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4EE648-92B5-4D7B-ADF3-D2B262EB1B15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
