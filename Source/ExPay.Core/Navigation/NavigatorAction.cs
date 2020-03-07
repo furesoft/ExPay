@@ -16,9 +16,9 @@ namespace ExPay.Core.Navigation
             });
         }
 
-        public static INavigatorAction New(Action callback)
+        public static INavigatorAction New(Action callback, Func<bool> canInvoke)
         {
-            return new DelegateAction(callback);
+            return new DelegateAction(callback, canInvoke);
         }
 
         public static INavigatorAction New<T>(params object[] args)
@@ -29,9 +29,9 @@ namespace ExPay.Core.Navigation
             return (INavigatorAction)Activator.CreateInstance(type, args);
         }
 
-        public static INavigatorAction SwitchPage(Control defaultContent)
+        public static INavigatorAction SwitchPage(Control defaultContent, Func<bool> canInvoke)
         {
-            return new SwitchPageAction(defaultContent);
+            return new SwitchPageAction(defaultContent, canInvoke);
         }
 
         public static INavigatorAction Finish(object result)
