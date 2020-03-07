@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ExPay\n"
-"POT-Creation-Date: 2020-03-07 17:29+0100\n"
-"PO-Revision-Date: 2020-03-07 17:29+0100\n"
+"POT-Creation-Date: 2020-03-07 17:46+0100\n"
+"PO-Revision-Date: 2020-03-07 17:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: Furesoft\n"
 "Language: de_DE\n"
@@ -28,9 +28,12 @@ msgid "Payment Methods"
 msgstr "Bezahlmöglichkeiten"
 
 #: ExPay Service/Pages/PaymentShippingPage.xaml.cs:17
-#: Service/Pages/PaymentShippingPage.xaml.cs:18
 msgid "Firstname"
 msgstr "Vorname"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:18
+msgid "Lastname"
+msgstr "Lastname"
 
 #: ExPay Service/Pages/PaymentShippingPage.xaml.cs:20
 msgid "Street"
@@ -43,6 +46,10 @@ msgstr "PLZ"
 #: ExPay Service/Pages/PaymentShippingPage.xaml.cs:22
 msgid "City"
 msgstr "Stadt"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:24
+msgid "Shipping Address"
+msgstr "Lieferadresse"
 
 #: ExPay.Core/Navigation/Actions/FinishAction.cs:25
 msgid "Pay"
