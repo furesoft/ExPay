@@ -12,7 +12,7 @@
 
     public enum ConnectionLostReason
     {
-        Stoped,
+        Stopped,
         Timeout,
 
     }

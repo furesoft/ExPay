@@ -33,13 +33,13 @@ namespace ExPay_Service
 
         public bool Stop(HostControl hostControl)
         {
-            Signal.CallEvent(channel, new ConnectionLostEvent(ConnectionLostReason.Stoped));
+            Signal.CallEvent(channel, new ConnectionLostEvent(ConnectionLostReason.Stopped));
 
             Dispose.DisposeAll();
 
             WindowManager.Shutdown();
 
-            Logger.Trace("Service Stoped");
+            Logger.Trace("Service Stopped");
 
             return true;
         }

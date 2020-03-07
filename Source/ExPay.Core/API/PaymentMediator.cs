@@ -16,7 +16,7 @@ namespace ExPay.Core.API
 
         private void OnConnectionLost(ConnectionLostEvent obj)
         {
-            Console.WriteLine("Connection lost!!");
+            Console.WriteLine($"PaymentRequest has stopped: {obj.Reason}");
         }
 
         public PaymentCanMakePaymentResultStatus CanMakePaymentAsync(PaymentRequest paymentRequest)
