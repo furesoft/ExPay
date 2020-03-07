@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.PaymentDetailsPage">
   <Grid RowDefinitions="*,50">
-    <ListBox Grid.Row="0" Items="{Binding Details.DisplayItems}">
+    <ListBox Grid.Row="0" Items="{Binding Details.DisplayItems}" IsHitTestVisible="False">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid>
