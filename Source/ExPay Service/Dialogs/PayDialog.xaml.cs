@@ -38,7 +38,7 @@ namespace ExPay_Service.Dialogs
 
             Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentShippingPage()));
             Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
-            Navigator.AddAction(NavigatorAction.Finish(new PaymentRequestSubmitResult() { Status = PaymentRequestStatus.Succeeded, Response = new PaymentResponse() { } }));
+            Navigator.AddAction(NavigatorAction.Finish(Singleton<PaymentRequestSubmitResult>.Instance));
 
             var req = Singleton<PaymentRequest>.Instance;
 
