@@ -17,35 +17,24 @@ namespace ExPay_Service.Core.Navigation
             PageActions.Add(navigatorAction);
         }
 
-        public static void AddAction(INavigatorAction navigatorAction, NavigationTarget target, int index = 0)
-        {
-            //ToDo: implement AddAction NavigationTarget
-            switch (target)
-            {
-                case NavigationTarget.BeforeFinish:
-                    break;
-                case NavigationTarget.BeforeIndex:
-                    break;
-                case NavigationTarget.AfterIndex:
-                    break;
-                default:
-                    break;
-            }
-
-            navigatorAction.Parent = _parent;
-
-            PageActions.Add(navigatorAction);
-        }
-
         public static void Forward()
         {
             if (PageIndex < PageActions.Count - 1)
             {
                 PageIndex++;
 
-                Logger.Info($"Invoking Action {PageActions[PageIndex].GetType().Name}");
+                var action = PageActions[PageIndex];
 
-                PageActions[PageIndex].Invoke();
+                if (action.CanInvoke())
+                {
+                    Logger.Info($"Invoking Action {action.GetType().Name}");
+                    action.Invoke();
+                }
+                else
+                {
+                    Logger.Info($"Skipping Action {action.GetType().Name}");
+                    Forward();
+                }
             }
         }
 
