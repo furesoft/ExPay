@@ -8,10 +8,10 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
-  <Grid RowDefinitions="50,*,50">
-    <StackPanel Grid.Row="0">
-      <Image Source="{Binding MerchantInfo.Image}" />
-      <TextBlock Text="{Binding MerchantInfo.Name}" />
+  <Grid RowDefinitions="100,*,50">
+    <StackPanel Grid.Row="0" Orientation="Vertical">
+      <Image Name="merchantImage" Width="150" Height="100" />
+      <TextBlock Name="merchantName" Text="{Binding MerchantInfo.Name}" IsVisible="False" />
     </StackPanel>
 
     <ContentControl Grid.Row="1" x:Name="content" />

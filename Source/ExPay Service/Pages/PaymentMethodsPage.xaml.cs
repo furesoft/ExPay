@@ -47,7 +47,7 @@ namespace ExPay_Service.Pages
             var selectedMethod = (IPaymentMethod)paymentMethodsLb.SelectedItem;
             var accpt_pi = _request.AcceptedPaymentMethods.Where(_ => _.URN == selectedMethod?.Info.ID).FirstOrDefault();
 
-            var data = await selectedMethod.BeforePay(accpt_pi?.Data);
+            var data = await selectedMethod?.BeforePay(accpt_pi?.Data);
 
             selectedMethod.Invoke(data);
         }

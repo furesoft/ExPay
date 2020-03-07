@@ -16,10 +16,9 @@ namespace KryptoPlugin
     {
         public PaymentMethodInfo Info => new PaymentMethodInfo("urn:bitcoin", "Bitcoin");
 
-        public Task<object> BeforePay(object data)
+        public async Task<object> BeforePay(object data)
         {
-            Navigator.AddAction(NavigatorAction.SwitchPage(new TestPage()), NavigationTarget.BeforeFinish);
-
+            await ExPay.Core.Utils.ShowDialog<object, TestPage>();
             var addr = GenerateAddress();
 
             return Task.FromResult<object>(new { hello = "world" });

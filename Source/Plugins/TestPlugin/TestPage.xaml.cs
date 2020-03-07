@@ -4,17 +4,19 @@ using Avalonia.Markup.Xaml;
 
 namespace KryptoPlugin
 {
-    public class TestPage : UserControl
+    public class TestPage : Window
     {
         public TestPage()
         {
             this.InitializeComponent();
+#if DEBUG
+            this.AttachDevTools();
+#endif
         }
 
         private void InitializeComponent()
         {
-
-            //AvaloniaXamlLoader.Load(this);
+            AvaloniaXamlLoader.Load(this);
         }
     }
 }

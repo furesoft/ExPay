@@ -7,7 +7,6 @@ namespace ExPay.Core.Models
     {
         public Uri ImageUrl { get; set; }
         public string Name { get; set; }
-        public Bitmap Image { get; set; }
 
         public PaymentMerchantInfo()
         {

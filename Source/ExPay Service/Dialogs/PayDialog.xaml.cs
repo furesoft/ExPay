@@ -39,7 +39,16 @@ namespace ExPay_Service.Dialogs
             Navigator.AddAction(NavigatorAction.Finish(new PaymentRequestSubmitResult() { Status = PaymentRequestStatus.Succeeded, Response = new PaymentResponse() { } }));
 
             var req = (PaymentRequest)DataContext;
-            req.MerchantInfo.Image = Utils.DownloadBitmap(req.MerchantInfo.ImageUrl.ToString());
+
+            if (req.MerchantInfo.ImageUrl != null)
+            {
+                this.FindControl<Image>("merchantImage").Source = Utils.DownloadBitmap(req.MerchantInfo.ImageUrl.ToString());
+            }
+            else
+            {
+                this.FindControl<TextBlock>("merchantName").IsVisible = true;
+                this.FindControl<Image>("merchantImage").IsVisible = false;
+            }
         }
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();

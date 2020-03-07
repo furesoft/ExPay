@@ -16,6 +16,9 @@
     <EmbeddedResource Include="TestPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
   </ItemGroup>
 
   <ItemGroup>
