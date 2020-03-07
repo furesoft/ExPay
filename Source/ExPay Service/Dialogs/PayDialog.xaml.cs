@@ -50,8 +50,6 @@ namespace ExPay_Service.Dialogs
                 this.FindControl<TextBlock>("merchantName").IsVisible = true;
                 this.FindControl<Image>("merchantImage").IsVisible = false;
             }
-
-
         }
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();

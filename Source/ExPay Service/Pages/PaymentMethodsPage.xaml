@@ -11,11 +11,16 @@
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid RowDefinitions="*,*" Margin="5">
-            <TextBlock Text="{Binding Info.Name}" Grid.Row="0" />
-            <Image Width="50" Height="50" Source="{Binding Image}" Grid.Row="1" HorizontalAlignment="Left" />
+            <Image Width="50" Height="50" Source="{Binding Image}" Grid.Row="0" HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding Info.Name}" Grid.Row="1" HorizontalAlignment="Center" />
           </Grid>
         </DataTemplate>
       </ListBox.ItemTemplate>
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <WrapPanel Orientation="Horizontal"  />
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
     </ListBox>
   </Grid>
 </UserControl>
