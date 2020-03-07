@@ -6,6 +6,10 @@
         {
         }
 
+        public string StreetLine { get; set; }
+        public string PostalCode { get; set; }
+        public string City { get; set; }
+
         //ToDo: add properties to ShippingAddress
     }
 }
