@@ -20,7 +20,6 @@ namespace ExPay.Core
             return _methods.CreateSubKey(id);
         }
 
-
         public static void Init()
         {
             if (File.Exists(configFilename))
@@ -59,9 +58,9 @@ namespace ExPay.Core
             return false;
         }
 
+        internal static RegistryKey _methods;
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private static RegistryHive _hive;
-        internal static RegistryKey _methods;
         private static string configFilename = Allocator.New<IDefaultPath>().SettingsPath;
     }
 }

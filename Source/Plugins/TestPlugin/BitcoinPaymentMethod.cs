@@ -1,8 +1,6 @@
 ﻿using Avalonia.Media.Imaging;
 using ExPay.Core;
 using ExPay.Core.Contracts;
-using ExPay.Core.Navigation;
-using ExPay_Service.Core.Navigation;
 using NBitcoin;
 using System;
 using System.Composition;
@@ -14,6 +12,7 @@ namespace KryptoPlugin
     [Export(typeof(IPaymentMethod))]
     public class BitcoinPaymentMethod : IPaymentMethod
     {
+        public Bitmap Image => ExPay.Core.Utils.DownloadBitmap("https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
         public PaymentMethodInfo Info => new PaymentMethodInfo("urn:bitcoin", "Bitcoin");
 
         public async Task<object> BeforePay(object data)
@@ -22,13 +21,6 @@ namespace KryptoPlugin
             var addr = GenerateAddress();
 
             return Task.FromResult<object>(new { hello = "world" });
-        }
-
-        string GenerateAddress()
-        {
-            var pubkey = ExtPubKey.Parse("xpub6CUGRUonZSQ4TWtTMmzXdrXDtypWKiKrhko4egpiMZbpiaQL2jkwSB1icqYh2cfDfVxdx4df189oLKnC5fSwqPfgyP3hooxujYzAu3fDVmz", Network.Main);
-            var newAddress = pubkey.Derive(0).Derive(0).PubKey.GetAddress(ScriptPubKeyType.Legacy, Network.Main);
-            return newAddress.ToString();
         }
 
         public void Initialize()
@@ -47,6 +39,11 @@ namespace KryptoPlugin
             return !config.GetValueNames().Contains("xpub");
         }
 
-        public Bitmap Image => ExPay.Core.Utils.DownloadBitmap("https://en.bitcoin.it/w/images/en/6/69/Btc-sans.png");
+        private string GenerateAddress()
+        {
+            var pubkey = ExtPubKey.Parse("xpub6CUGRUonZSQ4TWtTMmzXdrXDtypWKiKrhko4egpiMZbpiaQL2jkwSB1icqYh2cfDfVxdx4df189oLKnC5fSwqPfgyP3hooxujYzAu3fDVmz", Network.Main);
+            var newAddress = pubkey.Derive(0).Derive(0).PubKey.GetAddress(ScriptPubKeyType.Legacy, Network.Main);
+            return newAddress.ToString();
+        }
     }
 }

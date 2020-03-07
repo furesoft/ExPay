@@ -9,8 +9,16 @@ namespace ExPay.Core
 {
     public static class Utils
     {
+        public static Bitmap DownloadBitmap(string uri)
+        {
+            var client = new WebClient();
+            var strm = client.DownloadData(uri);
+
+            return new Bitmap(new MemoryStream(strm));
+        }
+
         public static Task<TResult> ShowDialog<TResult, TDialog>(object context = null)
-            where TDialog : Window, new()
+                    where TDialog : Window, new()
         {
             var tcs = new TaskCompletionSource<TResult>();
 
@@ -29,14 +37,6 @@ namespace ExPay.Core
             }).ConfigureAwait(false);
 
             return tcs.Task;
-        }
-
-        public static Bitmap DownloadBitmap(string uri)
-        {
-            var client = new WebClient();
-            var strm = client.DownloadData(uri);
-
-            return new Bitmap(new MemoryStream(strm));
         }
     }
 }

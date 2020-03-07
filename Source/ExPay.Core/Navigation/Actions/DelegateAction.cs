@@ -8,12 +8,15 @@ namespace ExPay.Core.Navigation.Actions
     {
         public Window Parent { get; set; }
 
-        Func<bool> canInvoke;
-
-        public DelegateAction(Action action, Func<bool> canInvoke)
+        public DelegateAction(Action action, Func<bool> canInvoke = null)
         {
             this.action = action;
             this.canInvoke = canInvoke;
+        }
+
+        public bool CanInvoke()
+        {
+            return canInvoke?.Invoke();
         }
 
         public void Invoke()
@@ -21,11 +24,7 @@ namespace ExPay.Core.Navigation.Actions
             action();
         }
 
-        public bool CanInvoke()
-        {
-            return canInvoke();
-        }
-
         private Action action;
+        private Func<bool> canInvoke;
     }
 }

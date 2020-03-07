@@ -7,6 +7,7 @@ namespace ExPay_Service.Core.Navigation
         Window Parent { get; set; }
 
         bool CanInvoke();
+
         void Invoke();
     }
 }

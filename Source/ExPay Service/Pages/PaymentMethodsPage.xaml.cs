@@ -4,7 +4,6 @@ using ExPay.Core;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
 using ExPay.Core.Navigation;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,8 +12,6 @@ namespace ExPay_Service.Pages
     public class PaymentMethodsPage : UserControl, IFinished
     {
         public List<IPaymentMethod> PaymentMethods { get; set; }
-
-        private PaymentRequest _request;
 
         public PaymentMethodsPage()
         {
@@ -34,12 +31,6 @@ namespace ExPay_Service.Pages
              };
         }
 
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
         public async void OnFinish()
         {
             var paymentMethodsLb = this.FindControl<ListBox>("paymentMethodsLb");
@@ -50,6 +41,13 @@ namespace ExPay_Service.Pages
             var data = await selectedMethod?.BeforePay(accpt_pi?.Data);
 
             selectedMethod.Invoke(data);
+        }
+
+        private PaymentRequest _request;
+
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
         }
     }
 }

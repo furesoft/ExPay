@@ -7,14 +7,6 @@ namespace ExPay.Core.PlatformDependent
 {
     public static class Allocator
     {
-        public static T New<T>()
-        {
-            var currentPlatform = GetCurrentPlatform();
-            var implementation = GetImplementationOf<T>(currentPlatform);
-
-            return (T)Activator.CreateInstance(implementation);
-        }
-
         public static IEnumerable<Platform> GetAvailablePlatformsForInstance<T>()
         {
             var ass = Assembly.GetEntryAssembly();
@@ -35,6 +27,25 @@ namespace ExPay.Core.PlatformDependent
                     }
                 }
             }
+        }
+
+        public static T New<T>()
+        {
+            var currentPlatform = GetCurrentPlatform();
+            var implementation = GetImplementationOf<T>(currentPlatform);
+
+            return (T)Activator.CreateInstance(implementation);
+        }
+
+        private static IEnumerable<Type> GetAllTypes()
+        {
+            var res = new List<Type>();
+
+            res.AddRange(Assembly.GetExecutingAssembly().GetTypes());
+            res.AddRange(Assembly.GetCallingAssembly().GetTypes());
+            res.AddRange(Assembly.GetEntryAssembly().GetTypes());
+
+            return res;
         }
 
         private static Platform GetCurrentPlatform()
@@ -79,17 +90,6 @@ namespace ExPay.Core.PlatformDependent
             }
 
             throw new PlatformNotSupportedException();
-        }
-
-        private static IEnumerable<Type> GetAllTypes()
-        {
-            var res = new List<Type>();
-
-            res.AddRange(Assembly.GetExecutingAssembly().GetTypes());
-            res.AddRange(Assembly.GetCallingAssembly().GetTypes());
-            res.AddRange(Assembly.GetEntryAssembly().GetTypes());
-
-            return res;
         }
     }
 }

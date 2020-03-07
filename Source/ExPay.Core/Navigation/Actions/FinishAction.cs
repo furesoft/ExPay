@@ -3,16 +3,14 @@ using ExPay_Service.Core.Navigation;
 
 namespace ExPay.Core.Navigation.Actions
 {
-    class FinishAction : INavigatorAction
+    internal class FinishAction : INavigatorAction
     {
-        private object result;
+        public Window Parent { get; set; }
 
         public FinishAction(object result)
         {
             this.result = result;
         }
-
-        public Window Parent { get; set; }
 
         public void Invoke()
         {
@@ -31,5 +29,7 @@ namespace ExPay.Core.Navigation.Actions
                 Navigator.SetResult(result);
             };
         }
+
+        private object result;
     }
 }
