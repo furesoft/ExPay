@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ExPay\n"
-"POT-Creation-Date: 2020-02-29 16:10+0100\n"
+"POT-Creation-Date: 2020-03-07 17:29+0100\n"
 "PO-Revision-Date: 2020-02-29 16:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: Furesoft\n"
@@ -10,22 +11,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"X-Poedit-Basepath: ../../../..\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Dialogs/PayDialog.xaml.cs:31
+#: Dialogs/PayDialog.xaml.cs:33
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
-#: Dialogs/PayDialog.xaml.cs:32
+#: Dialogs/PayDialog.xaml.cs:34
 msgid "Next"
-msgstr "Next"
+msgstr ""
 
-#: Pages/PaymentMethodsPage.xaml.cs:20
+#: Pages/PaymentMethodsPage.xaml.cs:22
 msgid "Payment Methods"
-msgstr "Payment Methods"
+msgstr ""
 
-msgid "Pay"
-msgstr "Pay"
+#: Pages/PaymentShippingPage.xaml.cs:17 Pages/PaymentShippingPage.xaml.cs:18
+msgid "Firstname"
+msgstr ""
+
+#: Pages/PaymentShippingPage.xaml.cs:20
+msgid "Street"
+msgstr ""
+
+#: Pages/PaymentShippingPage.xaml.cs:21
+msgid "Postal Code"
+msgstr ""
+
+#: Pages/PaymentShippingPage.xaml.cs:22
+msgid "City"
+msgstr ""

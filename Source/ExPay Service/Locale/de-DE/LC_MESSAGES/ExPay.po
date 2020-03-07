@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ExPay\n"
-"POT-Creation-Date: 2020-02-29 16:10+0100\n"
-"PO-Revision-Date: 2020-02-29 16:18+0100\n"
+"POT-Creation-Date: 2020-03-07 17:29+0100\n"
+"PO-Revision-Date: 2020-03-07 17:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: Furesoft\n"
 "Language: de_DE\n"
@@ -15,17 +15,35 @@ msgstr ""
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Dialogs/PayDialog.xaml.cs:31
+#: ExPay Service/Dialogs/PayDialog.xaml.cs:33
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: Dialogs/PayDialog.xaml.cs:32
+#: ExPay Service/Dialogs/PayDialog.xaml.cs:34
 msgid "Next"
 msgstr "Weiter"
 
-#: Pages/PaymentMethodsPage.xaml.cs:20
+#: ExPay Service/Pages/PaymentMethodsPage.xaml.cs:22
 msgid "Payment Methods"
 msgstr "Bezahlmöglichkeiten"
 
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:17
+#: Service/Pages/PaymentShippingPage.xaml.cs:18
+msgid "Firstname"
+msgstr "Vorname"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:20
+msgid "Street"
+msgstr "Straße"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:21
+msgid "Postal Code"
+msgstr "PLZ"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:22
+msgid "City"
+msgstr "Stadt"
+
+#: ExPay.Core/Navigation/Actions/FinishAction.cs:25
 msgid "Pay"
 msgstr "Bezahlen"
