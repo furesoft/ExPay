@@ -75,7 +75,7 @@ namespace TestClient
                 ShippingOptions = new List<PaymentShippingOption>
     {
         new PaymentShippingOption("Standard (3-5 business days)", new PaymentCurrencyAmount(0.00m, "USD")),
-        new PaymentShippingOption( "Express (2-3 buiness days)", new PaymentCurrencyAmount(4.99m, "USD")),
+        new PaymentShippingOption("Express (2-3 buiness days)", new PaymentCurrencyAmount(4.99m, "USD")),
         new PaymentShippingOption("Overnight (1 business day)", new PaymentCurrencyAmount(11.99m, "USD")),
     },
                 Modifiers = new[]
@@ -91,8 +91,7 @@ namespace TestClient
                 RequestPayerName = PaymentOptionPresence.None,
                 RequestPayerEmail = PaymentOptionPresence.None,
                 RequestPayerPhoneNumber = PaymentOptionPresence.None,
-                RequestShipping = false,
-                ShippingType = PaymentShippingType.Shipping
+                RequestShipping = false
             };
 
             var merchantInfo = new PaymentMerchantInfo("https://store.contoso.com", new Uri("https://i2.wp.com/www.mobiflip.de/wp-content/uploads/2019/04/amazon-logo-header.jpg?fit=1085%2C678&ssl=1"));
