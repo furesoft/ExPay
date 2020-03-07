@@ -36,6 +36,7 @@ namespace ExPay_Service.Dialogs
             var frame = this.FindControl<ContentControl>("content");
             Navigator.Init(this, frame, new PaymentDetailsPage());
 
+            Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentShippingPage()));
             Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
             Navigator.AddAction(NavigatorAction.Finish(new PaymentRequestSubmitResult() { Status = PaymentRequestStatus.Succeeded, Response = new PaymentResponse() { } }));
 

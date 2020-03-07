@@ -26,6 +26,7 @@
     <AvaloniaResource Remove="Dialogs\TestDialog.xaml" />
     <AvaloniaResource Remove="Pages\PaymentDetailsPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentMethodsPage.xaml" />
+    <AvaloniaResource Remove="Pages\PaymentShippingPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="close.png" />
@@ -34,6 +35,7 @@
     <None Remove="Dialogs\TestDialog.xaml" />
     <None Remove="Pages\PaymentDetailsPage.xaml" />
     <None Remove="Pages\PaymentMethodsPage.xaml" />
+    <None Remove="Pages\PaymentShippingPage.xaml" />
     <None Remove="pay.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\PaymentMethodsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\PaymentShippingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
