@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ExPay.Core;
@@ -49,6 +50,8 @@ namespace ExPay_Service.Dialogs
                 this.FindControl<TextBlock>("merchantName").IsVisible = true;
                 this.FindControl<Image>("merchantImage").IsVisible = false;
             }
+
+
         }
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();

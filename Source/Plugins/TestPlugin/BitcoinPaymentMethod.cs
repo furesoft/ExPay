@@ -17,11 +17,15 @@ namespace KryptoPlugin
 
         public async Task<object> BeforePay(object data)
         {
-            await ExPay.Core.Utils.ShowDialog<object, TestPage>();
             var addr = GenerateAddress();
+
+            await ExPay.Core.Utils.ShowDialog<object, TestPage>();
+
 
             return Task.FromResult<object>(new { hello = "world" });
         }
+
+
 
         public void Initialize()
         {

@@ -10,10 +10,10 @@
     <ListBox Name="paymentMethodsLb" Grid.Row="1" MinWidth="150" MinHeight="150">
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <StackPanel Orientation="Vertical">
-            <TextBlock Text="{Binding Info.Name}" />
-            <Image Width="50" Height="50" Source="{Binding Image}" />
-          </StackPanel>
+          <Grid RowDefinitions="*,*" Margin="5">
+            <TextBlock Text="{Binding Info.Name}" Grid.Row="0" />
+            <Image Width="50" Height="50" Source="{Binding Image}" Grid.Row="1" HorizontalAlignment="Left" />
+          </Grid>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
