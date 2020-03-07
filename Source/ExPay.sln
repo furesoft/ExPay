@@ -17,6 +17,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExPay Manager", "ExPay Manager\ExPay Manager.csproj", "{6B672887-1FCE-46F0-828C-D93B13E0B594}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExPay Service", "ExPay Service\ExPay Service.csproj", "{8B978F41-7900-4261-85AA-92946A89F256}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6} = {3CADB6E6-CBC6-4A7F-9871-40DDD8BACCF6}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{5AE1D0D5-7748-456D-A388-004678CF249C}"
 EndProject
@@ -28,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", 
 		..\References\NBitcoin.dll = ..\References\NBitcoin.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInstaller", "PluginInstaller\PluginInstaller.csproj", "{BF4EE648-92B5-4D7B-ADF3-D2B262EB1B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginInstaller", "PluginInstaller\PluginInstaller.csproj", "{BF4EE648-92B5-4D7B-ADF3-D2B262EB1B15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{F8806997-A7F0-45C0-93F1-2C714DA0A33D}"
 EndProject
