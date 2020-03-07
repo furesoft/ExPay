@@ -3,3 +3,4 @@ Shared Methods:
 	[0x1D] GetSupportedMethodIds() -> string[]
 	[0xEE] SubmitPaymentRequest(PaymentRequest) -> PaymentRequestSubmitResult
 	[0x3A] GetPaymentStatus -> int
+	event OnLostConnection(ServiceDisconnectReason)

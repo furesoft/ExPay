@@ -1,5 +1,7 @@
-﻿using ExPay.Core.Models;
+﻿using ExPay.Core.Events;
+using ExPay.Core.Models;
 using Furesoft.Signals;
+using System;
 using System.Collections.Generic;
 
 namespace ExPay.Core.API
@@ -9,6 +11,12 @@ namespace ExPay.Core.API
         public PaymentMediator()
         {
             channel = Signal.CreateSenderChannel("ExPay");
+            Signal.Subscribe<ConnectionLostEvent>(channel, OnConnectionLost);
+        }
+
+        private void OnConnectionLost(ConnectionLostEvent obj)
+        {
+            Console.WriteLine("Connection lost!!");
         }
 
         public PaymentCanMakePaymentResultStatus CanMakePaymentAsync(PaymentRequest paymentRequest)

@@ -1,5 +1,6 @@
 ﻿using ExPay.Core;
 using ExPay.Core.Contracts;
+using ExPay.Core.Events;
 using Furesoft.Signals;
 using Topshelf;
 
@@ -32,6 +33,8 @@ namespace ExPay_Service
 
         public bool Stop(HostControl hostControl)
         {
+            Signal.CallEvent(channel, new ConnectionLostEvent(ConnectionLostReason.Stoped));
+
             Dispose.DisposeAll();
 
             WindowManager.Shutdown();
