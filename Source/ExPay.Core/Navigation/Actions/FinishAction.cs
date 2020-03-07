@@ -30,6 +30,8 @@ namespace ExPay.Core.Navigation.Actions
             };
         }
 
+        public bool CanInvoke() => true;
+
         private object result;
     }
 }

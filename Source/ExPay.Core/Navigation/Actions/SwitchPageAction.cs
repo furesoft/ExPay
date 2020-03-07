@@ -16,7 +16,9 @@ namespace ExPay.Core.Navigation.Actions
 
         public bool CanInvoke()
         {
-            return canInvoke?.Invoke();
+            if (canInvoke != null)
+                return canInvoke();
+            return false;
         }
 
         public void Invoke()
