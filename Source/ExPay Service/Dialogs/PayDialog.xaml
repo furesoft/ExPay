@@ -10,6 +10,7 @@
         Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
   <Grid RowDefinitions="50,*,50">
     <StackPanel Grid.Row="0">
+      <Image Source="{Binding MerchantInfo.Image}" />
       <TextBlock Text="{Binding MerchantInfo.Name}" />
     </StackPanel>
 

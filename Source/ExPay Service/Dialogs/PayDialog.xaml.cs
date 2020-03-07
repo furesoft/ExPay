@@ -4,6 +4,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ExPay.Core;
 using ExPay.Core.API;
+using ExPay.Core.Models;
 using ExPay.Core.Navigation;
 using ExPay_Service.Core.Navigation;
 using ExPay_Service.Pages;
@@ -35,7 +36,10 @@ namespace ExPay_Service.Dialogs
             Navigator.Init(this, frame, new PaymentDetailsPage());
 
             Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
-            Navigator.AddAction(NavigatorAction.Finish(new PaymentRequestSubmitResult() { Status = ExPay.Core.Models.PaymentRequestStatus.Succeeded, Response = new ExPay.Core.Models.PaymentResponse() { } }));
+            Navigator.AddAction(NavigatorAction.Finish(new PaymentRequestSubmitResult() { Status = PaymentRequestStatus.Succeeded, Response = new PaymentResponse() { } }));
+
+            var req = (PaymentRequest)DataContext;
+            req.MerchantInfo.Image = Utils.DownloadBitmap(req.MerchantInfo.ImageUrl.ToString());
         }
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
