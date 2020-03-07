@@ -5,14 +5,14 @@
              mc:Ignorable="d"
              x:Class="ExPay_Service.Pages.PaymentMethodsPage">
   <Grid RowDefinitions="35,*">
-    <TextBlock Name="HeaderTb" Grid.Row="0">Payment Methods</TextBlock>
+    <TextBlock Name="HeaderTb" Grid.Row="0" FontSize="20">Payment Methods</TextBlock>
 
     <ListBox Name="paymentMethodsLb" Grid.Row="1" MinWidth="150" MinHeight="150">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid RowDefinitions="*,*" Margin="5">
             <Image Width="50" Height="50" Source="{Binding Image}" Grid.Row="0" HorizontalAlignment="Center" />
-            <TextBlock Text="{Binding Info.Name}" Grid.Row="1" HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding Info.Name}" FontSize="25" Grid.Row="1" HorizontalAlignment="Center" />
           </Grid>
         </DataTemplate>
       </ListBox.ItemTemplate>
