@@ -9,7 +9,7 @@ using System.Composition;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TestPlugin
+namespace KryptoPlugin
 {
     [Export(typeof(IPaymentMethod))]
     public class BitcoinPaymentMethod : IPaymentMethod
