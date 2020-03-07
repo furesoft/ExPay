@@ -16,14 +16,14 @@ namespace ExPay.Core.Navigation.Actions
 
         public void Invoke()
         {
-            var oldPage = Parent.FindControl<ContentControl>("content").Content as IFinished;
+            var oldPage = Parent?.FindControl<ContentControl>("content").Content as IFinished;
 
             if (oldPage != null)
             {
                 oldPage.OnFinish();
             }
 
-            var btn = Parent.FindControl<Button>("nextBtn");
+            var btn = Parent?.FindControl<Button>("nextBtn");
             btn.Content = I18N._("Pay");
 
             btn.Click += (s, e) =>
