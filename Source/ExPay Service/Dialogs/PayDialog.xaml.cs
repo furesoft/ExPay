@@ -40,7 +40,7 @@ namespace ExPay_Service.Dialogs
             Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
             Navigator.AddAction(NavigatorAction.Finish(new PaymentRequestSubmitResult() { Status = PaymentRequestStatus.Succeeded, Response = new PaymentResponse() { } }));
 
-            var req = (PaymentRequest)DataContext;
+            var req = Singleton<PaymentRequest>.Instance;
 
             if (req.MerchantInfo.ImageUrl != null)
             {

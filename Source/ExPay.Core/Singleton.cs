@@ -7,6 +7,7 @@
 
         {
             get { return SingletonCreator.instance; }
+            set { SingletonCreator.instance = value; }
         }
 
         private Singleton()
@@ -21,7 +22,7 @@
 
             // Private object instantiated with private constructor
 
-            internal static readonly T instance = new T();
+            internal static T instance = new T();
         }
     }
 }

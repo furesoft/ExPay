@@ -21,7 +21,7 @@ namespace ExPay_Service.Pages
              {
                  this.FindControl<TextBlock>("HeaderTb").Text = I18N._("Payment Methods");
 
-                 _request = (PaymentRequest)DataContext;
+                 _request = Singleton<PaymentRequest>.Instance;
                  DataContext = this;
 
                  PaymentMethods = PluginLoader.Instance.PaymentMethods.ToList();

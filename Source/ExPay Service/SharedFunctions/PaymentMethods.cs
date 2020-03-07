@@ -33,6 +33,8 @@ namespace ExPay_Service.SharedFunctions
 
             if (isavailable)
             {
+                Singleton<PaymentRequest>.Instance = req;
+
                 var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayDialog>(req);
 
                 return result.Result;
