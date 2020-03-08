@@ -5,8 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.PaymentDetailsPage">
-  <Grid RowDefinitions="*,50">
-    <ListBox Grid.Row="0" Items="{Binding Details.DisplayItems}" IsHitTestVisible="False">
+  <Grid>
+    <ListBox Items="{Binding Details.DisplayItems}" IsHitTestVisible="False">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid>
@@ -21,12 +21,5 @@
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
-
-    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="1">
-      <TextBlock Text="Total: " />
-      <TextBlock Text="{Binding Details.Total.Amount.Value, Converter={conv:CurrencyConverter}}" />
-
-      <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
-    </StackPanel>
   </Grid>
 </UserControl>
