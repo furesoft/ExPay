@@ -17,8 +17,6 @@
     <ContentControl Grid.Row="1" x:Name="content" />
 
     <Grid Grid.Row="2">
-      <Button Name="cancelBtn" Click="OnCancel" MinWidth="125" HorizontalAlignment="Left" Content="Cancel" />
-
       <Button Name="nextBtn" Click="OnPay" Content="Next" MinWidth="125" HorizontalAlignment="Right" />
     </Grid>
   </Grid>

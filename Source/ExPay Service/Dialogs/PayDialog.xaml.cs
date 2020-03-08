@@ -22,7 +22,7 @@ namespace ExPay_Service.Dialogs
 
             this.Activated += PayDialog_Initialized;
 
-            Tag = new PaymentRequestSubmitResult { Status = ExPay.Core.Models.PaymentRequestStatus.Failed };
+            Tag = new PaymentRequestSubmitResult { Status = PaymentRequestStatus.Canceled };
 #if DEBUG
             this.AttachDevTools();
 #endif
@@ -36,8 +36,7 @@ namespace ExPay_Service.Dialogs
             var frame = this.FindControl<ContentControl>("content");
             Navigator.Init(this, frame, new PaymentDetailsPage());
 
-            Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentShippingPage(), () => Singleton<PaymentRequest>.Instance.Options.RequestShipping));
-            Navigator.AddAction(NavigatorAction.SwitchPage(new PaymentMethodsPage()));
+            Navigator.AddAction(NavigatorAction.SwitchPage(new FinishPayPage()));
             Navigator.AddAction(NavigatorAction.Finish(Singleton<PaymentRequestSubmitResult>.Instance));
 
             var req = Singleton<PaymentRequest>.Instance;
@@ -54,14 +53,6 @@ namespace ExPay_Service.Dialogs
         }
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-
-        public void OnCancel(object sender, RoutedEventArgs e)
-        {
-            Logger.Info("Payment canceled");
-
-            Tag = new PaymentRequestSubmitResult { Status = ExPay.Core.Models.PaymentRequestStatus.Canceled };
-            Close();
-        }
 
         public void OnPay(object sender, RoutedEventArgs e)
         {

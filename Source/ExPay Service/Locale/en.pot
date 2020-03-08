@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ExPay\n"
-"POT-Creation-Date: 2020-03-08 09:59+0100\n"
+"POT-Creation-Date: 2020-03-08 11:03+0100\n"
 "PO-Revision-Date: 2020-02-29 16:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: Furesoft\n"
@@ -24,42 +24,26 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: Pages/PaymentMethodsPage.xaml.cs:22
-msgid "Payment Methods"
+#: Pages/FinishPayPage.xaml.cs:41
+msgid "Pay with"
 msgstr ""
 
-#: Pages/PaymentShippingPage.xaml.cs:21
-msgid "Firstname"
+#: Pages/FinishPayPage.xaml.cs:42
+msgid "Ship to"
 msgstr ""
 
-#: Pages/PaymentShippingPage.xaml.cs:22
-msgid "Lastname"
+#: Pages/FinishPayPage.xaml.cs:43
+msgid "Shipping Options"
 msgstr ""
 
-#: Pages/PaymentShippingPage.xaml.cs:24
-msgid "Street"
+#: Pages/FinishPayPage.xaml.cs:44
+msgid "Email receipt to"
 msgstr ""
 
-#: Pages/PaymentShippingPage.xaml.cs:25
-msgid "Postal Code"
-msgstr ""
-
-#: Pages/PaymentShippingPage.xaml.cs:26
-msgid "City"
-msgstr ""
-
-#: Pages/PaymentShippingPage.xaml.cs:28
+#: Pages/FinishPayPage.xaml.cs:45
 msgid "Phone"
 msgstr ""
 
-#: Pages/PaymentShippingPage.xaml.cs:29
-msgid "E-Mail"
-msgstr ""
-
-#: Pages/PaymentShippingPage.xaml.cs:31
-msgid "Shipping Address"
-msgstr ""
-
-#: Pages/PaymentShippingPage.xaml.cs:32
-msgid "(*) are required fields"
+#: Pages/old/PaymentMethodsPage.xaml.cs:22
+msgid "Payment Methods"
 msgstr ""

@@ -28,14 +28,14 @@ namespace ExPay.Core
                 {
                     _hive = new RegistryHive(File.Open(configFilename, FileMode.OpenOrCreate));
                     _methods = _hive.Root.OpenSubKey("payment_methods");
-                    _payer = _hive.Root.OpenSubKey("payer_information");
+                    _config = _hive.Root.OpenSubKey("payer_information");
                 }
             }
             else
             {
                 _hive = RegistryHive.Create(File.Open(configFilename, FileMode.OpenOrCreate));
                 _methods = _hive.Root.CreateSubKey("payment_methods");
-                _payer = _hive.Root.CreateSubKey("payer_information");
+                _config = _hive.Root.CreateSubKey("payer_information");
             }
 
             Dispose.Add(_hive);
@@ -60,23 +60,23 @@ namespace ExPay.Core
             return false;
         }
 
-        public static string GetValue(string key)
+        public static T GetValue<T>(string key)
         {
-            if (_payer?.GetValue(key) != null)
+            if (_config?.GetValue(key) != null)
             {
-                return _payer?.GetValue(key).ToString();
+                return (T)_config?.GetValue(key);
             }
 
-            return string.Empty;
+            return default;
         }
 
         public static void SetValue(string key, object value)
         {
-            _payer.SetValue(key, value);
+            _config.SetValue(key, value);
         }
 
         internal static RegistryKey _methods;
-        private static RegistryKey _payer;
+        private static RegistryKey _config;
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private static RegistryHive _hive;
         private static string configFilename = Allocator.New<IDefaultPath>().SettingsPath;
