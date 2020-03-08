@@ -27,6 +27,7 @@ namespace ExPay_Service.Core.Navigation
                 if (action.CanInvoke())
                 {
                     Logger.Info($"Invoking Action {action.GetType().Name}");
+                    OnForward?.Invoke(action);
                     action.Invoke();
                 }
                 else
@@ -38,6 +39,8 @@ namespace ExPay_Service.Core.Navigation
         }
 
         public static Window GetParent() => _parent;
+
+        public static event Action<INavigatorAction> OnForward;
 
         public static void Init(Window parent, ContentControl frame, Control defaultContent = null)
         {

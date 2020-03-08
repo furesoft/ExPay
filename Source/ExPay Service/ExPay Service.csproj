@@ -29,7 +29,6 @@
     <AvaloniaResource Remove="Pages\PaymentShippingPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Assets\back.png" />
     <None Remove="Dialogs\MessageDialog.xaml" />
     <None Remove="Dialogs\PayDialog.xaml" />
     <None Remove="Dialogs\TestDialog.xaml" />
@@ -82,9 +81,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Assets\back.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Update="Locale\de-DE\LC_MESSAGES\ExPay.mo">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -94,5 +90,8 @@
     <None Update="Locale\en\LC_MESSAGES\ExPay.mo">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
   </ItemGroup>
 </Project>

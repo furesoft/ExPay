@@ -33,8 +33,6 @@ namespace ExPay_Service.Dialogs
             this.FindControl<Button>("cancelBtn").Content = I18N._("Cancel");
             this.FindControl<Button>("nextBtn").Content = I18N._("Next");
 
-            this.FindControl<Button>("backBtn").SetValue(ToolTip.TipProperty, I18N._("Back"));
-
             var frame = this.FindControl<ContentControl>("content");
             Navigator.Init(this, frame, new PaymentDetailsPage());
 
