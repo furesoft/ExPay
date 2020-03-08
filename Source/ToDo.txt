@@ -1,1 +1,1 @@
-[ ] implement I18N with GetText
+[ ] Data Validation for Shipping Address
