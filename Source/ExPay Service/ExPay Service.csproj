@@ -51,7 +51,6 @@
     <ProjectReference Include="..\ExPay.Core\ExPay.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="close.png" />
     <EmbeddedResource Include="Dialogs\TestDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
