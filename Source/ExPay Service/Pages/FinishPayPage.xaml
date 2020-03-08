@@ -7,11 +7,11 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.FinishPayPage">
   <Grid RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*" HorizontalAlignment="Center">
-    <TextBlock Name="paymentMethodLbl" Foreground="Gray" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" />
-    <TextBlock Name="shipToLbl" Foreground="Gray" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" />
-    <TextBlock Name="shippingOptionsLbl" Foreground="Gray" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" />
-    <TextBlock Name="emailLbl" Foreground="Gray" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" />
-    <TextBlock Name="phoneLbl" Foreground="Gray" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" />
+    <TextBlock Name="paymentMethodLbl" Classes="grid"  Grid.Row="0"  />
+    <TextBlock Name="shipToLbl" Classes="grid" Grid.Row="1"  />
+    <TextBlock Name="shippingOptionsLbl" Classes="grid"  Grid.Row="2" />
+    <TextBlock Name="emailLbl" Classes="grid" Grid.Row="3"  />
+    <TextBlock Name="phoneLbl" Classes="grid" Grid.Row="4"  />
 
     <ComboBox Name="paymentMethodsCb" Margin="2" Grid.Row="0" Grid.Column="2" MinWidth="200">
       <ComboBox.ItemTemplate>
