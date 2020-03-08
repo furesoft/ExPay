@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:conv="http://furesoft.ml/expay"
+             xmlns:pages="clr-namespace:ExPay_Service.Pages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.FinishPayPage">
   <Grid RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*" HorizontalAlignment="Center">
@@ -37,8 +38,12 @@
       <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
     </StackPanel>
 
-    <Button Name="detailsBtn" Grid.Row="5" Grid.Column="1">
+    <ToggleButton Name="detailsBtn" Grid.Row="5" Grid.Column="0">
       Details
-    </Button>
+    </ToggleButton>
+
+    <Popup IsOpen="{Binding #detailsBtn.IsChecked}" MinWidth="250" StaysOpen="False" PlacementMode="Bottom" PlacementTarget="{Binding #detailsBtn}">
+      <pages:PaymentDetailsPage />
+    </Popup>
   </Grid>
 </UserControl>
