@@ -25,6 +25,9 @@ namespace ExPay_Service.Pages
             this.FindControl<TextBox>("postalcodeTb").Watermark = I18N._("Postal Code");
             this.FindControl<TextBox>("cityTb").Watermark = I18N._("City");
 
+            this.FindControl<TextBox>("phoneTb").Watermark = I18N._("Phone");
+            this.FindControl<TextBox>("emailTb").Watermark = I18N._("E-Mail");
+
             this.FindControl<TextBlock>("HeaderTb").Text = I18N._("Shipping Address");
 
             LoadConfiguredData();
