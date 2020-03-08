@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ExPay\n"
-"POT-Creation-Date: 2020-03-08 09:03+0100\n"
-"PO-Revision-Date: 2020-03-08 09:04+0100\n"
+"POT-Creation-Date: 2020-03-08 09:33+0100\n"
+"PO-Revision-Date: 2020-03-08 09:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: Furesoft\n"
 "Language: de_DE\n"
@@ -58,6 +58,10 @@ msgstr "E-Mail"
 #: ExPay Service/Pages/PaymentShippingPage.xaml.cs:31
 msgid "Shipping Address"
 msgstr "Lieferadresse"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:32
+msgid "(*) are required fields"
+msgstr "(*) Pflichtfelder"
 
 #: ExPay.Core/Navigation/Actions/FinishAction.cs:25
 msgid "Pay"
