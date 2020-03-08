@@ -22,6 +22,8 @@
 
       <TextBox Name="phoneTb" Margin="5" />
       <TextBox Name="emailTb" Margin="5" />
+
+      <TextBlock Name="requiredFieldsTb" />
     </StackPanel>
   </Grid>
 </UserControl>

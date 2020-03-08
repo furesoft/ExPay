@@ -89,7 +89,7 @@ namespace TestClient
             var options = new PaymentOptions()
             {
                 RequestPayerName = PaymentOptionPresence.Optional,
-                RequestPayerEmail = PaymentOptionPresence.Optional,
+                RequestPayerEmail = PaymentOptionPresence.Required,
                 RequestPayerPhoneNumber = PaymentOptionPresence.Optional,
                 RequestShipping = true
             };

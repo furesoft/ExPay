@@ -29,10 +29,13 @@ namespace ExPay_Service.Pages
             this.FindControl<TextBox>("emailTb").Watermark = I18N._("E-Mail");
 
             this.FindControl<TextBlock>("HeaderTb").Text = I18N._("Shipping Address");
+            this.FindControl<TextBlock>("requiredFieldsTb").Text = I18N._("(*) are required fields");
 
             LoadConfiguredData();
 
             var req = Singleton<PaymentRequest>.Instance;
+
+            //Hide non neccessary fields
             if (req.Options.RequestPayerName == PaymentOptionPresence.None)
             {
                 this.FindControl<TextBox>("firstNameTb").IsVisible = false;
@@ -45,6 +48,21 @@ namespace ExPay_Service.Pages
             if (req.Options.RequestPayerEmail == PaymentOptionPresence.None)
             {
                 this.FindControl<TextBox>("emailTb").IsVisible = false;
+            }
+
+            //add * to required fields
+            if (req.Options.RequestPayerName == PaymentOptionPresence.Required)
+            {
+                this.FindControl<TextBox>("firstNameTb").Watermark = this.FindControl<TextBox>("firstNameTb").Watermark + " (*)";
+                this.FindControl<TextBox>("secondNameTb").Watermark = this.FindControl<TextBox>("secondNameTb").Watermark + " (*)";
+            }
+            if (req.Options.RequestPayerPhoneNumber == PaymentOptionPresence.Required)
+            {
+                this.FindControl<TextBox>("phoneTb").Watermark = this.FindControl<TextBox>("phoneTb").Watermark + " (*)";
+            }
+            if (req.Options.RequestPayerEmail == PaymentOptionPresence.Required)
+            {
+                this.FindControl<TextBox>("emailTb").Watermark = this.FindControl<TextBox>("emailTb").Watermark + " (*)";
             }
         }
 
