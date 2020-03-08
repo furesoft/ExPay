@@ -22,6 +22,7 @@
     <None Remove="bin\**" />
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaResource Include="Assets\Colors.xaml" />
     <AvaloniaResource Remove="Dialogs\MessageDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\PayDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\TestDialog.xaml" />
@@ -31,6 +32,7 @@
     <AvaloniaResource Remove="Pages\PaymentShippingPage.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Assets\Colors.xaml" />
     <None Remove="Dialogs\MessageDialog.xaml" />
     <None Remove="Dialogs\PayDialog.xaml" />
     <None Remove="Dialogs\TestDialog.xaml" />
@@ -97,4 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
 </Project>
