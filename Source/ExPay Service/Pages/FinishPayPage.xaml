@@ -13,7 +13,7 @@
     <TextBlock Name="emailLbl" Classes="grid" Grid.Row="3"  />
     <TextBlock Name="phoneLbl" Classes="grid" Grid.Row="4"  />
 
-    <ComboBox Name="paymentMethodsCb" Margin="2" Grid.Row="0" Grid.Column="2" MinWidth="200">
+    <ComboBox Name="paymentMethodsCb" Classes="grid" Grid.Row="0" MinWidth="200">
       <ComboBox.ItemTemplate>
         <DataTemplate>
           <WrapPanel Orientation="Horizontal">
@@ -24,13 +24,13 @@
       </ComboBox.ItemTemplate>
     </ComboBox>
 
-    <ComboBox Name="shippingAddressCb" Margin="2"  Grid.Column="2" Grid.Row="1" />
-    <ComboBox Name="shippingOptionsCb"  Margin="2" Grid.Column="2" Grid.Row="2" />
+    <ComboBox Name="shippingAddressCb" Classes="grid" Grid.Row="1" />
+    <ComboBox Name="shippingOptionsCb"  Classes="grid" Grid.Row="2" />
 
-    <TextBox Name="emailTb" Margin="2"  Grid.Row="3" Grid.Column="2" />
-    <TextBox Name="phoneTb" Margin="2"  Grid.Row="4" Grid.Column="2" />
+    <TextBox Name="emailTb" Classes="grid"  Grid.Row="3"  />
+    <TextBox Name="phoneTb" Classes="grid" Grid.Row="4" />
 
-    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="5" Grid.Column="2">
+    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="5" Classes="grid">
       <TextBlock Text="Total: " />
       <TextBlock Text="{Binding Details.Total.Amount.Value, Converter={conv:CurrencyConverter}}" />
 
