@@ -4,7 +4,6 @@ namespace ExPay.Core.Models
 {
     public class PaymentMerchantInfo
     {
-        public Uri ImageUrl { get; set; }
         public string Name { get; set; }
 
         public PaymentMerchantInfo()
@@ -14,12 +13,6 @@ namespace ExPay.Core.Models
         public PaymentMerchantInfo(string name)
         {
             Name = name;
-        }
-
-        public PaymentMerchantInfo(string name, Uri image)
-            : this(name)
-        {
-            ImageUrl = image;
         }
     }
 }

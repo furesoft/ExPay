@@ -1,23 +1,20 @@
 ﻿<Window
-    xmlns:controls="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls" xmlns="https://github.com/avaloniaui"
+     xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:conv="http://furesoft.ml/expay"
-        xmlns:c="clr-namespace:ExPay.Core.UI.MarkupExtensions"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+    xmlns:pages="clr-namespace:ExPay_Service.Pages"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
   <Grid RowDefinitions="100,*,50">
-    <StackPanel Grid.Row="0" Orientation="Vertical">
-      <Image Name="merchantImage" Width="150" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" />
-      <TextBlock Name="merchantName" Text="{Binding MerchantInfo.Name}" IsVisible="False" />
-    </StackPanel>
+    <TextBlock Name="merchantName" Grid.Row="0" Text="{Binding MerchantInfo.Name}" />
 
-    <ContentControl Grid.Row="1" x:Name="content" />
+    <pages:FinishPayPage Grid.Row="1" />
 
     <Grid Grid.Row="2">
-      <Button Name="nextBtn" Click="OnPay" Content="Next" MinWidth="125" HorizontalAlignment="Right" />
+      <Button Name="nextBtn" Click="OnPay" MinWidth="125" MaxWidth="5" HorizontalAlignment="Right" />
     </Grid>
   </Grid>
 </Window>

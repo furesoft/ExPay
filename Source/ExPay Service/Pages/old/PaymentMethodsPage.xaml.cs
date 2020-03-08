@@ -3,13 +3,12 @@ using Avalonia.Markup.Xaml;
 using ExPay.Core;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
-using ExPay.Core.Navigation;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ExPay_Service.Pages
 {
-    public class PaymentMethodsPage : UserControl, IFinished
+    public class PaymentMethodsPage : UserControl
     {
         public List<IPaymentMethod> PaymentMethods { get; set; }
 

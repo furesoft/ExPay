@@ -1,16 +1,13 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Avalonia.Markup.Xaml.Templates;
 using ExPay.Core;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
-using ExPay.Core.Navigation;
 using System.Linq;
 
 namespace ExPay_Service.Pages
 {
-    public class FinishPayPage : UserControl, IFinished
+    public class FinishPayPage : UserControl
     {
         public FinishPayPage()
         {
