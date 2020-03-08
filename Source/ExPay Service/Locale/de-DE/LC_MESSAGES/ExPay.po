@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ExPay\n"
-"POT-Creation-Date: 2020-03-08 09:33+0100\n"
-"PO-Revision-Date: 2020-03-08 09:33+0100\n"
+"POT-Creation-Date: 2020-03-08 09:49+0100\n"
+"PO-Revision-Date: 2020-03-08 09:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: Furesoft\n"
 "Language: de_DE\n"
@@ -22,6 +22,10 @@ msgstr "Abbrechen"
 #: ExPay Service/Dialogs/PayDialog.xaml.cs:34
 msgid "Next"
 msgstr "Weiter"
+
+#: ExPay Service/Dialogs/PayDialog.xaml.cs:36
+msgid "Back"
+msgstr "Zurück"
 
 #: ExPay Service/Pages/PaymentMethodsPage.xaml.cs:22
 msgid "Payment Methods"

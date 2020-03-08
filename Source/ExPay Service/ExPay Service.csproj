@@ -29,7 +29,7 @@
     <AvaloniaResource Remove="Pages\PaymentShippingPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="close.png" />
+    <None Remove="Assets\back.png" />
     <None Remove="Dialogs\MessageDialog.xaml" />
     <None Remove="Dialogs\PayDialog.xaml" />
     <None Remove="Dialogs\TestDialog.xaml" />
@@ -81,6 +81,9 @@
     <EmbeddedResource Include="Pages\PaymentShippingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\back.png" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Locale\de-DE\LC_MESSAGES\ExPay.mo">
