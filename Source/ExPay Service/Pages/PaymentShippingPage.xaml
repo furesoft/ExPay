@@ -23,7 +23,7 @@
       <TextBox Name="phoneTb" Margin="5" />
       <TextBox Name="emailTb" Margin="5" />
 
-      <TextBlock Name="requiredFieldsTb" />
+      <TextBlock Name="requiredFieldsTb" Margin="5" />
     </StackPanel>
   </Grid>
 </UserControl>
