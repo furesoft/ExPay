@@ -41,6 +41,9 @@ namespace ExPay_Service.Pages
             this.FindControl<TextBox>("adressLineTb").Text = PaymentConfig.GetValue("adressline");
             this.FindControl<TextBox>("postalcodeTb").Text = PaymentConfig.GetValue("postalcode");
             this.FindControl<TextBox>("cityTb").Text = PaymentConfig.GetValue("city");
+
+            this.FindControl<TextBox>("phoneTb").Text = PaymentConfig.GetValue("Phone");
+            this.FindControl<TextBox>("emailTb").Text = PaymentConfig.GetValue("E-Mail");
         }
 
         private void SaveData()
@@ -51,6 +54,9 @@ namespace ExPay_Service.Pages
             PaymentConfig.SetValue("adressline", this.FindControl<TextBox>("adressLineTb").Text);
             PaymentConfig.SetValue("postalcode", this.FindControl<TextBox>("postalcodeTb").Text);
             PaymentConfig.SetValue("city", this.FindControl<TextBox>("cityTb").Text);
+
+            PaymentConfig.SetValue("phone", this.FindControl<TextBox>("phoneTb").Text);
+            PaymentConfig.SetValue("email", this.FindControl<TextBox>("emailTb").Text);
         }
 
         private void InitializeComponent()
