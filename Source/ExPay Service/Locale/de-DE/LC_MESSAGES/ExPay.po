@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ExPay\n"
-"POT-Creation-Date: 2020-03-07 17:46+0100\n"
-"PO-Revision-Date: 2020-03-07 17:46+0100\n"
+"POT-Creation-Date: 2020-03-08 09:03+0100\n"
+"PO-Revision-Date: 2020-03-08 09:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: Furesoft\n"
 "Language: de_DE\n"
@@ -27,27 +27,35 @@ msgstr "Weiter"
 msgid "Payment Methods"
 msgstr "Bezahlmöglichkeiten"
 
-#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:17
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:21
 msgid "Firstname"
 msgstr "Vorname"
 
-#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:18
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:22
 msgid "Lastname"
 msgstr "Lastname"
 
-#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:20
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:24
 msgid "Street"
 msgstr "Straße"
 
-#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:21
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:25
 msgid "Postal Code"
 msgstr "PLZ"
 
-#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:22
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:26
 msgid "City"
 msgstr "Stadt"
 
-#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:24
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:28
+msgid "Phone"
+msgstr "Telefonnummer"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:29
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: ExPay Service/Pages/PaymentShippingPage.xaml.cs:31
 msgid "Shipping Address"
 msgstr "Lieferadresse"
 
