@@ -62,7 +62,12 @@ namespace ExPay.Core
 
         public static string GetValue(string key)
         {
-            return _payer.GetValue(key).ToString();
+            if (_payer?.GetValue(key) != null)
+            {
+                return _payer?.GetValue(key).ToString();
+            }
+
+            return string.Empty;
         }
 
         public static void SetValue(string key, object value)
