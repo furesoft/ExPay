@@ -31,6 +31,21 @@ namespace ExPay_Service.Pages
             this.FindControl<TextBlock>("HeaderTb").Text = I18N._("Shipping Address");
 
             LoadConfiguredData();
+
+            var req = Singleton<PaymentRequest>.Instance;
+            if (req.Options.RequestPayerName == PaymentOptionPresence.None)
+            {
+                this.FindControl<TextBox>("firstNameTb").IsVisible = false;
+                this.FindControl<TextBox>("secondNameTb").IsVisible = false;
+            }
+            if (req.Options.RequestPayerPhoneNumber == PaymentOptionPresence.None)
+            {
+                this.FindControl<TextBox>("phoneTb").IsVisible = false;
+            }
+            if (req.Options.RequestPayerEmail == PaymentOptionPresence.None)
+            {
+                this.FindControl<TextBox>("emailTb").IsVisible = false;
+            }
         }
 
         private void LoadConfiguredData()

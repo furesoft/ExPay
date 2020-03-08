@@ -88,10 +88,10 @@ namespace TestClient
             // Describe options for any additional information needed to process the transaction.
             var options = new PaymentOptions()
             {
-                RequestPayerName = PaymentOptionPresence.None,
-                RequestPayerEmail = PaymentOptionPresence.None,
-                RequestPayerPhoneNumber = PaymentOptionPresence.None,
-                RequestShipping = false
+                RequestPayerName = PaymentOptionPresence.Optional,
+                RequestPayerEmail = PaymentOptionPresence.Optional,
+                RequestPayerPhoneNumber = PaymentOptionPresence.Optional,
+                RequestShipping = true
             };
 
             var merchantInfo = new PaymentMerchantInfo("https://store.contoso.com", new Uri("https://i2.wp.com/www.mobiflip.de/wp-content/uploads/2019/04/amazon-logo-header.jpg?fit=1085%2C678&ssl=1"));
