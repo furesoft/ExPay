@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <ApplicationIcon>pay.ico</ApplicationIcon>
     <StartupObject />
     <RootNamespace>ExPay_Service</RootNamespace>
+    <AssemblyName>ExPayService</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">
@@ -21,7 +22,6 @@
     <None Remove="bin\**" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Remove="Assets\Styles\GridMainStyle.xaml" />
     <AvaloniaResource Remove="Dialogs\MessageDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\PayDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\TestDialog.xaml" />
@@ -31,7 +31,6 @@
     <AvaloniaResource Remove="Pages\PaymentShippingPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Assets\Styles\GridMainStyle.xaml" />
     <None Remove="Dialogs\MessageDialog.xaml" />
     <None Remove="Dialogs\PayDialog.xaml" />
     <None Remove="Dialogs\TestDialog.xaml" />
@@ -80,6 +79,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Update="Assets\Styles\GridMainStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Locale\de-DE\LC_MESSAGES\ExPay.mo">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -92,11 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\FinishPayPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Assets\Styles\GridMainStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
