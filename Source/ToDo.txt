@@ -1,2 +1,3 @@
 [ ] when no payment method or shipping adress is configured, redirect to manager that opens first run wizard
 [ ] make resourcedictionary for fontsizes and colors
+[ ] add popup dialog

@@ -6,7 +6,7 @@
              xmlns:pages="clr-namespace:ExPay_Service.Pages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.FinishPayPage">
-  <Grid RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*,35" HorizontalAlignment="Center">
+  <Grid Name="layoutGrid" RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*,35" HorizontalAlignment="Center">
     <TextBlock Name="paymentMethodLbl" Classes="grid"  Grid.Row="0"  />
     <TextBlock Name="shipToLbl" Classes="grid" Grid.Row="1"  />
     <TextBlock Name="shippingOptionsLbl" Classes="grid"  Grid.Row="2" />
@@ -45,6 +45,8 @@
     <ToggleButton Name="detailsBtn" Grid.Row="5" Grid.Column="0">
       Details
     </ToggleButton>
+
+    <Button Name="test" Grid.Row="5" Grid.Column="2">DialogTest</Button>
 
     <Popup IsOpen="{Binding #detailsBtn.IsChecked}" MinWidth="250" StaysOpen="False" PlacementMode="Bottom" PlacementTarget="{Binding #detailsBtn}">
       <pages:PaymentDetailsPage />

@@ -1,0 +1,22 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cc="clr-namespace:ExPay.Core.UI.Controls">
+
+  <Style Selector="cc|ContentDialog">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid ClipToBounds="True">
+          <Grid IsVisible="{TemplateBinding IsOpened}" ZIndex="-1000">
+            <ContentControl Content="{TemplateBinding DialogContent}"
+                      VerticalContentAlignment="Center"
+                      VerticalAlignment="Center"
+                      HorizontalContentAlignment="Center"
+                      HorizontalAlignment="Center"/>
+          </Grid>
+
+          <ContentControl Content="{TemplateBinding Content}" />
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
