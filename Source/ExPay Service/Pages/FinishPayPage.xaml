@@ -6,7 +6,7 @@
              xmlns:pages="clr-namespace:ExPay_Service.Pages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.FinishPayPage">
-  <Grid RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*" HorizontalAlignment="Center">
+  <Grid RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*,35" HorizontalAlignment="Center">
     <TextBlock Name="paymentMethodLbl" Classes="grid"  Grid.Row="0"  />
     <TextBlock Name="shipToLbl" Classes="grid" Grid.Row="1"  />
     <TextBlock Name="shippingOptionsLbl" Classes="grid"  Grid.Row="2" />
@@ -23,6 +23,10 @@
         </DataTemplate>
       </ComboBox.ItemTemplate>
     </ComboBox>
+
+    <Button Name="addPaymentMethod" Grid.Row="0" Grid.Column="3">+</Button>
+    <Button Name="addShippingMethod" Grid.Row="1" Grid.Column="3">+</Button>
+
 
     <ComboBox Name="shippingAddressCb" Classes="grid" Grid.Row="1" />
     <ComboBox Name="shippingOptionsCb"  Classes="grid" Grid.Row="2" />
