@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
-    <PackageReference Include="NBitcoin" Version="5.0.15" />
+    <PackageReference Include="NBitcoin" Version="5.0.20" />
   </ItemGroup>
 
   <ItemGroup>
