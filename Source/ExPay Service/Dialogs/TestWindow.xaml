@@ -6,11 +6,14 @@
         x:Class="ExPay_Service.Dialogs.TestWindow"
         xmlns:conv="http://furesoft.ml/expay"
         Title="TestWindow">
-  <conv:ContentDialog Name="cd">
+  <conv:ContentDialog Background="AliceBlue" BorderBrush="Black" BorderThickness="3" Name="cd" IsOpened="{Binding #toggle.IsChecked, Mode=TwoWay}" DialogMaxWidth="500" DialogMaxHeigth="500">
     <conv:ContentDialog.DialogContent>
-      <TextBlock Width="35" Height="35" Text="hello world" />
+      <StackPanel>
+        <TextBlock Text="hello world" />
+        <ToggleButton IsChecked="{Binding !#cd.IsOpened}" Width="100" Height="100">Hide</ToggleButton>
+      </StackPanel>
     </conv:ContentDialog.DialogContent>
 
-    <ToggleButton Name="toggle" Width="100" Height="100">Show</ToggleButton>
+    <ToggleButton Name="toggle" Width="100" Height="100" HorizontalAlignment="Left">Show</ToggleButton>
   </conv:ContentDialog>
 </Window>

@@ -15,6 +15,12 @@ namespace ExPay.Core.UI.Controls
         public static readonly StyledProperty<object> ContentProperty =
         AvaloniaProperty.Register<ContentDialog, object>(nameof(Content));
 
+        public static readonly StyledProperty<int> DialogMaxWidthProperty =
+        AvaloniaProperty.Register<ContentDialog, int>(nameof(DialogMaxWidth));
+
+        public static readonly StyledProperty<int> DialogMaxHeigthProperty =
+        AvaloniaProperty.Register<ContentDialog, int>(nameof(DialogMaxHeigth));
+
         static ContentDialog()
         {
             IsOpenedProperty.OverrideDefaultValue(typeof(bool), false);
@@ -24,6 +30,18 @@ namespace ExPay.Core.UI.Controls
         {
             get { return GetValue(IsOpenedProperty); }
             set { SetValue(IsOpenedProperty, value); }
+        }
+
+        public int DialogMaxHeigth
+        {
+            get { return GetValue(DialogMaxHeigthProperty); }
+            set { SetValue(DialogMaxHeigthProperty, value); }
+        }
+
+        public int DialogMaxWidth
+        {
+            get { return GetValue(DialogMaxWidthProperty); }
+            set { SetValue(DialogMaxWidthProperty, value); }
         }
 
         [Content]
