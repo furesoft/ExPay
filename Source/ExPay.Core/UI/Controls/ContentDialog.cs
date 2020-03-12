@@ -1,15 +1,19 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Metadata;
 
 namespace ExPay.Core.UI.Controls
 {
-    public class ContentDialog : ContentControl
+
+    public class ContentDialog : TemplatedControl
     {
-        #region Styled properties
 
         public static readonly StyledProperty<bool> IsOpenedProperty =
         AvaloniaProperty.Register<ContentDialog, bool>(nameof(IsOpened));
+
+        public static readonly StyledProperty<object> ContentProperty =
+        AvaloniaProperty.Register<ContentDialog, object>(nameof(Content));
 
         public bool IsOpened
         {
@@ -17,7 +21,12 @@ namespace ExPay.Core.UI.Controls
             set { SetValue(IsOpenedProperty, value); }
         }
 
-
+        [Content]
+        public object Content
+        {
+            get { return GetValue(ContentProperty); }
+            set { SetValue(ContentProperty, value); }
+        }
 
         public static readonly StyledProperty<object> DialogContentProperty =
        AvaloniaProperty.Register<ContentDialog, object>(nameof(DialogContent));
@@ -28,15 +37,5 @@ namespace ExPay.Core.UI.Controls
             set { SetValue(DialogContentProperty, value); }
         }
 
-        #endregion Styled properties
-
-
-
-        protected override void OnTemplateApplied(TemplateAppliedEventArgs e)
-        {
-            base.OnTemplateApplied(e);
-
-
-        }
     }
 }

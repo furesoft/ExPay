@@ -8,7 +8,7 @@
         Title="TestWindow">
   <conv:ContentDialog Name="cd">
     <conv:ContentDialog.DialogContent>
-      <Button>Hide</Button>
+      <TextBlock Width="35" Height="35" Text="hello world" />
     </conv:ContentDialog.DialogContent>
 
     <ToggleButton IsChecked="{Binding #cd.IsOpened}" Width="100" Height="100">Show</ToggleButton>
