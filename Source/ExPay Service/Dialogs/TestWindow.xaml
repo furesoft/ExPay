@@ -11,6 +11,6 @@
       <TextBlock Width="35" Height="35" Text="hello world" />
     </conv:ContentDialog.DialogContent>
 
-    <ToggleButton IsChecked="{Binding #cd.IsOpened}" Width="100" Height="100">Show</ToggleButton>
+    <ToggleButton Name="toggle" Width="100" Height="100">Show</ToggleButton>
   </conv:ContentDialog>
 </Window>

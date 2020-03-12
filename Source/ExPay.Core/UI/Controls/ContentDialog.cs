@@ -15,6 +15,11 @@ namespace ExPay.Core.UI.Controls
         public static readonly StyledProperty<object> ContentProperty =
         AvaloniaProperty.Register<ContentDialog, object>(nameof(Content));
 
+        static ContentDialog()
+        {
+            IsOpenedProperty.OverrideDefaultValue(typeof(bool), false);
+        }
+
         public bool IsOpened
         {
             get { return GetValue(IsOpenedProperty); }

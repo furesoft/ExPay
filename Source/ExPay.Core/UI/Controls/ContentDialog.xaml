@@ -6,15 +6,15 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid ClipToBounds="True">
-          <ContentControl Content="{TemplateBinding Content}" />
-
-          <Grid IsVisible="{TemplateBinding IsOpened}" ZIndex="-1000">
+          <Grid IsVisible="{TemplateBinding IsOpened}">
             <ContentControl Content="{TemplateBinding DialogContent}"
                       VerticalContentAlignment="Center"
                       VerticalAlignment="Center"
                       HorizontalContentAlignment="Center"
                       HorizontalAlignment="Center"/>
           </Grid>
+
+          <ContentControl Content="{TemplateBinding Content}" />
         </Grid>
       </ControlTemplate>
     </Setter>
