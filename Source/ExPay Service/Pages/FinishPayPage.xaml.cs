@@ -31,25 +31,11 @@ namespace ExPay_Service.Pages
             selectedMethod.Invoke(data);
         }
 
-        private void addPaymentMethod_Click(object sender, RoutedEventArgs e)
-        {
-            DialogService.OpenDialog(new AddPaymentMethodDialog());
-        }
-
         private void FinishPayPage_Initialized(object sender, System.EventArgs e)
         {
             var paymentMethodsCb = this.FindControl<ComboBox>("paymentMethodsCb");
             paymentMethodsCb.Items = PluginLoader.Instance.PaymentMethods.ToList();
             paymentMethodsCb.SelectedIndex = PaymentConfig.GetValue<int>("defaultPaymentMethod");
-
-            //init labels
-            this.FindControl<TextBlock>("paymentMethodLbl").Text = I18N._("Pay with");
-            this.FindControl<TextBlock>("shipToLbl").Text = I18N._("Ship to");
-            this.FindControl<TextBlock>("shippingOptionsLbl").Text = I18N._("Shipping Options");
-            this.FindControl<TextBlock>("emailLbl").Text = I18N._("Email receipt to");
-            this.FindControl<TextBlock>("phoneLbl").Text = I18N._("Phone");
-
-            this.FindControl<Button>("detailsBtn").Content = I18N._("Details");
         }
 
         private void InitializeComponent()

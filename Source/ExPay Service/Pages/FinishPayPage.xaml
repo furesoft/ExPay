@@ -3,15 +3,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:conv="http://furesoft.ml/expay"
+             xmlns:dlgs="clr-namespace:ExPay_Service.Dialogs"
              xmlns:pages="clr-namespace:ExPay_Service.Pages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.FinishPayPage">
   <Grid Name="layoutGrid" RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*,35" HorizontalAlignment="Center">
-    <TextBlock Name="paymentMethodLbl" Classes="grid"  Grid.Row="0"  />
-    <TextBlock Name="shipToLbl" Classes="grid" Grid.Row="1"  />
-    <TextBlock Name="shippingOptionsLbl" Classes="grid"  Grid.Row="2" />
-    <TextBlock Name="emailLbl" Classes="grid" Grid.Row="3"  />
-    <TextBlock Name="phoneLbl" Classes="grid" Grid.Row="4"  />
+    <TextBlock Name="paymentMethodLbl" Classes="grid"  Grid.Row="0" Text="{conv:String 'Pay with'}"  />
+    <TextBlock Name="shipToLbl" Classes="grid" Grid.Row="1" Text="{conv:String 'Ship to'}" />
+    <TextBlock Name="shippingOptionsLbl" Classes="grid"  Grid.Row="2" Text="{conv:String 'Shipping Options'}" />
+    <TextBlock Name="emailLbl" Classes="grid" Grid.Row="3" Text="{conv:String 'Email receipt to'}" />
+    <TextBlock Name="phoneLbl" Classes="grid" Grid.Row="4" Text="{conv:String 'Phone'}" />
 
     <ComboBox Name="paymentMethodsCb" Classes="grid" Grid.Row="0" MinWidth="200">
       <ComboBox.ItemTemplate>
@@ -24,9 +25,8 @@
       </ComboBox.ItemTemplate>
     </ComboBox>
 
-    <Button Name="addPaymentMethod" Grid.Row="0" Grid.Column="3" Click="addPaymentMethod_Click">+</Button>
-    <Button Name="addShippingMethod" Grid.Row="1" Grid.Column="3" Command="{conv:OpenDialog 'PaymentStatusDialog'}" Content="{conv:String 'Pay'}" />
-
+    <Button Name="addPaymentMethod" Grid.Row="0" Grid.Column="3" Command="{conv:OpenDialog {x:Type dlgs:AddPaymentMethodDialog}}" Content="+" />
+    <Button Name="addShippingMethod" Grid.Row="1" Grid.Column="3" Command="{conv:OpenDialog {x:Type dlgs:PaymentStatusDialog}, AutoCloseTime='00:00:05'}" Content="+" />
 
     <ComboBox Name="shippingAddressCb" Classes="grid" Grid.Row="1" />
     <ComboBox Name="shippingOptionsCb"  Classes="grid" Grid.Row="2" />
@@ -42,7 +42,7 @@
       <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
     </StackPanel>
 
-    <ToggleButton Name="detailsBtn" Grid.Row="5" Grid.Column="0" />
+    <ToggleButton Name="detailsBtn" Grid.Row="5" Grid.Column="0" Content="{conv:String 'Details'}" />
 
     <Popup IsOpen="{Binding #detailsBtn.IsChecked}" MinWidth="250" StaysOpen="False" PlacementMode="Bottom" PlacementTarget="{Binding #detailsBtn}">
       <pages:PaymentDetailsPage />
