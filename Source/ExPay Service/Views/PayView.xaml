@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:conv="http://furesoft.ml/expay"
+     xmlns:dlgs="clr-namespace:ExPay_Service.Dialogs"
     xmlns:pages="clr-namespace:ExPay_Service.Pages"
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Views.PayView"
@@ -16,7 +17,7 @@
         <pages:FinishPayPage Grid.Row="1" />
 
         <Grid Grid.Row="2">
-          <Button Name="nextBtn" Click="OnPay" MinWidth="125" MaxWidth="5" HorizontalAlignment="Right" />
+          <Button MinWidth="125" MaxWidth="5" HorizontalAlignment="Right" Command="{conv:OpenDialog {x:Type dlgs:PaymentStatusDialog}, AutoCloseTime='00:00:03'}" Content="{conv:String 'Pay'}" />
         </Grid>
       </Grid>
     </conv:ContentDialog>

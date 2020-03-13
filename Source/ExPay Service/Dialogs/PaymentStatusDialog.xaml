@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:conv="http://furesoft.ml/expay"
              mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="350"
              x:Class="ExPay_Service.Dialogs.PaymentStatusDialog">
   <StackPanel VerticalAlignment="Center">
     <Image Source="resm:ExPay_Service.Assets.Images.success.png" Height="150" Width="150" />
-    <TextBlock Name="statusLbl" TextAlignment="Center" FontSize="25" />
+    <TextBlock TextAlignment="Center" FontSize="25" Text="{conv:String 'Success'}" />
   </StackPanel>
 </UserControl>

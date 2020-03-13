@@ -18,24 +18,10 @@ namespace ExPay_Service.Views
         {
             this.InitializeComponent();
 
-            this.Activated += PayDialog_Initialized;
-
             Tag = new PaymentRequestSubmitResult { Status = PaymentRequestStatus.Canceled };
 #if DEBUG
             this.AttachDevTools();
 #endif
-        }
-
-        private void PayDialog_Initialized(object sender, EventArgs e)
-        {
-            this.FindControl<Button>("nextBtn").Content = I18N._("Pay");
-        }
-
-        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-
-        public void OnPay(object sender, RoutedEventArgs e)
-        {
-            DialogService.OpenDialog(new PaymentStatusDialog(), TimeSpan.FromSeconds(3));
         }
 
         private void InitializeComponent()

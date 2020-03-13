@@ -18,7 +18,6 @@ namespace ExPay_Service.Pages
 
             this.Initialized += (s, e) =>
              {
-                 this.FindControl<TextBlock>("HeaderTb").Text = I18N._("Payment Methods");
 
                  _request = Singleton<PaymentRequest>.Instance;
                  DataContext = this;
