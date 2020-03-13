@@ -24,9 +24,9 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets\Colors.xaml" />
     <AvaloniaResource Remove="Dialogs\AddPaymentMethodDialog.xaml" />
+    <AvaloniaResource Remove="Dialogs\PaymentDetailsDialog.xaml" />
     <AvaloniaResource Remove="Dialogs\PaymentStatusDialog.xaml" />
     <AvaloniaResource Remove="Pages\FinishPayPage.xaml" />
-    <AvaloniaResource Remove="Pages\PaymentDetailsPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentMethodsPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentShippingPage.xaml" />
     <AvaloniaResource Remove="Views\MessageView.xaml" />
@@ -36,9 +36,9 @@
     <None Remove="Assets\Colors.xaml" />
     <None Remove="Assets\Images\success.png" />
     <None Remove="Dialogs\AddPaymentMethodDialog.xaml" />
+    <None Remove="Dialogs\PaymentDetailsDialog.xaml" />
     <None Remove="Dialogs\PaymentStatusDialog.xaml" />
     <None Remove="Pages\FinishPayPage.xaml" />
-    <None Remove="Pages\PaymentDetailsPage.xaml" />
     <None Remove="Pages\PaymentMethodsPage.xaml" />
     <None Remove="Pages\PaymentShippingPage.xaml" />
     <None Remove="pay.ico" />
@@ -71,11 +71,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PaymentDetailsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\old\PaymentMethodsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -103,6 +98,9 @@
     <Page Include="Assets\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <EmbeddedResource Include="Dialogs\PaymentDetailsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\PaymentStatusDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
