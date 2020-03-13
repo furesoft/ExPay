@@ -2,3 +2,4 @@
 [ ] add DefaultFrame for Dialogs with OK and Cancel Buttons and Content Property
 [-] Convert I18N to markupextensions
 [-] convert to mvvm
+[ ] add custom view for unhandled exceptions
