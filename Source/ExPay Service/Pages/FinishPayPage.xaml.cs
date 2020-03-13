@@ -1,9 +1,12 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ExPay.Core;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
+using ExPay.Core.UI.Controls;
 using ExPay_Service.Dialogs;
+using System;
 using System.Linq;
 
 namespace ExPay_Service.Pages
@@ -29,10 +32,15 @@ namespace ExPay_Service.Pages
             selectedMethod.Invoke(data);
         }
 
-        public void OnClick(object sender, System.EventArgs e)
+        public void OnClick(object sender, RoutedEventArgs e)
         {
             var td = new TestWindow();
             td.Show();
+        }
+
+        private void addPaymentMethod_Click(object sender, RoutedEventArgs e)
+        {
+            DialogService.OpenDialog(new PaymentDetailsPage());
         }
 
         private void FinishPayPage_Initialized(object sender, System.EventArgs e)

@@ -8,13 +8,17 @@
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExPay_Service.Dialogs.PayDialog"
         Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
-  <Grid RowDefinitions="100,*,50">
-    <TextBlock Name="merchantName" Grid.Row="0" Text="{Binding MerchantInfo.Name}" />
+  <Grid>
+    <conv:ContentDialog conv:DialogService.DialogHost="True" Background="AliceBlue" BorderBrush="Black" BorderThickness="3" Name="cd" DialogMaxWidth="300" DialogMaxHeigth="350">
+      <Grid RowDefinitions="100,*,50">
+        <TextBlock Name="merchantName" Grid.Row="0" Text="{Binding MerchantInfo.Name}" />
 
-    <pages:FinishPayPage Grid.Row="1" />
+        <pages:FinishPayPage Grid.Row="1" />
 
-    <Grid Grid.Row="2">
-      <Button Name="nextBtn" Click="OnPay" MinWidth="125" MaxWidth="5" HorizontalAlignment="Right" />
-    </Grid>
+        <Grid Grid.Row="2">
+          <Button Name="nextBtn" Click="OnPay" MinWidth="125" MaxWidth="5" HorizontalAlignment="Right" />
+        </Grid>
+      </Grid>
+    </conv:ContentDialog>
   </Grid>
 </Window>
