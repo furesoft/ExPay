@@ -5,6 +5,7 @@ using ExPay.Core;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
 using ExPay.Core.UI.Controls;
+using ExPay_Service.Dialogs;
 using System.Linq;
 
 namespace ExPay_Service.Pages
@@ -32,7 +33,7 @@ namespace ExPay_Service.Pages
 
         private void addPaymentMethod_Click(object sender, RoutedEventArgs e)
         {
-            DialogService.OpenDialog(new PaymentDetailsPage());
+            DialogService.OpenDialog(new AddPaymentMethodDialog());
         }
 
         private void FinishPayPage_Initialized(object sender, System.EventArgs e)

@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\Colors.xaml" />
+    <AvaloniaResource Remove="Dialogs\AddPaymentMethodDialog.xaml" />
     <AvaloniaResource Remove="Pages\FinishPayPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentDetailsPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentMethodsPage.xaml" />
@@ -32,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\Colors.xaml" />
+    <None Remove="Dialogs\AddPaymentMethodDialog.xaml" />
     <None Remove="Pages\FinishPayPage.xaml" />
     <None Remove="Pages\PaymentDetailsPage.xaml" />
     <None Remove="Pages\PaymentMethodsPage.xaml" />
@@ -96,6 +98,9 @@
     <Page Include="Assets\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <EmbeddedResource Include="Dialogs\AddPaymentMethodDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\MessageView.xaml.cs">
