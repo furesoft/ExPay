@@ -13,7 +13,7 @@ namespace ExPay_Service.SharedFunctions
         [Description("Get supported Payment Method IDs")]
         public static string[] GetSupportedMethodIds()
         {
-            var ids = PluginLoader.Instance.PaymentMethods.Select(_ => _.Info.ID);
+            var ids = PluginLoader.Instance.PaymentMethods?.Select(_ => _.Info.ID);
 
             return ids.ToArray();
         }
