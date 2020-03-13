@@ -13,7 +13,12 @@ namespace ExPay.Core.UI.Controls
         public static readonly AttachedProperty<bool> CloseDialogProperty =
        AvaloniaProperty.RegisterAttached<DialogService, Button, bool>("CloseDialog");
 
+        public static readonly AttachedProperty<TimeSpan> AutoCloseDialogProperty =
+       AvaloniaProperty.RegisterAttached<DialogService, Button, TimeSpan>("AutoCloseDialog");
+
         private static ContentDialog _host;
+
+        public static event Action<Control> DialogClosed;
 
         public static bool GetDialogHost(ContentDialog element)
         {
@@ -36,6 +41,27 @@ namespace ExPay.Core.UI.Controls
             element.SetValue(CloseDialogProperty, value);
 
             element.Click += (s, e) => CloseDialog();
+        }
+
+        public static TimeSpan GetAutoCloseDialog(Button element)
+        {
+            return element.GetValue(AutoCloseDialogProperty);
+        }
+
+        public static void SetAutoCloseDialog(Button element, TimeSpan value)
+        {
+            element.SetValue(AutoCloseDialogProperty, value);
+
+            var timer = new DispatcherTimer();
+            timer.Tick += (_, __) =>
+            {
+                CloseDialog();
+
+                timer.Stop();
+            };
+
+            timer.Interval = value;
+            timer.Start();
         }
 
         public static void OpenDialog(Control content, TimeSpan autoCloseTime = default)
@@ -72,6 +98,7 @@ namespace ExPay.Core.UI.Controls
             if (_host != null)
             {
                 _host.IsOpened = false;
+                DialogClosed?.Invoke((Control)_host.Content);
             }
         }
     }
