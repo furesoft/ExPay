@@ -5,7 +5,14 @@
     <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml" />
     <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml" />
     <StyleInclude Source="avares://ExPayService/Assets/Styles/GridMainStyle.xaml" />
-    <StyleInclude Source="avares://ExPayService/Assets/Colors.xaml" />
     <StyleInclude Source="avares://ExPay.Core/UI/Controls/ContentDialog.xaml" />
   </Application.Styles>
+
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://ExPayService/Assets/Colors.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
 </Application>
