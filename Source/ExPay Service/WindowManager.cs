@@ -26,18 +26,11 @@ namespace ExPay_Service
 
                     AppBuilder.StartWithClassicDesktopLifetime(null, Avalonia.Controls.ShutdownMode.OnExplicitShutdown);
                     Application = AppBuilder.Instance;
-
-                    AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
                 }
             });
 
             UIThread.Start();
             Logger.Trace("WindowManager initialized");
-        }
-
-        private static async void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
-        {
-            await Utils.ShowDialog<object, MessageView>(e.ExceptionObject);
         }
 
         public static async void Shutdown()
