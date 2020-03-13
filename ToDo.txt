@@ -3,3 +3,4 @@
 [-] Convert I18N to markupextensions
 [-] convert to mvvm
 [ ] add custom view for unhandled exceptions
+[ ] move PaymentDetails to Dialog
