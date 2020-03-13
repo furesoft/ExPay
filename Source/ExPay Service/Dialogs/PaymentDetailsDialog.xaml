@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:conv="http://furesoft.ml/expay"
              xmlns:dlgs="clr-namespace:ExPay_Service.Dialogs"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
              x:Class="ExPay_Service.Dialogs.PaymentDetailsDialog">
-  <Grid RowDefinitions="*,35">
-    <ListBox Grid.Row="0" Items="{Binding Details.DisplayItems}" IsHitTestVisible="False">
+  <StackPanel Orientation="Vertical">
+    <ListBox Items="{Binding Details.DisplayItems}" IsHitTestVisible="False" MinWidth="250">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid>
@@ -23,6 +23,6 @@
       </ListBox.ItemTemplate>
     </ListBox>
 
-    <Button Content="{conv:String 'OK'}" Grid.Row="1" Command="{conv:CloseDialog}" />
-  </Grid>
+    <Button Content="{conv:String 'OK'}" Command="{conv:CloseDialog}" />
+  </StackPanel>
 </UserControl>
