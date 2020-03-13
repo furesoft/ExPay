@@ -25,7 +25,7 @@
     </ComboBox>
 
     <Button Name="addPaymentMethod" Grid.Row="0" Grid.Column="3" Click="addPaymentMethod_Click">+</Button>
-    <Button Name="addShippingMethod" Grid.Row="1" Grid.Column="3" conv:DialogService.AutoCloseDialog="00:00:10">+</Button>
+    <Button Name="addShippingMethod" Grid.Row="1" Grid.Column="3" Command="{conv:OpenDialog 'PaymentStatusDialog'}" Content="{conv:String 'Pay'}" />
 
 
     <ComboBox Name="shippingAddressCb" Classes="grid" Grid.Row="1" />
