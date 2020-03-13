@@ -1,12 +1,13 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:conv="http://furesoft.ml/expay"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:conv="http://furesoft.ml/expay"
+             xmlns:dlgs="clr-namespace:ExPay_Service.Dialogs"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="ExPay_Service.Pages.PaymentDetailsPage">
-  <Grid>
-    <ListBox Items="{Binding Details.DisplayItems}" IsHitTestVisible="False">
+             x:Class="ExPay_Service.Dialogs.PaymentDetailsDialog">
+  <Grid RowDefinitions="*,35">
+    <ListBox Grid.Row="0" Items="{Binding Details.DisplayItems}" IsHitTestVisible="False">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid>
@@ -21,5 +22,7 @@
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
+
+    <Button Content="{conv:String 'OK'}" Grid.Row="1" Command="{conv:CloseDialog}" />
   </Grid>
 </UserControl>

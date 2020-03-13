@@ -1,11 +1,11 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace ExPay_Service.Pages
+namespace ExPay_Service.Dialogs
 {
-    public class PaymentDetailsPage : UserControl
+    public class PaymentDetailsDialog : UserControl
     {
-        public PaymentDetailsPage()
+        public PaymentDetailsDialog()
         {
             this.InitializeComponent();
         }

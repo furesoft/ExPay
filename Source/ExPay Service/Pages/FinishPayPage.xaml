@@ -42,10 +42,6 @@
       <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
     </StackPanel>
 
-    <ToggleButton Name="detailsBtn" Grid.Row="5" Grid.Column="0" Content="{conv:String 'Details'}" />
-
-    <Popup IsOpen="{Binding #detailsBtn.IsChecked}" MinWidth="250" StaysOpen="False" PlacementMode="Bottom" PlacementTarget="{Binding #detailsBtn}">
-      <pages:PaymentDetailsPage />
-    </Popup>
+    <Button Grid.Row="5" Grid.Column="0" Content="{conv:String 'Details'}" Command="{conv:OpenDialog {x:Type dlgs:PaymentDetailsDialog}}"  />
   </Grid>
 </UserControl>
