@@ -6,7 +6,7 @@
         xmlns:conv="http://furesoft.ml/expay"
     xmlns:pages="clr-namespace:ExPay_Service.Pages"
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="ExPay_Service.Dialogs.PayDialog"
+        x:Class="ExPay_Service.Views.PayView"
         Title="ExPay" Height="500" Width="450" WindowStartupLocation="CenterScreen">
   <Grid>
     <conv:ContentDialog conv:DialogService.DialogHost="True" Background="AliceBlue" BorderBrush="Black" BorderThickness="3" Name="cd" DialogMaxWidth="300" DialogMaxHeigth="350">

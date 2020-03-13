@@ -2,7 +2,7 @@
 using ExPay.Core.API;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
-using ExPay_Service.Dialogs;
+using ExPay_Service.Views;
 using Furesoft.Signals.Attributes;
 using System.ComponentModel;
 
@@ -35,13 +35,13 @@ namespace ExPay_Service.SharedFunctions
             {
                 Singleton<PaymentRequest>.Instance = req;
 
-                var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayDialog>(req);
+                var result = Utils.ShowDialog<PaymentRequestSubmitResult, PayView>(req);
 
                 return result.Result;
             }
             else
             {
-                var errorDlg = Utils.ShowDialog<PaymentRequestSubmitResult, MessageDialog>("No Payment Method is configured or available for this Request");
+                var errorDlg = Utils.ShowDialog<PaymentRequestSubmitResult, MessageView>("No Payment Method is configured or available for this Request");
 
                 return errorDlg.Result;
             }

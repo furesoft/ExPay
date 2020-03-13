@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Width="350" Height="350"
-        x:Class="ExPay_Service.Dialogs.MessageDialog"
+        x:Class="ExPay_Service.Views.MessageView"
         WindowStartupLocation="CenterScreen"
         Title="Error">
   <TextBlock Text="{Binding}" />

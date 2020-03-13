@@ -8,11 +8,11 @@ using ExPay.Core.Models;
 using NLog;
 using System;
 
-namespace ExPay_Service.Dialogs
+namespace ExPay_Service.Views
 {
-    public class PayDialog : Window
+    public class PayView : Window
     {
-        public PayDialog()
+        public PayView()
         {
             this.InitializeComponent();
 

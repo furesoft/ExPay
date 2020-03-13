@@ -5,8 +5,6 @@ using ExPay.Core;
 using ExPay.Core.Contracts;
 using ExPay.Core.Models;
 using ExPay.Core.UI.Controls;
-using ExPay_Service.Dialogs;
-using System;
 using System.Linq;
 
 namespace ExPay_Service.Pages
@@ -32,12 +30,6 @@ namespace ExPay_Service.Pages
             selectedMethod.Invoke(data);
         }
 
-        public void OnClick(object sender, RoutedEventArgs e)
-        {
-            var td = new TestWindow();
-            td.Show();
-        }
-
         private void addPaymentMethod_Click(object sender, RoutedEventArgs e)
         {
             DialogService.OpenDialog(new PaymentDetailsPage());
@@ -55,8 +47,6 @@ namespace ExPay_Service.Pages
             this.FindControl<TextBlock>("shippingOptionsLbl").Text = I18N._("Shipping Options");
             this.FindControl<TextBlock>("emailLbl").Text = I18N._("Email receipt to");
             this.FindControl<TextBlock>("phoneLbl").Text = I18N._("Phone");
-
-            this.FindControl<Button>("test").Click += OnClick;
         }
 
         private void InitializeComponent()

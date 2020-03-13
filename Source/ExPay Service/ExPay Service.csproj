@@ -23,26 +23,22 @@
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\Colors.xaml" />
-    <AvaloniaResource Remove="Dialogs\MessageDialog.xaml" />
-    <AvaloniaResource Remove="Dialogs\PayDialog.xaml" />
-    <AvaloniaResource Remove="Dialogs\TestDialog.xaml" />
-    <AvaloniaResource Remove="Dialogs\TestWindow.xaml" />
     <AvaloniaResource Remove="Pages\FinishPayPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentDetailsPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentMethodsPage.xaml" />
     <AvaloniaResource Remove="Pages\PaymentShippingPage.xaml" />
+    <AvaloniaResource Remove="Views\MessageView.xaml" />
+    <AvaloniaResource Remove="Views\PayView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\Colors.xaml" />
-    <None Remove="Dialogs\MessageDialog.xaml" />
-    <None Remove="Dialogs\PayDialog.xaml" />
-    <None Remove="Dialogs\TestDialog.xaml" />
-    <None Remove="Dialogs\TestWindow.xaml" />
     <None Remove="Pages\FinishPayPage.xaml" />
     <None Remove="Pages\PaymentDetailsPage.xaml" />
     <None Remove="Pages\PaymentMethodsPage.xaml" />
     <None Remove="Pages\PaymentShippingPage.xaml" />
     <None Remove="pay.ico" />
+    <None Remove="Views\MessageView.xaml" />
+    <None Remove="Views\PayView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.4" />
@@ -57,18 +53,13 @@
     <ProjectReference Include="..\ExPay.Core\ExPay.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Dialogs\TestDialog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Dialogs\PayDialog.xaml">
+    <EmbeddedResource Include="Views\PayView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="pay.ico" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Dialogs\MessageDialog.xaml">
+    <EmbeddedResource Include="Views\MessageView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -105,9 +96,14 @@
     <Page Include="Assets\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <EmbeddedResource Include="Dialogs\TestWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\MessageView.xaml.cs">
+      <DependentUpon>MessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PayView.xaml.cs">
+      <DependentUpon>PayView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="Assets\Colors.xaml">

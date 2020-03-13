@@ -46,8 +46,6 @@
       Details
     </ToggleButton>
 
-    <Button Name="test" Grid.Row="5" Grid.Column="2">DialogTest</Button>
-
     <Popup IsOpen="{Binding #detailsBtn.IsChecked}" MinWidth="250" StaysOpen="False" PlacementMode="Bottom" PlacementTarget="{Binding #detailsBtn}">
       <pages:PaymentDetailsPage />
     </Popup>

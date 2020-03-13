@@ -3,11 +3,11 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using ExPay.Core.API;
 
-namespace ExPay_Service.Dialogs
+namespace ExPay_Service.Views
 {
-    public class MessageDialog : Window
+    public class MessageView : Window
     {
-        public MessageDialog()
+        public MessageView()
         {
             this.InitializeComponent();
 #if DEBUG
