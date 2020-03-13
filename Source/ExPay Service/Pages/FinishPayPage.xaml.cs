@@ -48,6 +48,8 @@ namespace ExPay_Service.Pages
             this.FindControl<TextBlock>("shippingOptionsLbl").Text = I18N._("Shipping Options");
             this.FindControl<TextBlock>("emailLbl").Text = I18N._("Email receipt to");
             this.FindControl<TextBlock>("phoneLbl").Text = I18N._("Phone");
+
+            this.FindControl<Button>("detailsBtn").Content = I18N._("Details");
         }
 
         private void InitializeComponent()
