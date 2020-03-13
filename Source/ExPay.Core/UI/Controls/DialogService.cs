@@ -64,12 +64,17 @@ namespace ExPay.Core.UI.Controls
             timer.Start();
         }
 
-        public static void OpenDialog(Control content, TimeSpan autoCloseTime = default)
+        public static void OpenDialog(Control content, TimeSpan autoCloseTime = default, object context = null)
         {
             if (_host != null)
             {
                 _host.DialogContent = content;
                 _host.IsOpened = true;
+
+                if (context != null)
+                {
+                    content.DataContext = context;
+                }
 
                 if (autoCloseTime != default)
                 {
