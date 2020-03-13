@@ -1,5 +1,4 @@
 [ ] make resourcedictionary for fontsizes and colors
 [ ] add DefaultFrame for Dialogs with OK and Cancel Buttons and Content Property
-[X] add String Markupextension for I18N
-[-] open dialog with markupextension on Command
+[-] Convert I18N to markupextensions
 [-] convert to mvvm

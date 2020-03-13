@@ -2,27 +2,27 @@
 using Avalonia.Markup.Xaml;
 using ExPay.Core.UI.Controls;
 using System;
+using System.Reflection;
 
 namespace ExPay.Core.UI
 {
     public class OpenDialogExtension : MarkupExtension
     {
-        public OpenDialogExtension(string typename)
+        public OpenDialogExtension(Type type)
         {
-            Typename = typename;
+            Type = type;
         }
 
-        public string Typename { get; set; }
+        public Type Type { get; set; }
+        public TimeSpan AutoCloseTime { get; set; }
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return new DelegateCommand(_ =>
             {
-                var type = Type.GetType(Typename);
-
-                if (type != null)
+                if (Type != null)
                 {
-                    var instance = Activator.CreateInstance(type);
-                    DialogService.OpenDialog((Control)instance);
+                    var instance = Activator.CreateInstance(Type);
+                    DialogService.OpenDialog((Control)instance, AutoCloseTime);
                 }
             });
         }
