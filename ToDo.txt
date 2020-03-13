@@ -1,3 +1,4 @@
 [ ] make resourcedictionary for fontsizes and colors
 [ ] add DefaultFrame for Dialogs with OK and Cancel Buttons and Content Property
-[ ] add MarkupExtension for I18N
+[ ] add automatic dialog clode after specific time with attached property
+[ ] add DialogClosed Event
