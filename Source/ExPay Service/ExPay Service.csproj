@@ -79,15 +79,6 @@
     <None Update="Assets\Styles\GridMainStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Locale\de-DE\LC_MESSAGES\ExPay.mo">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Locale\en.mo">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Locale\en\LC_MESSAGES\ExPay.mo">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\FinishPayPage.xaml">
@@ -120,10 +111,17 @@
     <None Update="Assets\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Locales\de-DE.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Locales\en.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties locales_4de-de_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

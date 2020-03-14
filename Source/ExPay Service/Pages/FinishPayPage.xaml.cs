@@ -36,12 +36,6 @@ namespace ExPay_Service.Pages
             var paymentMethodsCb = this.FindControl<ComboBox>("paymentMethodsCb");
             paymentMethodsCb.Items = PluginLoader.Instance.PaymentMethods.ToList();
             paymentMethodsCb.SelectedIndex = PaymentConfig.GetValue<int>("defaultPaymentMethod");
-
-            var test = this.FindControl<Button>("testBtn");
-            test.Click += async (s, e) =>
-              {
-                  var value = await DialogService.ShowDialog("test", new Button { Content = "hello world" }, new { hello = true });
-              };
         }
 
         private void InitializeComponent()

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://furesoft.bplaced.net/schema/ExPay_localize_schema.json",
+  "name": "English",
+  "keys": {
+    "Button.Ok": "Ok",
+    "Button.Cancel": "Cancel",
+    "Button.Pay": "Pay",
+    "Button.Details": "Products",
+
+    "State.Success": "Success",
+    "State.Failed": "Failed",
+
+    "Label.Phone": "Phone",
+    "Label.Pay_with": "Pay with",
+    "Label.Ship_to": "Ship to",
+    "Label.Shipping_options": "Shipping options",
+    "Label.Email_receipt_to": "E-Mail"
+  }
+}

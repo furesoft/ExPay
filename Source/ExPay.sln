@@ -9,8 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClient", "TestClient\Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{935E02E4-5F52-455B-8A37-7B1E7B08BBBB}"
 	ProjectSection(SolutionItems) = preProject
+		..\ExPay_localize_schema.json = ..\ExPay_localize_schema.json
 		..\Protocol.txt = ..\Protocol.txt
 		..\ToDo.txt = ..\ToDo.txt
+	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		C_5_4Users_4filmee24_4Documents_4Projekte_4ExPay_4Source_4ExPay_3localize_3schema_1json__JsonSchema = http://json-schema.org/draft-04/schema
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExPay Manager", "ExPay Manager\ExPay Manager.csproj", "{6B672887-1FCE-46F0-828C-D93B13E0B594}"

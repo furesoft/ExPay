@@ -1,4 +1,5 @@
 ﻿using Avalonia.Markup.Xaml;
+using ExPay.Core.Localisation;
 using System;
 
 namespace ExPay.Core.UI.MarkupExtensions

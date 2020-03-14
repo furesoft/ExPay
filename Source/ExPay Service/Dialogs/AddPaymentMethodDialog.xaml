@@ -7,6 +7,5 @@
              x:Class="ExPay_Service.Dialogs.AddPaymentMethodDialog">
   <StackPanel>
     <TextBlock Text="Hello World Dialog" />
-    <Button conv:DialogService.CloseDialog="True" Content="Close" />
   </StackPanel>
 </UserControl>

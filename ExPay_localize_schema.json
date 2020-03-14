@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "keys": {
+      "type": "object",
+      "properties": {
+        "Button.Ok": {
+          "type": "string"
+        },
+        "Button.Cancel": {
+          "type": "string"
+        },
+        "Button.Pay": {
+          "type": "string"
+        },
+        "Button.Details": {
+          "type": "string"
+        },
+        "State.Success": {
+          "type": "string"
+        },
+        "State.Failed": {
+          "type": "string"
+        },
+        "Label.Phone": {
+          "type": "string"
+        },
+        "Label.Pay_with": {
+          "type": "string"
+        },
+        "Label.Ship_to": {
+          "type": "string"
+        },
+        "Label.Shipping_options": {
+          "type": "string"
+        },
+        "Label.Email_receipt_to": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Button.Ok",
+        "Button.Cancel",
+        "Button.Pay",
+        "Button.Details",
+        "State.Success",
+        "State.Failed",
+        "Label.Phone",
+        "Label.Pay_with",
+        "Label.Ship_to",
+        "Label.Shipping_options",
+        "Label.Email_receipt_to"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "keys"
+  ]
+}

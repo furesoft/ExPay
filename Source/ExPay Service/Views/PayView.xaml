@@ -17,7 +17,7 @@
         <pages:FinishPayPage Grid.Row="1" />
 
         <Grid Grid.Row="2">
-          <Button MinWidth="125" MaxWidth="5" HorizontalAlignment="Right" Command="{conv:OpenDialog {x:Type dlgs:PaymentStatusDialog}, AutoCloseTime='00:00:03'}" Content="{conv:String 'Pay'}" />
+          <Button MinWidth="125" MaxWidth="5" HorizontalAlignment="Right" Command="{conv:OpenDialog {x:Type dlgs:PaymentStatusDialog}, AutoCloseTime='00:00:03'}" Content="{conv:String 'Button.Pay'}" />
         </Grid>
       </Grid>
     </conv:ContentDialog>

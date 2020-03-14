@@ -7,6 +7,6 @@
              x:Class="ExPay_Service.Dialogs.PaymentStatusDialog">
   <StackPanel VerticalAlignment="Center">
     <Image Source="resm:ExPay_Service.Assets.Images.success.png" Height="150" Width="150" />
-    <TextBlock TextAlignment="Center" FontSize="25" Text="{conv:String 'Success'}" />
+    <TextBlock TextAlignment="Center" FontSize="25" Text="{conv:String 'State.Success'}" />
   </StackPanel>
 </UserControl>
