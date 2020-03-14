@@ -1,5 +1,5 @@
 [ ] make resourcedictionary for fontsizes and colors
-[ ] add DefaultFrame for Dialogs with OK and Cancel Buttons and Content Property
+[ ] add DialogFrame for default dialogs, add method for showing this frame with getting new datacontext as result
 [-] convert to mvvm
 [ ] add custom view for unhandled exceptions
 [-] move PaymentDetails to Dialog

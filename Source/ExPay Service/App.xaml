@@ -6,6 +6,7 @@
     <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml" />
     <StyleInclude Source="avares://ExPayService/Assets/Styles/GridMainStyle.xaml" />
     <StyleInclude Source="avares://ExPay.Core/UI/Controls/ContentDialog.xaml" />
+    <StyleInclude Source="avares://ExPay.Core/UI/Controls/DialogFrame.xaml" />
   </Application.Styles>
 
   <Application.Resources>

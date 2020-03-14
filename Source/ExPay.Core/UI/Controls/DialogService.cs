@@ -2,6 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Threading;
 using System;
+using System.Threading.Tasks;
 
 namespace ExPay.Core.UI.Controls
 {
@@ -62,6 +63,28 @@ namespace ExPay.Core.UI.Controls
 
             timer.Interval = value;
             timer.Start();
+        }
+
+        public static Task<DialogResult> ShowDialog(string title, Control content, object context = null)
+        {
+            var tcs = new TaskCompletionSource<DialogResult>();
+
+            var frame = new DialogFrame();
+            frame.Content = content;
+            frame.Title = title;
+
+            Action<Control> closed = null;
+            closed = new Action<Control>((_) =>
+            {
+                DialogClosed -= closed;
+                tcs.SetResult(frame.Result);
+            });
+
+            DialogClosed += closed;
+
+            OpenDialog(frame, context: context);
+
+            return tcs.Task;
         }
 
         public static void OpenDialog(Control content, TimeSpan autoCloseTime = default, object context = null)

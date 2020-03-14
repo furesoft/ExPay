@@ -43,5 +43,6 @@
     </StackPanel>
 
     <Button Grid.Row="5" Grid.Column="0" Content="{conv:String 'Details'}" Command="{conv:OpenDialog {x:Type dlgs:PaymentDetailsDialog}}"  />
+    <Button Name="testBtn" Grid.Row="5" Grid.Column="1" Content="Test"  />
   </Grid>
 </UserControl>

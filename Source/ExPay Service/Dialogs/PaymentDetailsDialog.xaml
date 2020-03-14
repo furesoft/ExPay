@@ -22,7 +22,5 @@
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
-
-    <Button VerticalAlignment="Bottom" Content="{conv:String 'OK'}" Command="{conv:CloseDialog}" />
   </Grid>
 </UserControl>

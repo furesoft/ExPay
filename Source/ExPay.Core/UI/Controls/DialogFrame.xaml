@@ -1,0 +1,26 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="http://furesoft.ml/expay"
+        xmlns:cc="clr-namespace:ExPay.Core.UI.Controls">
+
+  <Style Selector="cc|DialogFrame">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border BorderBrush="Black" BorderThickness="1">
+          <Grid RowDefinitions="35,*,35">
+            <Grid Grid.Row="0" Background="Blue">
+              <TextBlock Text="{TemplateBinding Title}" />
+            </Grid>
+
+            <ContentControl Grid.Row="1"  Content="{TemplateBinding Content}" />
+
+            <Grid Grid.Row="2">
+              <Button Name="cancelBtn" HorizontalAlignment="Left" Content="{conv:String 'Cancel'}" />
+              <Button Name="okBtn" Content="{conv:String 'OK'}" HorizontalAlignment="Right" />
+            </Grid>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
