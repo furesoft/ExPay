@@ -11,10 +11,7 @@
 
           <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" ZIndex="5000" IsVisible="{TemplateBinding IsOpened}" MaxWidth="{TemplateBinding DialogMaxWidth}" MaxHeight="{TemplateBinding DialogMaxHeigth}">
             <ContentControl Content="{TemplateBinding DialogContent}"
-                      VerticalContentAlignment="Center"
-                      VerticalAlignment="Center"
-                      HorizontalContentAlignment="Center"
-                      HorizontalAlignment="Center"/>
+                      />
           </Border>
         </Grid>
       </ControlTemplate>

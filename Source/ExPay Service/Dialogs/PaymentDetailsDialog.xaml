@@ -6,8 +6,8 @@
              xmlns:dlgs="clr-namespace:ExPay_Service.Dialogs"
              mc:Ignorable="d"
              x:Class="ExPay_Service.Dialogs.PaymentDetailsDialog">
-  <StackPanel Orientation="Vertical">
-    <ListBox Items="{Binding Details.DisplayItems}" IsHitTestVisible="False" MinWidth="250">
+  <Grid>
+    <ListBox Items="{Binding Details.DisplayItems}" IsHitTestVisible="False">
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid>
@@ -23,6 +23,6 @@
       </ListBox.ItemTemplate>
     </ListBox>
 
-    <Button Content="{conv:String 'OK'}" Command="{conv:CloseDialog}" />
-  </StackPanel>
+    <Button VerticalAlignment="Bottom" Content="{conv:String 'OK'}" Command="{conv:CloseDialog}" />
+  </Grid>
 </UserControl>
