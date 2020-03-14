@@ -91,7 +91,7 @@ namespace TestClient
                 RequestPayerName = PaymentOptionPresence.Optional,
                 RequestPayerEmail = PaymentOptionPresence.Required,
                 RequestPayerPhoneNumber = PaymentOptionPresence.Optional,
-                RequestShipping = true
+                RequestShipping = false
             };
 
             var merchantInfo = new PaymentMerchantInfo("https://store.contoso.com");

@@ -1,6 +1,4 @@
 [ ] make resourcedictionary for fontsizes and colors
-[ ] add DialogFrame for default dialogs, add method for showing this frame with getting new datacontext as result
 [-] convert to mvvm
-[ ] add custom view for unhandled exceptions
 [-] move PaymentDetails to Dialog
-[-] add json based localisation
+[ ] fix payment page design bug, when elements are disabled, probably with 2 stackpanels

@@ -7,12 +7,13 @@
              xmlns:pages="clr-namespace:ExPay_Service.Pages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExPay_Service.Pages.FinishPayPage">
-  <Grid Name="layoutGrid" RowDefinitions="35,35,35,35,35,35" ColumnDefinitions="*,15,*,35" HorizontalAlignment="Center">
+  <Grid Name="layoutGrid" RowDefinitions="35,35,35,35,35,35,35" ColumnDefinitions="*,15,*,35" HorizontalAlignment="Center">
     <TextBlock Name="paymentMethodLbl" Classes="grid"  Grid.Row="0" Text="{conv:String 'Label.Pay_with'}"  />
-    <TextBlock Name="shipToLbl" Classes="grid" Grid.Row="1" Text="{conv:String 'Label.Ship_to'}" />
-    <TextBlock Name="shippingOptionsLbl" Classes="grid"  Grid.Row="2" Text="{conv:String 'Label.Shipping_options'}" />
-    <TextBlock Name="emailLbl" Classes="grid" Grid.Row="3" Text="{conv:String 'Label.Email_receipt_to'}" />
-    <TextBlock Name="phoneLbl" Classes="grid" Grid.Row="4" Text="{conv:String 'Label.Phone'}" />
+    <TextBlock Name="shipToLbl"  IsVisible="{conv:RequestVisible 'RequestShipping'}" Classes="grid" Grid.Row="1" Text="{conv:String 'Label.Ship_to'}" />
+    <TextBlock Name="shippingOptionsLbl"  IsVisible="{conv:RequestVisible 'RequestShipping'}" Classes="grid"  Grid.Row="2" Text="{conv:String 'Label.Shipping_options'}" />
+    <TextBlock Name="emailLbl" IsVisible="{conv:RequestVisible 'RequestPayerEmail'}" Classes="grid" Grid.Row="3" Text="{conv:String 'Label.Email_receipt_to'}" />
+    <TextBlock Name="phoneLbl" IsVisible="{conv:RequestVisible 'RequestPayerPhoneNumber'}" Classes="grid" Grid.Row="4" Text="{conv:String 'Label.Phone'}" />
+    <TextBlock Name="nameLbl" IsVisible="{conv:RequestVisible 'RequestPayerName'}" Classes="grid" Grid.Row="5" Text="{conv:String 'Label.Name'}" />
 
     <ComboBox Name="paymentMethodsCb" Classes="grid" Grid.Row="0" MinWidth="200">
       <ComboBox.ItemTemplate>
@@ -25,14 +26,15 @@
       </ComboBox.ItemTemplate>
     </ComboBox>
 
-    <Button Name="addPaymentMethod" Grid.Row="0" Grid.Column="3" Command="{conv:OpenDialog {x:Type dlgs:AddPaymentMethodDialog}}" Content="+" />
-    <Button Name="addShippingMethod" Grid.Row="1" Grid.Column="3" Command="{conv:OpenDialog {x:Type dlgs:PaymentStatusDialog}, AutoCloseTime='00:00:05'}" Content="+" />
+    <Button Name="addPaymentMethod"  Grid.Row="0" Grid.Column="3" Command="{conv:OpenDialog {x:Type dlgs:AddPaymentMethodDialog}}" Content="+" />
+    <Button Name="addShippingMethod" IsVisible="{conv:RequestVisible 'RequestShipping'}" Grid.Row="1" Grid.Column="3" Command="{conv:OpenDialog {x:Type dlgs:PaymentStatusDialog}, AutoCloseTime='00:00:05'}" Content="+" />
 
-    <ComboBox Name="shippingAddressCb" Classes="grid" Grid.Row="1" />
-    <ComboBox Name="shippingOptionsCb"  Classes="grid" Grid.Row="2" />
+    <ComboBox Name="shippingAddressCb" IsVisible="{conv:RequestVisible 'RequestShipping'}" Classes="grid" Grid.Row="1" />
+    <ComboBox Name="shippingOptionsCb"  IsVisible="{conv:RequestVisible 'RequestShipping'}" Classes="grid" Grid.Row="2" />
 
-    <TextBox Name="emailTb" Classes="grid"  Grid.Row="3"  />
-    <TextBox Name="phoneTb" Classes="grid" Grid.Row="4" />
+    <TextBox Name="emailTb" IsVisible="{conv:RequestVisible 'RequestPayerEmail'}" Classes="grid"  Grid.Row="3"  />
+    <TextBox Name="phoneTb" IsVisible="{conv:RequestVisible 'RequestPayerPhoneNumber'}" Classes="grid" Grid.Row="4" />
+    <TextBox Name="nameTb" IsVisible="{conv:RequestVisible 'RequestPayerName'}" Classes="grid" Grid.Row="5" />
 
     <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="5" Classes="grid">
       <TextBlock Text="Total: " />
@@ -42,6 +44,6 @@
       <TextBlock Text="{Binding Details.Total.Amount.Currency}" />
     </StackPanel>
 
-    <Button Grid.Row="5" Grid.Column="0" Content="{conv:String 'Button.Details'}" Command="{conv:OpenDialog {x:Type dlgs:PaymentDetailsDialog}}"  />
+    <Button Grid.Row="6" Grid.Column="0" Content="{conv:String 'Button.Details'}" Command="{conv:OpenDialog {x:Type dlgs:PaymentDetailsDialog}}"  />
   </Grid>
 </UserControl>
