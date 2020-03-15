@@ -14,6 +14,7 @@
     "Label.Pay_with": "Pay with",
     "Label.Ship_to": "Ship to",
     "Label.Shipping_options": "Shipping options",
-    "Label.Email_receipt_to": "E-Mail"
+    "Label.Email_receipt_to": "E-Mail",
+    "Label.Name": "Name",
   }
 }

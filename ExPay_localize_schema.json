@@ -40,6 +40,9 @@
         },
         "Label.Email_receipt_to": {
           "type": "string"
+        },
+        "Label.Name": {
+          "type": "string"
         }
       },
       "required": [
@@ -53,7 +56,8 @@
         "Label.Pay_with",
         "Label.Ship_to",
         "Label.Shipping_options",
-        "Label.Email_receipt_to"
+        "Label.Email_receipt_to",
+        "Label.Name"
       ]
     }
   },
