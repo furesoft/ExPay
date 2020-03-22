@@ -51,7 +51,7 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.4" />
     <PackageReference Include="Furesoft.Signals" Version="1.0.16" />
     <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
-    <PackageReference Include="NLog" Version="4.7.0-rc1" />
+    <PackageReference Include="NLog" Version="4.7.0" />
     <PackageReference Include="Quamotion.DiscUtils.Registry" Version="0.15.4" />
     <PackageReference Include="Topshelf" Version="4.2.1.218-develop" />
   </ItemGroup>
