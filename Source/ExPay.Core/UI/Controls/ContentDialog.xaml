@@ -17,4 +17,11 @@
       </ControlTemplate>
     </Setter>
   </Style>
+
+  <Style Selector="cc|ContentDialog:opened">
+
+  </Style>
+  <Style Selector="cc|ContentDialog:closed">
+
+  </Style>
 </Styles>
