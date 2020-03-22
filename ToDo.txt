@@ -1,6 +1,5 @@
 [ ] make resourcedictionary for fontsizes and colors
 [-] convert to mvvm
-[-] move PaymentDetails to Dialog
-[ ] fix payment page design bug, when elements are disabled, probably with 2 stackpanels
+[-] fix payment page design bug, when elements are disabled, probably with 2 stackpanels
 [ ] prototype ui in figma and store figma file in repo
 [ ] fix autogrid in payfinishpage to old result

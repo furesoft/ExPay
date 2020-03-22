@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Metadata;
 
@@ -28,7 +29,11 @@ namespace ExPay.Core.UI.Controls
         public bool IsOpened
         {
             get { return GetValue(IsOpenedProperty); }
-            set { SetValue(IsOpenedProperty, value); }
+            set
+            {
+                SetValue(IsOpenedProperty, value);
+                UpdatePseudoClasses(value);
+            }
         }
 
         public int DialogMaxHeigth
@@ -59,5 +64,10 @@ namespace ExPay.Core.UI.Controls
             set { SetValue(DialogContentProperty, value); }
         }
 
+        private void UpdatePseudoClasses(bool isopened)
+        {
+            PseudoClasses.Set(":opened", isopened == true);
+            PseudoClasses.Set(":closed", isopened == false);
+        }
     }
 }
