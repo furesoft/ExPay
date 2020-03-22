@@ -1,27 +1,33 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:react="http://reactiveui.net"
         xmlns:cc="clr-namespace:ExPay.Core.UI.Controls">
 
   <Style Selector="cc|ContentDialog">
     <Setter Property="Template">
       <ControlTemplate>
         <Grid>
+           
           <ContentControl Content="{TemplateBinding Content}" />
           <Rectangle Fill="Gray" IsVisible="{TemplateBinding IsOpened}" Opacity="0.3" />
 
           <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" ZIndex="5000" IsVisible="{TemplateBinding IsOpened}" MaxWidth="{TemplateBinding DialogMaxWidth}" MaxHeight="{TemplateBinding DialogMaxHeigth}">
-            <ContentControl Content="{TemplateBinding DialogContent}"
-                      />
+            <react:TransitioningContentControl Content="{TemplateBinding DialogContent}">
+              
+            </react:TransitioningContentControl>
           </Border>
         </Grid>
       </ControlTemplate>
     </Setter>
   </Style>
 
-  <Style Selector="cc|ContentDialog:opened">
-
+  <Style Selector="cc|ContentDialog:opened react|TransitioningContentControl">
+    <Setter Property="Transitions">
+        <CrossFade Duration="00:00:10" />
+    </Setter>
   </Style>
-  <Style Selector="cc|ContentDialog:closed">
+  
+  <Style Selector="cc|ContentDialog:closed react|TransitioningContentControl">
 
   </Style>
 </Styles>

@@ -2,6 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Dialogs;
 using Avalonia.Logging.Serilog;
+using Avalonia.ReactiveUI;
 using Avalonia.Threading;
 using ExPay.Core;
 using ExPay_Service.Views;
@@ -49,6 +50,7 @@ namespace ExPay_Service
         private static AppBuilder BuildAvaloniaApp()
                     => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
+                .UseReactiveUI()
                 .UseManagedSystemDialogs()
                 .LogToDebug();
     }
